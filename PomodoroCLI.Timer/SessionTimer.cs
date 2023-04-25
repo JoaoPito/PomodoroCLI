@@ -3,29 +3,54 @@ using System.Timers;
 namespace PomodoroCLI.Timer {
     public class SessionTimer : PomodoroCLI.Timer.Timer{
 
-        System.Timers.Timer timer;
-        TimeSpan setDuration;
-        DateTime lastSetTime;
+        System.Timers.Timer clock;
+        TimeSpan totalDuration;
+	    TimeSpan remainingTime;
+        TimeSpan clockPeriod = new TimeSpan(100 * TimeSpan.TicksPerMillisecond);
 
-        public SessionTimer() {
-            timer = new System.Timers.Timer();
+	    Action trigger;
+
+        public SessionTimer(System.Timers.Timer timer, Action trigger) {
+            this.clock = timer;
+            this.clock.Elapsed += Tick;
+            this.trigger = trigger;
+
+            Reset();
         }
 
         public void SetDuration(TimeSpan duration) {
-            if(duration.TotalMilliseconds > 0){
-                timer.Interval = duration.TotalMilliseconds;
-                this.setDuration = duration;
-                lastSetTime = DateTime.Now;
-            }
+            this.totalDuration = duration;
+            Reset();
         }
+
+	    void Tick(Object source, System.Timers.ElapsedEventArgs e){
+	        remainingTime -= clockPeriod;
+
+	        if(remainingTime.TotalSeconds <= 0)
+	            Ring();
+	    }
+
+        void Ring() {
+	        Stop();
+	        trigger();
+	    }
 
         public TimeSpan GetRemainingTime() {
-            var elapsedTime = DateTime.Now - lastSetTime;
-            return setDuration - elapsedTime;
+            return remainingTime;
         }
 
+	    public void Reset() {
+            Stop();
+            clock.Interval = clockPeriod.TotalMilliseconds;	    
+	        remainingTime = totalDuration;
+	    }
+
         public void Start() {
-            timer.Enabled = true;
+            clock.Start();
         }
+
+	    public void Stop() {
+            clock.Stop();
+	    }
     }
 }

@@ -5,4 +5,6 @@ public interface Timer
     public TimeSpan GetRemainingTime();
 
     public void Start();
+    public void Stop();
+    public void Reset();
 }

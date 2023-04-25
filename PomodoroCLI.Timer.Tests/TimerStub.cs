@@ -1,11 +1,14 @@
 namespace PomodoroCLI.Timer.Tests {
-    public class StubTimer : System.ComponentModel.Component, 
-                             System.ComponentModel.ISupportInitialize {
-        public void BeginInit() {
+    public class TimerStub : System.Timers.Timer {
+
+        public new float Interval;
+        public new bool Enabled;
+
+        public new void Start(){
 
         }
 
-        public void EndInit() {
+        public void Trigger(){
             
         }
     }
