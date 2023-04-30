@@ -1808,16 +1808,6 @@
         "build": {
           "build/netcoreapp3.1/xunit.runner.visualstudio.props": {}
         }
-      },
-      "PomodoroCLI.Timer/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v7.0",
-        "compile": {
-          "bin/placeholder/PomodoroCLI.Timer.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/PomodoroCLI.Timer.dll": {}
-        }
       }
     }
   },
@@ -6113,17 +6103,11 @@
         "xunit.runner.visualstudio.2.4.5.nupkg.sha512",
         "xunit.runner.visualstudio.nuspec"
       ]
-    },
-    "PomodoroCLI.Timer/1.0.0": {
-      "type": "project",
-      "path": "../PomodoroCLI.Timer/PomodoroCLI.Timer.csproj",
-      "msbuildProject": "../PomodoroCLI.Timer/PomodoroCLI.Timer.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net7.0": [
       "Microsoft.NET.Test.Sdk >= 17.3.2",
-      "PomodoroCLI.Timer >= 1.0.0",
       "coverlet.collector >= 3.1.2",
       "xunit >= 2.4.2",
       "xunit.runner.visualstudio >= 2.4.5"
@@ -6135,11 +6119,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/joaopito/Documentos/Projetos/PomodoroCLI/PomodoroCLI.Timer.Tests/PomodoroCLI.Timer.Tests.csproj",
-      "projectName": "PomodoroCLI.Timer.Tests",
-      "projectPath": "/home/joaopito/Documentos/Projetos/PomodoroCLI/PomodoroCLI.Timer.Tests/PomodoroCLI.Timer.Tests.csproj",
+      "projectUniqueName": "/home/joaopito/Documentos/Projetos/PomodoroCLI/PomodoroCLI.FunctionalTests/PomodoroCLI.FunctionalTests.csproj",
+      "projectName": "PomodoroCLI.FunctionalTests",
+      "projectPath": "/home/joaopito/Documentos/Projetos/PomodoroCLI/PomodoroCLI.FunctionalTests/PomodoroCLI.FunctionalTests.csproj",
       "packagesPath": "/home/joaopito/.nuget/packages/",
-      "outputPath": "/home/joaopito/Documentos/Projetos/PomodoroCLI/PomodoroCLI.Timer.Tests/obj/",
+      "outputPath": "/home/joaopito/Documentos/Projetos/PomodoroCLI/PomodoroCLI.FunctionalTests/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/joaopito/.nuget/NuGet/NuGet.Config"
@@ -6153,11 +6137,7 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
-          "projectReferences": {
-            "/home/joaopito/Documentos/Projetos/PomodoroCLI/PomodoroCLI.Timer/PomodoroCLI.Timer.csproj": {
-              "projectPath": "/home/joaopito/Documentos/Projetos/PomodoroCLI/PomodoroCLI.Timer/PomodoroCLI.Timer.csproj"
-            }
-          }
+          "projectReferences": {}
         }
       },
       "warningProperties": {
