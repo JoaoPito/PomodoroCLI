@@ -1,11 +1,49 @@
 {
   "version": 3,
   "targets": {
-    "net7.0": {}
+    "net7.0": {
+      "PomodoroCLI.CLI/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "PomodoroCLI.Timer": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/PomodoroCLI.CLI.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/PomodoroCLI.CLI.dll": {}
+        }
+      },
+      "PomodoroCLI.Timer/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/PomodoroCLI.Timer.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/PomodoroCLI.Timer.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "PomodoroCLI.CLI/1.0.0": {
+      "type": "project",
+      "path": "../PomodoroCLI.CLI/PomodoroCLI.CLI.csproj",
+      "msbuildProject": "../PomodoroCLI.CLI/PomodoroCLI.CLI.csproj"
+    },
+    "PomodoroCLI.Timer/1.0.0": {
+      "type": "project",
+      "path": "../PomodoroCLI.Timer/PomodoroCLI.Timer.csproj",
+      "msbuildProject": "../PomodoroCLI.Timer/PomodoroCLI.Timer.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net7.0": []
+    "net7.0": [
+      "PomodoroCLI.CLI >= 1.0.0",
+      "PomodoroCLI.Timer >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "/home/joaopito/.nuget/packages/": {}
@@ -13,11 +51,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/joaopito/Documentos/Projetos/PomodoroCLI/PomodoroCLI.Client/PomodoroCLI.Client.csproj",
+      "projectUniqueName": "/home/joaopito/Documentos/Projetos/PomodoroCLI/src/PomodoroCLI.Client/PomodoroCLI.Client.csproj",
       "projectName": "PomodoroCLI.Client",
-      "projectPath": "/home/joaopito/Documentos/Projetos/PomodoroCLI/PomodoroCLI.Client/PomodoroCLI.Client.csproj",
+      "projectPath": "/home/joaopito/Documentos/Projetos/PomodoroCLI/src/PomodoroCLI.Client/PomodoroCLI.Client.csproj",
       "packagesPath": "/home/joaopito/.nuget/packages/",
-      "outputPath": "/home/joaopito/Documentos/Projetos/PomodoroCLI/PomodoroCLI.Client/obj/",
+      "outputPath": "/home/joaopito/Documentos/Projetos/PomodoroCLI/src/PomodoroCLI.Client/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/joaopito/.nuget/NuGet/NuGet.Config"
@@ -31,7 +69,14 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "/home/joaopito/Documentos/Projetos/PomodoroCLI/src/PomodoroCLI.CLI/PomodoroCLI.CLI.csproj": {
+              "projectPath": "/home/joaopito/Documentos/Projetos/PomodoroCLI/src/PomodoroCLI.CLI/PomodoroCLI.CLI.csproj"
+            },
+            "/home/joaopito/Documentos/Projetos/PomodoroCLI/src/PomodoroCLI.Timer/PomodoroCLI.Timer.csproj": {
+              "projectPath": "/home/joaopito/Documentos/Projetos/PomodoroCLI/src/PomodoroCLI.Timer/PomodoroCLI.Timer.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

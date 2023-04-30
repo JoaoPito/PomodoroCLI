@@ -6,15 +6,6 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v7.0": {
-      "PomodoroCLI.Client/1.0.0": {
-        "dependencies": {
-          "PomodoroCLI.CLI": "1.0.0",
-          "PomodoroCLI.Timer": "1.0.0"
-        },
-        "runtime": {
-          "PomodoroCLI.Client.dll": {}
-        }
-      },
       "PomodoroCLI.CLI/1.0.0": {
         "dependencies": {
           "PomodoroCLI.Timer": "1.0.0"
@@ -31,11 +22,6 @@
     }
   },
   "libraries": {
-    "PomodoroCLI.Client/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
     "PomodoroCLI.CLI/1.0.0": {
       "type": "project",
       "serviceable": false,
