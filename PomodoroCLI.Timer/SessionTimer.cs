@@ -27,8 +27,6 @@ namespace PomodoroCLI.Timer {
 	    void Tick(Object? source, System.Timers.ElapsedEventArgs e){
 	        remainingTime -= clockPeriod;
 
-            Console.WriteLine($"SessionTimer tick: {remainingTime}");
-
 	        if(remainingTime.TotalSeconds <= 0)
 	            Ring();
 	    }

@@ -6,18 +6,18 @@ namespace PomodoroCLI.Timer.Tests {
         ElapsedEventHandler Events;
 
         bool hasStarted = false;
-        TimeSpan interval;
+        TimeSpan totalTime;
         TimeSpan remainingTime;
 
         public TimerStub() {
             Events = new ElapsedEventHandler((Object, ElapsedEventArgs) => {return;});
-            interval = new TimeSpan();
+            totalTime = new TimeSpan();
             remainingTime = new TimeSpan();
         }
 
         public void SetInterval(double milisseconds) {
-            interval = new TimeSpan((long)milisseconds * TimeSpan.TicksPerMillisecond);
-            remainingTime = interval;
+            totalTime = new TimeSpan((long)milisseconds * TimeSpan.TicksPerMillisecond);
+            remainingTime = totalTime;
         }
 
         public void RegisterNewTriggerEvent(ElapsedEventHandler newEvent) {
@@ -34,12 +34,19 @@ namespace PomodoroCLI.Timer.Tests {
         public void Stop() {
             hasStarted = false;
         }
-
+ 
         public void SkipTime(TimeSpan milliseconds) {
             remainingTime -= milliseconds;
 
-            if(remainingTime.TotalMilliseconds <= 0 && hasStarted){
-                remainingTime = interval;
+            while(remainingTime.TotalMilliseconds <= 0 && hasStarted){
+                remainingTime += totalTime;
+                Events(this, new EventArgs() as ElapsedEventArgs);
+            }
+        }
+
+        public void SkipCycle() {
+            if(hasStarted){
+                remainingTime = totalTime;
                 Events(this, new EventArgs() as ElapsedEventArgs);
             }
         }

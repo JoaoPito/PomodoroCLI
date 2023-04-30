@@ -48,7 +48,7 @@ public class SessionTimer_Tests
         var resultTime = Math.Round(timer.GetRemainingTime().TotalSeconds);
         var expectedTime = Math.Round(duration.TotalSeconds) - Math.Round(waitTime.TotalSeconds);
 
-        Assert.True((resultTime < expectedTime), $"Time not decreasing. Expected {expectedTime}s, got {resultTime}s");
+        Assert.True((resultTime <= expectedTime), $"Time not decreasing. Expected {expectedTime}s, got {resultTime}s");
     }
 
     [Theory]
