@@ -5,12 +5,6 @@ namespace PomodoroCLI.Timer.Tests;
 
 public class SessionTimer_Tests
 {
-    ISessionTimer CreateTimer(IGenericTimer clockTimer, Action? trigger, TimeSpan duration) {
-        var timer = new SessionTimer(clockTimer, trigger);
-        timer.SetDuration(duration);
-        return timer;
-    }
-
     [Theory]
     [InlineData(0, 0, 10)]
     [InlineData(0, 10, 0)]
@@ -19,9 +13,9 @@ public class SessionTimer_Tests
     {
         var clockStub = new TimerStub();
         var duration = new TimeSpan(hour,min,sec);
-        var timer = CreateTimer(clockStub, null, duration);
+        var timer = Helpers.CreateTimer(clockStub, null, duration);
 
-        AssertIfTimeMatches(timer, duration, "Session duration not set correctly");
+        Helpers.AssertIfTimeMatches(timer, duration, "Session duration not set correctly");
     }
 
     [Fact]
@@ -35,13 +29,13 @@ public class SessionTimer_Tests
         var duration = new TimeSpan(0,0,10);
         var waitTime = new TimeSpan(0,0,1);
 
-        var timer = CreateTimer(clockStub, null, duration);
+        var timer = Helpers.CreateTimer(clockStub, null, duration);
         timer.Start();
         
         clockStub.SkipTime(waitTime);
         //Thread.Sleep((int)waitTime.TotalMilliseconds);
 
-        AssertIfTimeMatches(timer, duration - waitTime, "");
+        Helpers.AssertIfTimeMatches(timer, duration - waitTime, "");
     }
 
     [Theory]
@@ -53,15 +47,13 @@ public class SessionTimer_Tests
         var duration = new TimeSpan(hours,minutes,seconds);
         var waitTime = new TimeSpan(hours,minutes,seconds);
 
-        var timer = CreateTimer(clockStub, () => triggered=true, duration);
+        var timer = Helpers.CreateTimer(clockStub, () => triggered=true, duration);
         timer.Start();
 
         clockStub.SkipTime(waitTime);
 
         Assert.True(triggered, $"Trigger timeout, clock remaining time: {clockStub.GetRemainingTime()}");
     }
-
-
 
     [Fact]
     public void TimerProperlyStopped() {
@@ -70,7 +62,7 @@ public class SessionTimer_Tests
         var wait = new TimeSpan(0,0,1);
 
         var clockStub = new TimerStub();
-        var timer = CreateTimer(clockStub, null, duration);
+        var timer = Helpers.CreateTimer(clockStub, null, duration);
         timer.Start();
 
         // Wait
@@ -78,24 +70,12 @@ public class SessionTimer_Tests
         // Stop Timer
         timer.Stop();
         // Check
-        AssertIfTimeMatches(timer, duration - wait, "1st:");
+        Helpers.AssertIfTimeMatches(timer, duration - wait, "1st:");
 
         // Wait
         clockStub.SkipTime(wait);
         // Check
-        AssertIfTimeMatches(timer, duration - wait, "2nd:");
-    }
-
-    [Fact]
-    public void TimerProperlyStartStop() {
-
-    }
-
-    void AssertIfTimeMatches(ISessionTimer timer, TimeSpan expected, string message) {
-        var resultTime = Math.Round(timer.GetRemainingTime().TotalMilliseconds);
-        var expectedTime = Math.Round(expected.TotalMilliseconds);
-
-        Assert.True(resultTime == expectedTime, $"{message} Time does not match. Expected {expectedTime}s, got {resultTime}s");
+        Helpers.AssertIfTimeMatches(timer, duration - wait, "2nd:");
     }
 
     // Stub testing and others
