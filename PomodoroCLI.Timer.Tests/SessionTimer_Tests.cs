@@ -18,14 +18,10 @@ public class SessionTimer_Tests
     public void IfSetDurationCorrectly(int hour, int min, int sec)
     {
         var clockStub = new TimerStub();
-
         var duration = new TimeSpan(hour,min,sec);
         var timer = CreateTimer(clockStub, null, duration);
 
-        var resultSec = Math.Round(timer.GetRemainingTime().TotalSeconds);
-        var expectedSec = Math.Round(duration.TotalSeconds);
-
-        Assert.True((resultSec == expectedSec), $"Session duration not set correctly, got {resultSec}, expected {expectedSec}");
+        AssertIfTimeMatches(timer, duration, "Session duration not set correctly");
     }
 
     [Fact]
@@ -45,10 +41,7 @@ public class SessionTimer_Tests
         clockStub.SkipTime(waitTime);
         //Thread.Sleep((int)waitTime.TotalMilliseconds);
 
-        var resultTime = Math.Round(timer.GetRemainingTime().TotalSeconds);
-        var expectedTime = Math.Round(duration.TotalSeconds) - Math.Round(waitTime.TotalSeconds);
-
-        Assert.True((resultTime <= expectedTime), $"Time not decreasing. Expected {expectedTime}s, got {resultTime}s");
+        AssertIfTimeMatches(timer, duration - waitTime, "");
     }
 
     [Theory]
@@ -73,16 +66,36 @@ public class SessionTimer_Tests
     [Fact]
     public void TimerProperlyStopped() {
         // Configure/Start Timer
+        var duration = new TimeSpan(0,0,10);
+        var wait = new TimeSpan(0,0,1);
+
+        var clockStub = new TimerStub();
+        var timer = CreateTimer(clockStub, null, duration);
+        timer.Start();
+
         // Wait
+        clockStub.SkipTime(wait);
         // Stop Timer
+        timer.Stop();
         // Check
+        AssertIfTimeMatches(timer, duration - wait, "1st:");
+
         // Wait
+        clockStub.SkipTime(wait);
         // Check
+        AssertIfTimeMatches(timer, duration - wait, "2nd:");
     }
 
     [Fact]
     public void TimerProperlyStartStop() {
 
+    }
+
+    void AssertIfTimeMatches(ISessionTimer timer, TimeSpan expected, string message) {
+        var resultTime = Math.Round(timer.GetRemainingTime().TotalMilliseconds);
+        var expectedTime = Math.Round(expected.TotalMilliseconds);
+
+        Assert.True(resultTime == expectedTime, $"{message} Time does not match. Expected {expectedTime}s, got {resultTime}s");
     }
 
     // Stub testing and others

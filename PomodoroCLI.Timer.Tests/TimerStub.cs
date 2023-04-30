@@ -44,13 +44,6 @@ namespace PomodoroCLI.Timer.Tests {
             }
         }
 
-        public void SkipCycle() {
-            if(hasStarted){
-                remainingTime = totalTime;
-                Events(this, new EventArgs() as ElapsedEventArgs);
-            }
-        }
-
         public TimeSpan GetRemainingTime() {
             return remainingTime;
         }
