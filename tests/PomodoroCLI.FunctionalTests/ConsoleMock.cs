@@ -33,7 +33,13 @@ public class ConsoleMock : PomodoroCLI.Console.IConsoleBase {
     }
 
     public string GetPrintBuffer() {
-        return buffer;
+        string output = (string)buffer.Clone();
+        FlushBuffer();
+        return output;
+    }
+
+    void FlushBuffer(){
+        buffer = "";
     }
 
 }
