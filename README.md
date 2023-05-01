@@ -21,5 +21,7 @@ Rotten tomatoes may appear.
 
 There is still some work to be done:
 - [ ] User Interface
+- [ ] Notifications
 - [ ] Arguments
 - [ ] Session Settings/Default Settings customization
+
