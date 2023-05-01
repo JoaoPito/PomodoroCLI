@@ -33,3 +33,5 @@
 /home/joaopito/Documentos/Projetos/PomodoroCLI/src/PomodoroCLI.Client/obj/Debug/net7.0/PomodoroCLI.Client.csproj.CopyComplete
 /home/joaopito/Documentos/Projetos/PomodoroCLI/src/PomodoroCLI.Client/obj/Debug/net7.0/PomodoroCLI.Client.genruntimeconfig.cache
 /home/joaopito/Documentos/Projetos/PomodoroCLI/src/PomodoroCLI.Client/obj/Debug/net7.0/ref/PomodoroCLI.Client.dll
+/home/joaopito/Documentos/Projetos/PomodoroCLI/src/PomodoroCLI.Client/bin/Debug/net7.0/PomodoroCLI.Console.dll
+/home/joaopito/Documentos/Projetos/PomodoroCLI/src/PomodoroCLI.Client/bin/Debug/net7.0/PomodoroCLI.Console.pdb

@@ -21,4 +21,10 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\PomodoroCLI.Client\PomodoroCLI.Client.csproj" />
+    <ProjectReference Include="..\..\src\PomodoroCLI.CLI\PomodoroCLI.CLI.csproj" />
+    <ProjectReference Include="..\..\src\PomodoroCLI.Console\PomodoroCLI.Console.csproj" />
+  </ItemGroup>
+
 </Project>

@@ -1808,6 +1808,55 @@
         "build": {
           "build/netcoreapp3.1/xunit.runner.visualstudio.props": {}
         }
+      },
+      "PomodoroCLI.CLI/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "PomodoroCLI.Console": "1.0.0",
+          "PomodoroCLI.Timer": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/PomodoroCLI.CLI.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/PomodoroCLI.CLI.dll": {}
+        }
+      },
+      "PomodoroCLI.Client/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "PomodoroCLI.CLI": "1.0.0",
+          "PomodoroCLI.Console": "1.0.0",
+          "PomodoroCLI.Timer": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/PomodoroCLI.Client.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/PomodoroCLI.Client.dll": {}
+        }
+      },
+      "PomodoroCLI.Console/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/PomodoroCLI.Console.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/PomodoroCLI.Console.dll": {}
+        }
+      },
+      "PomodoroCLI.Timer/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/PomodoroCLI.Timer.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/PomodoroCLI.Timer.dll": {}
+        }
       }
     }
   },
@@ -6103,11 +6152,34 @@
         "xunit.runner.visualstudio.2.4.5.nupkg.sha512",
         "xunit.runner.visualstudio.nuspec"
       ]
+    },
+    "PomodoroCLI.CLI/1.0.0": {
+      "type": "project",
+      "path": "../../src/PomodoroCLI.CLI/PomodoroCLI.CLI.csproj",
+      "msbuildProject": "../../src/PomodoroCLI.CLI/PomodoroCLI.CLI.csproj"
+    },
+    "PomodoroCLI.Client/1.0.0": {
+      "type": "project",
+      "path": "../../src/PomodoroCLI.Client/PomodoroCLI.Client.csproj",
+      "msbuildProject": "../../src/PomodoroCLI.Client/PomodoroCLI.Client.csproj"
+    },
+    "PomodoroCLI.Console/1.0.0": {
+      "type": "project",
+      "path": "../../src/PomodoroCLI.Console/PomodoroCLI.Console.csproj",
+      "msbuildProject": "../../src/PomodoroCLI.Console/PomodoroCLI.Console.csproj"
+    },
+    "PomodoroCLI.Timer/1.0.0": {
+      "type": "project",
+      "path": "../../src/PomodoroCLI.Timer/PomodoroCLI.Timer.csproj",
+      "msbuildProject": "../../src/PomodoroCLI.Timer/PomodoroCLI.Timer.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net7.0": [
       "Microsoft.NET.Test.Sdk >= 17.3.2",
+      "PomodoroCLI.CLI >= 1.0.0",
+      "PomodoroCLI.Client >= 1.0.0",
+      "PomodoroCLI.Console >= 1.0.0",
       "coverlet.collector >= 3.1.2",
       "xunit >= 2.4.2",
       "xunit.runner.visualstudio >= 2.4.5"
@@ -6137,7 +6209,17 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "/home/joaopito/Documentos/Projetos/PomodoroCLI/src/PomodoroCLI.CLI/PomodoroCLI.CLI.csproj": {
+              "projectPath": "/home/joaopito/Documentos/Projetos/PomodoroCLI/src/PomodoroCLI.CLI/PomodoroCLI.CLI.csproj"
+            },
+            "/home/joaopito/Documentos/Projetos/PomodoroCLI/src/PomodoroCLI.Client/PomodoroCLI.Client.csproj": {
+              "projectPath": "/home/joaopito/Documentos/Projetos/PomodoroCLI/src/PomodoroCLI.Client/PomodoroCLI.Client.csproj"
+            },
+            "/home/joaopito/Documentos/Projetos/PomodoroCLI/src/PomodoroCLI.Console/PomodoroCLI.Console.csproj": {
+              "projectPath": "/home/joaopito/Documentos/Projetos/PomodoroCLI/src/PomodoroCLI.Console/PomodoroCLI.Console.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

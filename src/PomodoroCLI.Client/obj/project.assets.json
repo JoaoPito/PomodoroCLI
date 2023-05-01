@@ -6,6 +6,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
+          "PomodoroCLI.Console": "1.0.0",
           "PomodoroCLI.Timer": "1.0.0"
         },
         "compile": {
@@ -13,6 +14,16 @@
         },
         "runtime": {
           "bin/placeholder/PomodoroCLI.CLI.dll": {}
+        }
+      },
+      "PomodoroCLI.Console/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/PomodoroCLI.Console.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/PomodoroCLI.Console.dll": {}
         }
       },
       "PomodoroCLI.Timer/1.0.0": {
@@ -33,6 +44,11 @@
       "path": "../PomodoroCLI.CLI/PomodoroCLI.CLI.csproj",
       "msbuildProject": "../PomodoroCLI.CLI/PomodoroCLI.CLI.csproj"
     },
+    "PomodoroCLI.Console/1.0.0": {
+      "type": "project",
+      "path": "../PomodoroCLI.Console/PomodoroCLI.Console.csproj",
+      "msbuildProject": "../PomodoroCLI.Console/PomodoroCLI.Console.csproj"
+    },
     "PomodoroCLI.Timer/1.0.0": {
       "type": "project",
       "path": "../PomodoroCLI.Timer/PomodoroCLI.Timer.csproj",
@@ -42,6 +58,7 @@
   "projectFileDependencyGroups": {
     "net7.0": [
       "PomodoroCLI.CLI >= 1.0.0",
+      "PomodoroCLI.Console >= 1.0.0",
       "PomodoroCLI.Timer >= 1.0.0"
     ]
   },
@@ -72,6 +89,9 @@
           "projectReferences": {
             "/home/joaopito/Documentos/Projetos/PomodoroCLI/src/PomodoroCLI.CLI/PomodoroCLI.CLI.csproj": {
               "projectPath": "/home/joaopito/Documentos/Projetos/PomodoroCLI/src/PomodoroCLI.CLI/PomodoroCLI.CLI.csproj"
+            },
+            "/home/joaopito/Documentos/Projetos/PomodoroCLI/src/PomodoroCLI.Console/PomodoroCLI.Console.csproj": {
+              "projectPath": "/home/joaopito/Documentos/Projetos/PomodoroCLI/src/PomodoroCLI.Console/PomodoroCLI.Console.csproj"
             },
             "/home/joaopito/Documentos/Projetos/PomodoroCLI/src/PomodoroCLI.Timer/PomodoroCLI.Timer.csproj": {
               "projectPath": "/home/joaopito/Documentos/Projetos/PomodoroCLI/src/PomodoroCLI.Timer/PomodoroCLI.Timer.csproj"

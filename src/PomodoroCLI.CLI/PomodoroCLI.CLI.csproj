@@ -2,6 +2,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\PomodoroCLI.Timer\PomodoroCLI.Timer.csproj" />
+    <ProjectReference Include="..\PomodoroCLI.Console\PomodoroCLI.Console.csproj" />
   </ItemGroup>
 
   <PropertyGroup>

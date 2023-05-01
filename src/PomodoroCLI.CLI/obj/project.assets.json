@@ -2,6 +2,16 @@
   "version": 3,
   "targets": {
     "net7.0": {
+      "PomodoroCLI.Console/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/PomodoroCLI.Console.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/PomodoroCLI.Console.dll": {}
+        }
+      },
       "PomodoroCLI.Timer/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
@@ -15,6 +25,11 @@
     }
   },
   "libraries": {
+    "PomodoroCLI.Console/1.0.0": {
+      "type": "project",
+      "path": "../PomodoroCLI.Console/PomodoroCLI.Console.csproj",
+      "msbuildProject": "../PomodoroCLI.Console/PomodoroCLI.Console.csproj"
+    },
     "PomodoroCLI.Timer/1.0.0": {
       "type": "project",
       "path": "../PomodoroCLI.Timer/PomodoroCLI.Timer.csproj",
@@ -23,6 +38,7 @@
   },
   "projectFileDependencyGroups": {
     "net7.0": [
+      "PomodoroCLI.Console >= 1.0.0",
       "PomodoroCLI.Timer >= 1.0.0"
     ]
   },
@@ -51,6 +67,9 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
+            "/home/joaopito/Documentos/Projetos/PomodoroCLI/src/PomodoroCLI.Console/PomodoroCLI.Console.csproj": {
+              "projectPath": "/home/joaopito/Documentos/Projetos/PomodoroCLI/src/PomodoroCLI.Console/PomodoroCLI.Console.csproj"
+            },
             "/home/joaopito/Documentos/Projetos/PomodoroCLI/src/PomodoroCLI.Timer/PomodoroCLI.Timer.csproj": {
               "projectPath": "/home/joaopito/Documentos/Projetos/PomodoroCLI/src/PomodoroCLI.Timer/PomodoroCLI.Timer.csproj"
             }

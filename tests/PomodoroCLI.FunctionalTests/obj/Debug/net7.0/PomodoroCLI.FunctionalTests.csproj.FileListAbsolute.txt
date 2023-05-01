@@ -96,3 +96,15 @@
 /home/joaopito/Documentos/Projetos/PomodoroCLI/tests/PomodoroCLI.FunctionalTests/obj/Debug/net7.0/PomodoroCLI.FunctionalTests.pdb
 /home/joaopito/Documentos/Projetos/PomodoroCLI/tests/PomodoroCLI.FunctionalTests/obj/Debug/net7.0/PomodoroCLI.FunctionalTests.genruntimeconfig.cache
 /home/joaopito/Documentos/Projetos/PomodoroCLI/tests/PomodoroCLI.FunctionalTests/obj/Debug/net7.0/ref/PomodoroCLI.FunctionalTests.dll
+/home/joaopito/Documentos/Projetos/PomodoroCLI/tests/PomodoroCLI.FunctionalTests/bin/Debug/net7.0/CoverletSourceRootsMapping
+/home/joaopito/Documentos/Projetos/PomodoroCLI/tests/PomodoroCLI.FunctionalTests/bin/Debug/net7.0/PomodoroCLI.Client.deps.json
+/home/joaopito/Documentos/Projetos/PomodoroCLI/tests/PomodoroCLI.FunctionalTests/bin/Debug/net7.0/PomodoroCLI.Client.runtimeconfig.json
+/home/joaopito/Documentos/Projetos/PomodoroCLI/tests/PomodoroCLI.FunctionalTests/bin/Debug/net7.0/PomodoroCLI.Client
+/home/joaopito/Documentos/Projetos/PomodoroCLI/tests/PomodoroCLI.FunctionalTests/bin/Debug/net7.0/PomodoroCLI.CLI.dll
+/home/joaopito/Documentos/Projetos/PomodoroCLI/tests/PomodoroCLI.FunctionalTests/bin/Debug/net7.0/PomodoroCLI.Client.dll
+/home/joaopito/Documentos/Projetos/PomodoroCLI/tests/PomodoroCLI.FunctionalTests/bin/Debug/net7.0/PomodoroCLI.Console.dll
+/home/joaopito/Documentos/Projetos/PomodoroCLI/tests/PomodoroCLI.FunctionalTests/bin/Debug/net7.0/PomodoroCLI.Timer.dll
+/home/joaopito/Documentos/Projetos/PomodoroCLI/tests/PomodoroCLI.FunctionalTests/bin/Debug/net7.0/PomodoroCLI.Client.pdb
+/home/joaopito/Documentos/Projetos/PomodoroCLI/tests/PomodoroCLI.FunctionalTests/bin/Debug/net7.0/PomodoroCLI.CLI.pdb
+/home/joaopito/Documentos/Projetos/PomodoroCLI/tests/PomodoroCLI.FunctionalTests/bin/Debug/net7.0/PomodoroCLI.Console.pdb
+/home/joaopito/Documentos/Projetos/PomodoroCLI/tests/PomodoroCLI.FunctionalTests/bin/Debug/net7.0/PomodoroCLI.Timer.pdb

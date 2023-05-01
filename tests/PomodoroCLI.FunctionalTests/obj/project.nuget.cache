@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "2T5BItVlS1IFLzEhlBRKSV72zsmnthr9kOol3eb8D1OHiVDEYfdDGVQWMsrqXqrruVQGSndp1iVsetgdJRq48Q==",
+  "dgSpecHash": "SR9oxcWviwvIwbAVsg8Uujl9Ge7CjyhbrzSUm6mbHL+ALJK8qSnctDb/iUCjm35CCNV7Tc7gO1x+F+uOGZ71ug==",
   "success": true,
   "projectFilePath": "/home/joaopito/Documentos/Projetos/PomodoroCLI/tests/PomodoroCLI.FunctionalTests/PomodoroCLI.FunctionalTests.csproj",
   "expectedPackageFiles": [
