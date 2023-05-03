@@ -1,4 +1,5 @@
 using PomodoroCLI.UI;
+using PomodoroCLI.Timer;
 
 namespace PomodoroCLI.FunctionalTests;
 
@@ -11,7 +12,10 @@ public class FunctionalTests
         // He opens up the PomodoroCLI client with default parameters
         var console = new ConsoleMock();
         var args = PomodoroCLI.UI.ArgsParser.LoadDefaults();
-        var pomodoro = new UI.CLI(args, console);
+
+        var clock = new SystemTimer();
+        var timer = new SessionTimer(clock);
+        var pomodoro = new UI.CLI(args, console, timer);
         pomodoro.Start();
 
         // He sees that the app opened as expected

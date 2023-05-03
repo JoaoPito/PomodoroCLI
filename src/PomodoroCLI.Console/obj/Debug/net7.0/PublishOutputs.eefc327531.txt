@@ -1,0 +1,3 @@
+/home/joaopito/Documentos/Projetos/PomodoroCLI/src/PomodoroCLI.Console/bin/Debug/net7.0/publish/PomodoroCLI.Console.dll
+/home/joaopito/Documentos/Projetos/PomodoroCLI/src/PomodoroCLI.Console/bin/Debug/net7.0/publish/PomodoroCLI.Console.deps.json
+/home/joaopito/Documentos/Projetos/PomodoroCLI/src/PomodoroCLI.Console/bin/Debug/net7.0/publish/PomodoroCLI.Console.pdb

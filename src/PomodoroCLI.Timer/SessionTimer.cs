@@ -11,12 +11,15 @@ namespace PomodoroCLI.Timer {
 
 	    Action? trigger;
 
-        public SessionTimer(IGenericTimer clock, Action? trigger) {
+        public SessionTimer(IGenericTimer clock) {
             this.updateClock = clock;
-            this.trigger = trigger;
             updateClock.RegisterNewTriggerEvent(Tick);
 
             Reset();
+        }
+
+        public void SetTrigger(Action trigger) {
+            this.trigger = trigger;
         }
 
         public void SetDuration(TimeSpan duration) {
