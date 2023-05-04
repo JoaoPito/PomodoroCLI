@@ -20,11 +20,18 @@ namespace PomoGUI.ViewModels
             timer = new SessionTimer(new SystemTimer());
             TimeSpan defaultSessionDuration = TimeSpan.FromMinutes(45);
             timer.SetDuration(defaultSessionDuration);
+            timer.RegisterUpdateTrigger(OnTimerUpdate);
         }
 
         public void StartSession()
         {
             timer.Start();
+        }
+
+        void OnTimerUpdate()
+        {
+            var remainingTime = timer.GetRemainingTime();
+            Clock = String.Format("{0:D2}:{1:D2}:{2:D2}", remainingTime.Hours, remainingTime.Minutes, remainingTime.Seconds);
         }
     }
 }

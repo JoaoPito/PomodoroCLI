@@ -10,6 +10,7 @@ namespace PomodoroCLI.Timer {
 	    TimeSpan remainingTime;
 
 	    Action? trigger;
+        event Action updateTriggers;
 
         public SessionTimer(IGenericTimer clock) {
             this.updateClock = clock;
@@ -18,8 +19,30 @@ namespace PomodoroCLI.Timer {
             Reset();
         }
 
+        public void Reset()
+        {
+            Stop();
+            updateClock.SetInterval(clockPeriod.TotalMilliseconds);
+            remainingTime = totalDuration;
+        }
+
+        public void Start()
+        {
+            updateClock.Start();
+        }
+
+        public void Stop()
+        {
+            updateClock.Stop();
+        }
+
         public void SetTrigger(Action trigger) {
             this.trigger = trigger;
+        }
+
+        public void RegisterUpdateTrigger(Action trigger)
+        {
+            updateTriggers += trigger;
         }
 
         public void SetDuration(TimeSpan duration) {
@@ -30,7 +53,9 @@ namespace PomodoroCLI.Timer {
 	    void Tick(Object? source, System.Timers.ElapsedEventArgs e){
 	        remainingTime -= clockPeriod;
 
-	        if(remainingTime.TotalSeconds <= 0)
+            updateTriggers.Invoke();
+
+            if (remainingTime.TotalSeconds <= 0)
 	            Ring();
 	    }
 
@@ -43,18 +68,6 @@ namespace PomodoroCLI.Timer {
             return remainingTime;
         }
 
-	    public void Reset() {
-            Stop();
-            updateClock.SetInterval(clockPeriod.TotalMilliseconds);   
-	        remainingTime = totalDuration;
-	    }
-
-        public void Start() {
-            updateClock.Start();
-        }
-
-	    public void Stop() {
-            updateClock.Stop();
-	    }
+	    
     }
 }
