@@ -1,7 +1,7 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <ItemGroup>
-    <ProjectReference Include="..\PomodoroCLI.CLI\PomodoroCLI.CLI.csproj" />
+    <ProjectReference Include="..\PomodoroCLI.CLI\PomodoroCLI.UI.csproj" />
     <ProjectReference Include="..\PomodoroCLI.Timer\PomodoroCLI.Timer.csproj" />
     <ProjectReference Include="..\PomodoroCLI.Console\PomodoroCLI.Console.csproj" />
   </ItemGroup>

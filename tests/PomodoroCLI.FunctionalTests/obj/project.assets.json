@@ -1809,31 +1809,6 @@
           "build/netcoreapp3.1/xunit.runner.visualstudio.props": {}
         }
       },
-      "PomodoroCLI.Client/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v7.0",
-        "dependencies": {
-          "PomodoroCLI.Console": "1.0.0",
-          "PomodoroCLI.Timer": "1.0.0",
-          "PomodoroCLI.UI": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/PomodoroCLI.Client.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/PomodoroCLI.Client.dll": {}
-        }
-      },
-      "PomodoroCLI.Console/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v7.0",
-        "compile": {
-          "bin/placeholder/PomodoroCLI.Console.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/PomodoroCLI.Console.dll": {}
-        }
-      },
       "PomodoroCLI.Timer/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
@@ -1848,7 +1823,6 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
-          "PomodoroCLI.Console": "1.0.0",
           "PomodoroCLI.Timer": "1.0.0"
         },
         "compile": {
@@ -6153,16 +6127,6 @@
         "xunit.runner.visualstudio.nuspec"
       ]
     },
-    "PomodoroCLI.Client/1.0.0": {
-      "type": "project",
-      "path": "../../src/PomodoroCLI.Client/PomodoroCLI.Client.csproj",
-      "msbuildProject": "../../src/PomodoroCLI.Client/PomodoroCLI.Client.csproj"
-    },
-    "PomodoroCLI.Console/1.0.0": {
-      "type": "project",
-      "path": "../../src/PomodoroCLI.Console/PomodoroCLI.Console.csproj",
-      "msbuildProject": "../../src/PomodoroCLI.Console/PomodoroCLI.Console.csproj"
-    },
     "PomodoroCLI.Timer/1.0.0": {
       "type": "project",
       "path": "../../src/PomodoroCLI.Timer/PomodoroCLI.Timer.csproj",
@@ -6177,8 +6141,6 @@
   "projectFileDependencyGroups": {
     "net7.0": [
       "Microsoft.NET.Test.Sdk >= 17.3.2",
-      "PomodoroCLI.Client >= 1.0.0",
-      "PomodoroCLI.Console >= 1.0.0",
       "PomodoroCLI.UI >= 1.0.0",
       "coverlet.collector >= 3.1.2",
       "xunit >= 2.4.2",
@@ -6218,14 +6180,8 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "D:\\Projetos\\PomodoroCLI\\src\\PomodoroCLI.Client\\PomodoroCLI.Client.csproj": {
-              "projectPath": "D:\\Projetos\\PomodoroCLI\\src\\PomodoroCLI.Client\\PomodoroCLI.Client.csproj"
-            },
             "D:\\Projetos\\PomodoroCLI\\src\\PomodoroCLI.CLI\\PomodoroCLI.UI.csproj": {
               "projectPath": "D:\\Projetos\\PomodoroCLI\\src\\PomodoroCLI.CLI\\PomodoroCLI.UI.csproj"
-            },
-            "D:\\Projetos\\PomodoroCLI\\src\\PomodoroCLI.Console\\PomodoroCLI.Console.csproj": {
-              "projectPath": "D:\\Projetos\\PomodoroCLI\\src\\PomodoroCLI.Console\\PomodoroCLI.Console.csproj"
             }
           }
         }
