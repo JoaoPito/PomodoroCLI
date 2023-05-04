@@ -8,4 +8,4 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = PomodoroCLI.CLI
-build_property.ProjectDir = /home/joaopito/Documentos/Projetos/PomodoroCLI/src/PomodoroCLI.CLI/
+build_property.ProjectDir = D:\Projetos\PomodoroCLI\src\PomodoroCLI.CLI\

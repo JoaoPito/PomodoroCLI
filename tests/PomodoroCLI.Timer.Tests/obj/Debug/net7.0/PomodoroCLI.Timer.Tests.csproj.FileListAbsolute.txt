@@ -200,3 +200,12 @@
 /home/joaopito/Documentos/Projetos/PomodoroCLI/tests/PomodoroCLI.Timer.Tests/obj/Debug/net7.0/PomodoroCLI.Timer.Tests.pdb
 /home/joaopito/Documentos/Projetos/PomodoroCLI/tests/PomodoroCLI.Timer.Tests/obj/Debug/net7.0/PomodoroCLI.Timer.Tests.genruntimeconfig.cache
 /home/joaopito/Documentos/Projetos/PomodoroCLI/tests/PomodoroCLI.Timer.Tests/obj/Debug/net7.0/ref/PomodoroCLI.Timer.Tests.dll
+D:\Projetos\PomodoroCLI\tests\PomodoroCLI.Timer.Tests\bin\Debug\net7.0\CoverletSourceRootsMapping
+D:\Projetos\PomodoroCLI\tests\PomodoroCLI.Timer.Tests\obj\Debug\net7.0\PomodoroCLI.Timer.Tests.csproj.AssemblyReference.cache
+D:\Projetos\PomodoroCLI\tests\PomodoroCLI.Timer.Tests\obj\Debug\net7.0\PomodoroCLI.Timer.Tests.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projetos\PomodoroCLI\tests\PomodoroCLI.Timer.Tests\obj\Debug\net7.0\PomodoroCLI.Timer.Tests.AssemblyInfoInputs.cache
+D:\Projetos\PomodoroCLI\tests\PomodoroCLI.Timer.Tests\obj\Debug\net7.0\PomodoroCLI.Timer.Tests.AssemblyInfo.cs
+D:\Projetos\PomodoroCLI\tests\PomodoroCLI.Timer.Tests\obj\Debug\net7.0\PomodoroCLI.Timer.Tests.csproj.CoreCompileInputs.cache
+D:\Projetos\PomodoroCLI\tests\PomodoroCLI.Timer.Tests\obj\Debug\net7.0\PomodoroCLI.Timer.Tests.dll
+D:\Projetos\PomodoroCLI\tests\PomodoroCLI.Timer.Tests\obj\Debug\net7.0\refint\PomodoroCLI.Timer.Tests.dll
+D:\Projetos\PomodoroCLI\tests\PomodoroCLI.Timer.Tests\obj\Debug\net7.0\PomodoroCLI.Timer.Tests.pdb

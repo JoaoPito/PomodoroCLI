@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "WuugyLWzeBV++XKOxXWlCd66OQt6O/FUAgSfz2kFjO/MfxCpaAQAgNXKa+I9/g8bjVem4UO5vTtQiV8K2IgzkA==",
+  "dgSpecHash": "fea+fxK5Z3lm55Y1mfu0913aXX4nOu44xMky7e6LV4o+Fb0KeQUig/JavoNGcLizDmCJctuKnkYgQ3yvBPT4KQ==",
   "success": true,
-  "projectFilePath": "/home/joaopito/Documentos/Projetos/PomodoroCLI/src/PomodoroCLI.Client/PomodoroCLI.Client.csproj",
+  "projectFilePath": "D:\\Projetos\\PomodoroCLI\\src\\PomodoroCLI.Client\\PomodoroCLI.Client.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
