@@ -49,9 +49,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Projetos\\PomodoroCLI\\src\\PomodoroCLI.CLI\\PomodoroCLI.CLI.csproj",
-      "projectName": "PomodoroCLI.CLI",
-      "projectPath": "D:\\Projetos\\PomodoroCLI\\src\\PomodoroCLI.CLI\\PomodoroCLI.CLI.csproj",
+      "projectUniqueName": "D:\\Projetos\\PomodoroCLI\\src\\PomodoroCLI.CLI\\PomodoroCLI.UI.csproj",
+      "projectName": "PomodoroCLI.UI",
+      "projectPath": "D:\\Projetos\\PomodoroCLI\\src\\PomodoroCLI.CLI\\PomodoroCLI.UI.csproj",
       "packagesPath": "C:\\Users\\João\\.nuget\\packages\\",
       "outputPath": "D:\\Projetos\\PomodoroCLI\\src\\PomodoroCLI.CLI\\obj\\",
       "projectStyle": "PackageReference",

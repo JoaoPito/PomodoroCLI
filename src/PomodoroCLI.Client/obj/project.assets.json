@@ -2,20 +2,6 @@
   "version": 3,
   "targets": {
     "net7.0": {
-      "PomodoroCLI.CLI/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v7.0",
-        "dependencies": {
-          "PomodoroCLI.Console": "1.0.0",
-          "PomodoroCLI.Timer": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/PomodoroCLI.CLI.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/PomodoroCLI.CLI.dll": {}
-        }
-      },
       "PomodoroCLI.Console/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
@@ -35,15 +21,24 @@
         "runtime": {
           "bin/placeholder/PomodoroCLI.Timer.dll": {}
         }
+      },
+      "PomodoroCLI.UI/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "PomodoroCLI.Console": "1.0.0",
+          "PomodoroCLI.Timer": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/PomodoroCLI.UI.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/PomodoroCLI.UI.dll": {}
+        }
       }
     }
   },
   "libraries": {
-    "PomodoroCLI.CLI/1.0.0": {
-      "type": "project",
-      "path": "../PomodoroCLI.CLI/PomodoroCLI.CLI.csproj",
-      "msbuildProject": "../PomodoroCLI.CLI/PomodoroCLI.CLI.csproj"
-    },
     "PomodoroCLI.Console/1.0.0": {
       "type": "project",
       "path": "../PomodoroCLI.Console/PomodoroCLI.Console.csproj",
@@ -53,13 +48,18 @@
       "type": "project",
       "path": "../PomodoroCLI.Timer/PomodoroCLI.Timer.csproj",
       "msbuildProject": "../PomodoroCLI.Timer/PomodoroCLI.Timer.csproj"
+    },
+    "PomodoroCLI.UI/1.0.0": {
+      "type": "project",
+      "path": "../PomodoroCLI.CLI/PomodoroCLI.UI.csproj",
+      "msbuildProject": "../PomodoroCLI.CLI/PomodoroCLI.UI.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net7.0": [
-      "PomodoroCLI.CLI >= 1.0.0",
       "PomodoroCLI.Console >= 1.0.0",
-      "PomodoroCLI.Timer >= 1.0.0"
+      "PomodoroCLI.Timer >= 1.0.0",
+      "PomodoroCLI.UI >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -95,8 +95,8 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "D:\\Projetos\\PomodoroCLI\\src\\PomodoroCLI.CLI\\PomodoroCLI.CLI.csproj": {
-              "projectPath": "D:\\Projetos\\PomodoroCLI\\src\\PomodoroCLI.CLI\\PomodoroCLI.CLI.csproj"
+            "D:\\Projetos\\PomodoroCLI\\src\\PomodoroCLI.CLI\\PomodoroCLI.UI.csproj": {
+              "projectPath": "D:\\Projetos\\PomodoroCLI\\src\\PomodoroCLI.CLI\\PomodoroCLI.UI.csproj"
             },
             "D:\\Projetos\\PomodoroCLI\\src\\PomodoroCLI.Console\\PomodoroCLI.Console.csproj": {
               "projectPath": "D:\\Projetos\\PomodoroCLI\\src\\PomodoroCLI.Console\\PomodoroCLI.Console.csproj"

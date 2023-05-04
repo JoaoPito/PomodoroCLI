@@ -33,8 +33,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "D:\\Projetos\\PomodoroCLI\\src\\PomodoroCLI.CLI\\PomodoroCLI.CLI.csproj": {
-                "projectPath": "D:\\Projetos\\PomodoroCLI\\src\\PomodoroCLI.CLI\\PomodoroCLI.CLI.csproj"
+              "D:\\Projetos\\PomodoroCLI\\src\\PomodoroCLI.CLI\\PomodoroCLI.UI.csproj": {
+                "projectPath": "D:\\Projetos\\PomodoroCLI\\src\\PomodoroCLI.CLI\\PomodoroCLI.UI.csproj"
               },
               "D:\\Projetos\\PomodoroCLI\\src\\PomodoroCLI.Console\\PomodoroCLI.Console.csproj": {
                 "projectPath": "D:\\Projetos\\PomodoroCLI\\src\\PomodoroCLI.Console\\PomodoroCLI.Console.csproj"
@@ -74,12 +74,12 @@
         }
       }
     },
-    "D:\\Projetos\\PomodoroCLI\\src\\PomodoroCLI.CLI\\PomodoroCLI.CLI.csproj": {
+    "D:\\Projetos\\PomodoroCLI\\src\\PomodoroCLI.CLI\\PomodoroCLI.UI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projetos\\PomodoroCLI\\src\\PomodoroCLI.CLI\\PomodoroCLI.CLI.csproj",
-        "projectName": "PomodoroCLI.CLI",
-        "projectPath": "D:\\Projetos\\PomodoroCLI\\src\\PomodoroCLI.CLI\\PomodoroCLI.CLI.csproj",
+        "projectUniqueName": "D:\\Projetos\\PomodoroCLI\\src\\PomodoroCLI.CLI\\PomodoroCLI.UI.csproj",
+        "projectName": "PomodoroCLI.UI",
+        "projectPath": "D:\\Projetos\\PomodoroCLI\\src\\PomodoroCLI.CLI\\PomodoroCLI.UI.csproj",
         "packagesPath": "C:\\Users\\João\\.nuget\\packages\\",
         "outputPath": "D:\\Projetos\\PomodoroCLI\\src\\PomodoroCLI.CLI\\obj\\",
         "projectStyle": "PackageReference",

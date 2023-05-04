@@ -21,6 +21,8 @@ namespace PomoGUI.ViewModels
             TimeSpan defaultSessionDuration = TimeSpan.FromMinutes(45);
             timer.SetDuration(defaultSessionDuration);
             timer.RegisterUpdateTrigger(OnTimerUpdate);
+
+            UpdateTimerText();
         }
 
         public void StartSession()
@@ -29,6 +31,11 @@ namespace PomoGUI.ViewModels
         }
 
         void OnTimerUpdate()
+        {
+            UpdateTimerText();
+        }
+
+        void UpdateTimerText()
         {
             var remainingTime = timer.GetRemainingTime();
             Clock = String.Format("{0:D2}:{1:D2}:{2:D2}", remainingTime.Hours, remainingTime.Minutes, remainingTime.Seconds);

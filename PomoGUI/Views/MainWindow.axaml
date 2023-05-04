@@ -3,11 +3,14 @@
         xmlns:vm="using:PomoGUI.ViewModels"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        mc:Ignorable="d" d:DesignWidth="400" d:DesignHeight="400"
         x:Class="PomoGUI.Views.MainWindow"
         x:DataType="vm:MainWindowViewModel"
         Icon="/Assets/avalonia-logo.ico"
         Title="PomoGUI"
+        
+        Width="500"
+        Height="450"
         
         TransparencyLevelHint="AcrylicBlur"
         Background="Transparent"
@@ -26,18 +29,30 @@
         <ExperimentalAcrylicMaterial
           BackgroundSource="Digger"
           TintColor="Black"
-          TintOpacity="0.5"
-          MaterialOpacity="0.3"
-          />
+          TintOpacity="0.75"
+          MaterialOpacity="0.4"/>
       </ExperimentalAcrylicBorder.Material>
     </ExperimentalAcrylicBorder>
 
-    <TextBlock Text="{Binding Clock}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+    
     <Panel Margin="50">
       <Button Content="Start" Command="{Binding StartSession}" HorizontalAlignment="Center" VerticalAlignment="Bottom"/> 
     </Panel>
+
+    <RelativePanel HorizontalAlignment="Center" VerticalAlignment="Center">
+      <TextBlock x:Name="SessionTimerText" Text="{Binding Clock}" FontSize="48" 
+                 RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignHorizontalCenterWithPanel="True"/>
+      <ProgressBar x:Name="SessionProgress" 
+                   Value="50" IsIndeterminate="False" Minimum="0" Maximum="100"  
+                   Height="5" Width="400" HorizontalAlignment="Center"
+                   RelativePanel.Below="SessionTimerText" RelativePanel.AlignHorizontalCenterWithPanel="True"/>
+    </RelativePanel>
+
+    <TimePicker Height="50" Width="300" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
+    
+    
   </Panel>
 
-    
+ 
 
 </Window>
