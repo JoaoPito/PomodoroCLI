@@ -1,6 +1,7 @@
 ﻿using ReactiveUI;
 using PomodoroCLI.Timer;
 using System;
+using Avalonia.Controls;
 
 namespace PomoGUI.ViewModels
 {
@@ -13,12 +14,31 @@ namespace PomoGUI.ViewModels
             set => this.RaiseAndSetIfChanged(ref _clock, value);
         }
 
+        string _interactButtonText = "Start";
+        public string InteractButtonText
+        {
+            get => _interactButtonText;
+            set => this.RaiseAndSetIfChanged(ref _interactButtonText, value);
+        }
+
+        bool _inSession = false;
+        public bool InSession {
+            get => _inSession;
+            set => this.RaiseAndSetIfChanged(ref _inSession, value);
+        }
+
         SessionTimer timer;
+
+        TimeSpan _selectedDuration = new TimeSpan(00, 45, 00);
+        public TimeSpan SelectedDuration {
+            get => _selectedDuration;
+            set => this.RaiseAndSetIfChanged(ref _selectedDuration, value);
+        }
 
         public MainWindowViewModel()
         {
             timer = new SessionTimer(new SystemTimer());
-            TimeSpan defaultSessionDuration = TimeSpan.FromMinutes(45);
+            TimeSpan defaultSessionDuration = TimeSpan.FromMinutes(1);
             timer.SetDuration(defaultSessionDuration);
             timer.RegisterUpdateTrigger(OnTimerUpdate);
 
@@ -28,6 +48,7 @@ namespace PomoGUI.ViewModels
         public void StartSession()
         {
             timer.Start();
+            InSession = true;
         }
 
         void OnTimerUpdate()

@@ -21,8 +21,4 @@
     </PackageReference>
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\..\src\PomodoroCLI.CLI\PomodoroCLI.UI.csproj" />
-  </ItemGroup>
-
 </Project>

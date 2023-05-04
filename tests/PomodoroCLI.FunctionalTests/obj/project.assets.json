@@ -1808,29 +1808,6 @@
         "build": {
           "build/netcoreapp3.1/xunit.runner.visualstudio.props": {}
         }
-      },
-      "PomodoroCLI.Timer/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v7.0",
-        "compile": {
-          "bin/placeholder/PomodoroCLI.Timer.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/PomodoroCLI.Timer.dll": {}
-        }
-      },
-      "PomodoroCLI.UI/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v7.0",
-        "dependencies": {
-          "PomodoroCLI.Timer": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/PomodoroCLI.UI.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/PomodoroCLI.UI.dll": {}
-        }
       }
     }
   },
@@ -6126,22 +6103,11 @@
         "xunit.runner.visualstudio.2.4.5.nupkg.sha512",
         "xunit.runner.visualstudio.nuspec"
       ]
-    },
-    "PomodoroCLI.Timer/1.0.0": {
-      "type": "project",
-      "path": "../../src/PomodoroCLI.Timer/PomodoroCLI.Timer.csproj",
-      "msbuildProject": "../../src/PomodoroCLI.Timer/PomodoroCLI.Timer.csproj"
-    },
-    "PomodoroCLI.UI/1.0.0": {
-      "type": "project",
-      "path": "../../src/PomodoroCLI.CLI/PomodoroCLI.UI.csproj",
-      "msbuildProject": "../../src/PomodoroCLI.CLI/PomodoroCLI.UI.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net7.0": [
       "Microsoft.NET.Test.Sdk >= 17.3.2",
-      "PomodoroCLI.UI >= 1.0.0",
       "coverlet.collector >= 3.1.2",
       "xunit >= 2.4.2",
       "xunit.runner.visualstudio >= 2.4.5"
@@ -6179,11 +6145,7 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
-          "projectReferences": {
-            "D:\\Projetos\\PomodoroCLI\\src\\PomodoroCLI.CLI\\PomodoroCLI.UI.csproj": {
-              "projectPath": "D:\\Projetos\\PomodoroCLI\\src\\PomodoroCLI.CLI\\PomodoroCLI.UI.csproj"
-            }
-          }
+          "projectReferences": {}
         }
       },
       "warningProperties": {
