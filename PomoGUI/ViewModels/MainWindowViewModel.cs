@@ -59,12 +59,10 @@ namespace PomoGUI.ViewModels
             if (InSession)
             {
                 StopSession();
-                UpdateButtonText();
             }
             else
             {
                 StartNextSession();
-                UpdateButtonText();
             }
         }
 
@@ -119,6 +117,7 @@ namespace PomoGUI.ViewModels
 
             timer.Start();
             InSession = true;
+            UpdateButtonText();
         }
 
         void LoadWorkSessionConfig()
@@ -139,6 +138,7 @@ namespace PomoGUI.ViewModels
         {
             timer.Stop();
             InSession = false;
+            UpdateButtonText();
         }
 
         void OnSessionEnd()
