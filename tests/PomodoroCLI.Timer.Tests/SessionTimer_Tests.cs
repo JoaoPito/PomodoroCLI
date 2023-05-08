@@ -40,6 +40,8 @@ public class SessionTimer_Tests
 
     [Theory]
     [InlineData(0,0,1)]
+    [InlineData(0, 45, 0)]
+    [InlineData(1, 30, 0)]
     public void TimerIsTriggeringProperly(int hours, int minutes, int seconds) {
         var clockStub = new TimerStub();
         bool triggered = false;
@@ -53,6 +55,28 @@ public class SessionTimer_Tests
         clockStub.SkipTime(waitTime);
 
         Assert.True(triggered, $"Trigger timeout, clock remaining time: {clockStub.GetRemainingTime()}");
+    }
+
+    [Fact]
+    public void TimerThrowsExceptionWhenDurationIsZero()
+    {
+        var clockStub = new TimerStub();
+        bool triggered = false;
+
+        var duration = new TimeSpan(0, 0, 0);
+        const string expectedMessage = "Duration time must be higher than 0.";
+
+        try
+        {
+            var timer = Helpers.CreateTimer(clockStub, () => triggered = true, duration);
+        } 
+        catch (ArgumentOutOfRangeException e)
+        {
+            Assert.Contains(expectedMessage, e.Message);
+            return;
+        }
+
+        Assert.Fail("The Timer did not throw the expected exception.");
     }
 
     [Fact]
@@ -70,12 +94,12 @@ public class SessionTimer_Tests
         // Stop Timer
         timer.Stop();
         // Check
-        Helpers.AssertIfTimeMatches(timer, duration - wait, "1st:");
+        Helpers.AssertIfTimeMatches(timer, duration - wait, "1st timer didnt stop");
 
         // Wait
         clockStub.SkipTime(wait);
         // Check
-        Helpers.AssertIfTimeMatches(timer, duration - wait, "2nd:");
+        Helpers.AssertIfTimeMatches(timer, duration - wait, "2nd timer didnt stop");
     }
 
     // Stub testing and others

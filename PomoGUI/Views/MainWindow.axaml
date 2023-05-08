@@ -44,14 +44,14 @@
       <TextBlock x:Name="SessionTimerText" Text="{Binding Clock}" FontSize="52" 
                  RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignHorizontalCenterWithPanel="True"/>
       
-      <ProgressBar x:Name="SessionProgress" IsVisible="{Binding InSession}"
-                   Value="{Binding SessionProgress}" IsIndeterminate="False" Minimum="0" Maximum="100"  
+      <ProgressBar x:Name="SessionProgress" IsVisible="True"
+                   Value="{Binding SessionProgressPercent}" IsIndeterminate="False" Minimum="0" Maximum="100"  
                    Height="5" Width="300" HorizontalAlignment="Center"
                    RelativePanel.Below="SessionTimerText" RelativePanel.AlignHorizontalCenterWithPanel="True"/>
       
       <Panel Margin="20" RelativePanel.Below="SessionProgress" RelativePanel.AlignHorizontalCenterWithPanel="True">
-        <Button x:Name="InteractButton"
-              Content="{Binding InteractButtonText}" Command="{Binding StartSession}"
+        <Button x:Name="StartStopButton"
+              Content="{Binding StartStopButtonText}" Command="{Binding OnStartStopButton}"
               HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
       </Panel>
     </RelativePanel>    
