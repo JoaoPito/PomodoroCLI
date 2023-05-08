@@ -1,7 +1,0 @@
-/home/joaopito/Documentos/Projetos/PomodoroCLI/src/PomodoroCLI.CLI/bin/Debug/net7.0/publish/PomodoroCLI.CLI.dll
-/home/joaopito/Documentos/Projetos/PomodoroCLI/src/PomodoroCLI.CLI/bin/Debug/net7.0/publish/PomodoroCLI.CLI.deps.json
-/home/joaopito/Documentos/Projetos/PomodoroCLI/src/PomodoroCLI.CLI/bin/Debug/net7.0/publish/PomodoroCLI.CLI.pdb
-/home/joaopito/Documentos/Projetos/PomodoroCLI/src/PomodoroCLI.CLI/bin/Debug/net7.0/publish/PomodoroCLI.Console.dll
-/home/joaopito/Documentos/Projetos/PomodoroCLI/src/PomodoroCLI.CLI/bin/Debug/net7.0/publish/PomodoroCLI.Timer.dll
-/home/joaopito/Documentos/Projetos/PomodoroCLI/src/PomodoroCLI.CLI/bin/Debug/net7.0/publish/PomodoroCLI.Timer.pdb
-/home/joaopito/Documentos/Projetos/PomodoroCLI/src/PomodoroCLI.CLI/bin/Debug/net7.0/publish/PomodoroCLI.Console.pdb
