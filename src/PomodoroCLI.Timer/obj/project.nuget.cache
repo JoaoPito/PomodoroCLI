@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "4EnYAiddiyy/Ghs5pa6ZSOlP+LL1NjGUCPFjhMpcg7mVil3tfyQAZBpkt+W2QBnSTGiGOWQdatbv7QnlCRfcEA==",
+  "dgSpecHash": "1unmDR3jrvqkVzuxQalsPRSb5IvON5XayNy+pdVHUgqwp1pDhL96f5BhDYNtadwr6WAQdSu04o1nkXq4ISrgjA==",
   "success": true,
-  "projectFilePath": "/home/joaopito/Documentos/Projetos/PomodoroCLI/src/PomodoroCLI.Timer/PomodoroCLI.Timer.csproj",
+  "projectFilePath": "D:\\Projetos\\PomodoroCLI\\src\\PomodoroCLI.Timer\\Pomogotchi.Timer.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

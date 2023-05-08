@@ -4,7 +4,8 @@ namespace PomodoroCLI.Timer.Tests;
 
 public class Helpers {
     public static ISessionTimer CreateTimer(IGenericTimer clockTimer, Action? trigger, TimeSpan duration) {
-        var timer = new SessionTimer(clockTimer, trigger);
+        var timer = new SessionTimer(clockTimer);
+        timer.SetTrigger(trigger);
         timer.SetDuration(duration);
         return timer;
     }

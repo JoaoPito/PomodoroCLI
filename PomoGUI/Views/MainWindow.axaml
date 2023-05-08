@@ -1,0 +1,62 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:PomoGUI.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="400" d:DesignHeight="400"
+        x:Class="PomoGUI.Views.MainWindow"
+        x:DataType="vm:MainWindowViewModel"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="PomoGUI"
+        
+        Width="500"
+        Height="450"
+        
+        TransparencyLevelHint="AcrylicBlur"
+        Background="Transparent"
+        
+        ExtendClientAreaToDecorationsHint="True">
+
+    <Design.DataContext>
+        <!-- This only sets the DataContext for the previewer in an IDE,
+             to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
+        <vm:MainWindowViewModel/>
+    </Design.DataContext>
+
+  <Panel>
+    <ExperimentalAcrylicBorder IsHitTestVisible="False">
+      <ExperimentalAcrylicBorder.Material>
+        <ExperimentalAcrylicMaterial
+          BackgroundSource="Digger"
+          TintColor="Black"
+          TintOpacity="0.75"
+          MaterialOpacity="0.4"/>
+      </ExperimentalAcrylicBorder.Material>
+    </ExperimentalAcrylicBorder>
+
+    <Panel Margin="10">
+      <Button x:Name="SettingsButton" IsVisible="{Binding InSession}"
+            Content="Settings" Command="{Binding OnSettingsClick}"
+            HorizontalAlignment="Left" VerticalAlignment="Top"/>
+    </Panel>
+
+    <RelativePanel HorizontalAlignment="Center" VerticalAlignment="Center" Margin="40">      
+      <TextBlock x:Name="SessionTimerText" Text="{Binding Clock}" FontSize="52" 
+                 RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignHorizontalCenterWithPanel="True"/>
+      
+      <ProgressBar x:Name="SessionProgress" IsVisible="True"
+                   Value="{Binding SessionProgressPercent}" IsIndeterminate="False" Minimum="0" Maximum="100"  
+                   Height="5" Width="300" HorizontalAlignment="Center"
+                   RelativePanel.Below="SessionTimerText" RelativePanel.AlignHorizontalCenterWithPanel="True"/>
+      
+      <Panel Margin="20" RelativePanel.Below="SessionProgress" RelativePanel.AlignHorizontalCenterWithPanel="True">
+        <Button x:Name="StartStopButton"
+              Content="{Binding StartStopButtonText}" Command="{Binding OnStartStopButton}"
+              HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
+      </Panel>
+    </RelativePanel>    
+  </Panel>
+
+ 
+
+</Window>

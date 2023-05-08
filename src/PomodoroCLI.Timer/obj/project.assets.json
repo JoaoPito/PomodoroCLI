@@ -8,24 +8,32 @@
     "net7.0": []
   },
   "packageFolders": {
-    "/home/joaopito/.nuget/packages/": {}
+    "C:\\Users\\João\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/joaopito/Documentos/Projetos/PomodoroCLI/src/PomodoroCLI.Timer/PomodoroCLI.Timer.csproj",
-      "projectName": "PomodoroCLI.Timer",
-      "projectPath": "/home/joaopito/Documentos/Projetos/PomodoroCLI/src/PomodoroCLI.Timer/PomodoroCLI.Timer.csproj",
-      "packagesPath": "/home/joaopito/.nuget/packages/",
-      "outputPath": "/home/joaopito/Documentos/Projetos/PomodoroCLI/src/PomodoroCLI.Timer/obj/",
+      "projectUniqueName": "D:\\Projetos\\PomodoroCLI\\src\\PomodoroCLI.Timer\\Pomogotchi.Timer.csproj",
+      "projectName": "Pomogotchi.Timer",
+      "projectPath": "D:\\Projetos\\PomodoroCLI\\src\\PomodoroCLI.Timer\\Pomogotchi.Timer.csproj",
+      "packagesPath": "C:\\Users\\João\\.nuget\\packages\\",
+      "outputPath": "D:\\Projetos\\PomodoroCLI\\src\\PomodoroCLI.Timer\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "/home/joaopito/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\João\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -59,7 +67,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/lib64/dotnet/sdk/7.0.105/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
       }
     }
   }

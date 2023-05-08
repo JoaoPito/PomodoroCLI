@@ -1,25 +1,32 @@
 {
   "format": 1,
   "restore": {
-    "/home/joaopito/Documentos/Projetos/PomodoroCLI/tests/PomodoroCLI.Timer.Tests/PomodoroCLI.Timer.Tests.csproj": {}
+    "D:\\Projetos\\PomodoroCLI\\tests\\PomodoroCLI.Timer.Tests\\PomodoroCLI.Timer.Tests.csproj": {}
   },
   "projects": {
-    "/home/joaopito/Documentos/Projetos/PomodoroCLI/src/PomodoroCLI.Timer/PomodoroCLI.Timer.csproj": {
+    "D:\\Projetos\\PomodoroCLI\\src\\PomodoroCLI.Timer\\Pomogotchi.Timer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/joaopito/Documentos/Projetos/PomodoroCLI/src/PomodoroCLI.Timer/PomodoroCLI.Timer.csproj",
-        "projectName": "PomodoroCLI.Timer",
-        "projectPath": "/home/joaopito/Documentos/Projetos/PomodoroCLI/src/PomodoroCLI.Timer/PomodoroCLI.Timer.csproj",
-        "packagesPath": "/home/joaopito/.nuget/packages/",
-        "outputPath": "/home/joaopito/Documentos/Projetos/PomodoroCLI/src/PomodoroCLI.Timer/obj/",
+        "projectUniqueName": "D:\\Projetos\\PomodoroCLI\\src\\PomodoroCLI.Timer\\Pomogotchi.Timer.csproj",
+        "projectName": "Pomogotchi.Timer",
+        "projectPath": "D:\\Projetos\\PomodoroCLI\\src\\PomodoroCLI.Timer\\Pomogotchi.Timer.csproj",
+        "packagesPath": "C:\\Users\\João\\.nuget\\packages\\",
+        "outputPath": "D:\\Projetos\\PomodoroCLI\\src\\PomodoroCLI.Timer\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "/home/joaopito/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\João\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -53,34 +60,41 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/lib64/dotnet/sdk/7.0.105/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "/home/joaopito/Documentos/Projetos/PomodoroCLI/tests/PomodoroCLI.Timer.Tests/PomodoroCLI.Timer.Tests.csproj": {
+    "D:\\Projetos\\PomodoroCLI\\tests\\PomodoroCLI.Timer.Tests\\PomodoroCLI.Timer.Tests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/joaopito/Documentos/Projetos/PomodoroCLI/tests/PomodoroCLI.Timer.Tests/PomodoroCLI.Timer.Tests.csproj",
+        "projectUniqueName": "D:\\Projetos\\PomodoroCLI\\tests\\PomodoroCLI.Timer.Tests\\PomodoroCLI.Timer.Tests.csproj",
         "projectName": "PomodoroCLI.Timer.Tests",
-        "projectPath": "/home/joaopito/Documentos/Projetos/PomodoroCLI/tests/PomodoroCLI.Timer.Tests/PomodoroCLI.Timer.Tests.csproj",
-        "packagesPath": "/home/joaopito/.nuget/packages/",
-        "outputPath": "/home/joaopito/Documentos/Projetos/PomodoroCLI/tests/PomodoroCLI.Timer.Tests/obj/",
+        "projectPath": "D:\\Projetos\\PomodoroCLI\\tests\\PomodoroCLI.Timer.Tests\\PomodoroCLI.Timer.Tests.csproj",
+        "packagesPath": "C:\\Users\\João\\.nuget\\packages\\",
+        "outputPath": "D:\\Projetos\\PomodoroCLI\\tests\\PomodoroCLI.Timer.Tests\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "/home/joaopito/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\João\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "/home/joaopito/Documentos/Projetos/PomodoroCLI/src/PomodoroCLI.Timer/PomodoroCLI.Timer.csproj": {
-                "projectPath": "/home/joaopito/Documentos/Projetos/PomodoroCLI/src/PomodoroCLI.Timer/PomodoroCLI.Timer.csproj"
+              "D:\\Projetos\\PomodoroCLI\\src\\PomodoroCLI.Timer\\Pomogotchi.Timer.csproj": {
+                "projectPath": "D:\\Projetos\\PomodoroCLI\\src\\PomodoroCLI.Timer\\Pomogotchi.Timer.csproj"
               }
             }
           }
@@ -132,7 +146,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/lib64/dotnet/sdk/7.0.105/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
         }
       }
     }
