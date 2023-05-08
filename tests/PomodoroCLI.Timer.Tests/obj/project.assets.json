@@ -1809,14 +1809,14 @@
           "build/netcoreapp3.1/xunit.runner.visualstudio.props": {}
         }
       },
-      "PomodoroCLI.Timer/1.0.0": {
+      "Pomogotchi.Timer/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "compile": {
-          "bin/placeholder/PomodoroCLI.Timer.dll": {}
+          "bin/placeholder/Pomogotchi.Timer.dll": {}
         },
         "runtime": {
-          "bin/placeholder/PomodoroCLI.Timer.dll": {}
+          "bin/placeholder/Pomogotchi.Timer.dll": {}
         }
       }
     }
@@ -6114,16 +6114,16 @@
         "xunit.runner.visualstudio.nuspec"
       ]
     },
-    "PomodoroCLI.Timer/1.0.0": {
+    "Pomogotchi.Timer/1.0.0": {
       "type": "project",
-      "path": "../../src/PomodoroCLI.Timer/PomodoroCLI.Timer.csproj",
-      "msbuildProject": "../../src/PomodoroCLI.Timer/PomodoroCLI.Timer.csproj"
+      "path": "../../src/PomodoroCLI.Timer/Pomogotchi.Timer.csproj",
+      "msbuildProject": "../../src/PomodoroCLI.Timer/Pomogotchi.Timer.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net7.0": [
       "Microsoft.NET.Test.Sdk >= 17.3.2",
-      "PomodoroCLI.Timer >= 1.0.0",
+      "Pomogotchi.Timer >= 1.0.0",
       "coverlet.collector >= 3.1.2",
       "xunit >= 2.4.2",
       "xunit.runner.visualstudio >= 2.4.5"
@@ -6162,8 +6162,8 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "D:\\Projetos\\PomodoroCLI\\src\\PomodoroCLI.Timer\\PomodoroCLI.Timer.csproj": {
-              "projectPath": "D:\\Projetos\\PomodoroCLI\\src\\PomodoroCLI.Timer\\PomodoroCLI.Timer.csproj"
+            "D:\\Projetos\\PomodoroCLI\\src\\PomodoroCLI.Timer\\Pomogotchi.Timer.csproj": {
+              "projectPath": "D:\\Projetos\\PomodoroCLI\\src\\PomodoroCLI.Timer\\Pomogotchi.Timer.csproj"
             }
           }
         }

@@ -131,5 +131,5 @@ D:\Projetos\PomodoroCLI\PomoGUI\obj\Debug\net7.0\refint\PomoGUI.dll
 D:\Projetos\PomodoroCLI\PomoGUI\obj\Debug\net7.0\PomoGUI.pdb
 D:\Projetos\PomodoroCLI\PomoGUI\obj\Debug\net7.0\PomoGUI.genruntimeconfig.cache
 D:\Projetos\PomodoroCLI\PomoGUI\obj\Debug\net7.0\ref\PomoGUI.dll
-D:\Projetos\PomodoroCLI\PomoGUI\bin\Debug\net7.0\PomodoroCLI.Timer.dll
-D:\Projetos\PomodoroCLI\PomoGUI\bin\Debug\net7.0\PomodoroCLI.Timer.pdb
+D:\Projetos\PomodoroCLI\PomoGUI\bin\Debug\net7.0\Pomogotchi.Timer.dll
+D:\Projetos\PomodoroCLI\PomoGUI\bin\Debug\net7.0\Pomogotchi.Timer.pdb

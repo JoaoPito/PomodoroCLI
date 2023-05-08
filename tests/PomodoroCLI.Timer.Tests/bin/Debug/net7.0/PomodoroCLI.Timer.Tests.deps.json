@@ -9,7 +9,7 @@
       "PomodoroCLI.Timer.Tests/1.0.0": {
         "dependencies": {
           "Microsoft.NET.Test.Sdk": "17.3.2",
-          "PomodoroCLI.Timer": "1.0.0",
+          "Pomogotchi.Timer": "1.0.0",
           "coverlet.collector": "3.1.2",
           "xunit": "2.4.2",
           "xunit.runner.visualstudio": "2.4.5"
@@ -1043,7 +1043,7 @@
         "runtime": {
           "lib/netstandard2.0/xunit.abstractions.dll": {
             "assemblyVersion": "2.0.0.0",
-            "fileVersion": "0.0.0.0"
+            "fileVersion": "2.0.0.0"
           }
         }
       },
@@ -1090,9 +1090,9 @@
         }
       },
       "xunit.runner.visualstudio/2.4.5": {},
-      "PomodoroCLI.Timer/1.0.0": {
+      "Pomogotchi.Timer/1.0.0": {
         "runtime": {
-          "PomodoroCLI.Timer.dll": {}
+          "Pomogotchi.Timer.dll": {}
         }
       }
     }
@@ -1747,7 +1747,7 @@
       "path": "xunit.runner.visualstudio/2.4.5",
       "hashPath": "xunit.runner.visualstudio.2.4.5.nupkg.sha512"
     },
-    "PomodoroCLI.Timer/1.0.0": {
+    "Pomogotchi.Timer/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

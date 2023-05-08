@@ -25,6 +25,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\src\PomodoroCLI.Timer\PomodoroCLI.Timer.csproj" />
+    <ProjectReference Include="..\src\PomodoroCLI.Timer\Pomogotchi.Timer.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Models\" />
   </ItemGroup>
 </Project>

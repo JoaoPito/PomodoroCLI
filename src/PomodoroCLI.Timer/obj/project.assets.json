@@ -14,9 +14,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Projetos\\PomodoroCLI\\src\\PomodoroCLI.Timer\\PomodoroCLI.Timer.csproj",
-      "projectName": "PomodoroCLI.Timer",
-      "projectPath": "D:\\Projetos\\PomodoroCLI\\src\\PomodoroCLI.Timer\\PomodoroCLI.Timer.csproj",
+      "projectUniqueName": "D:\\Projetos\\PomodoroCLI\\src\\PomodoroCLI.Timer\\Pomogotchi.Timer.csproj",
+      "projectName": "Pomogotchi.Timer",
+      "projectPath": "D:\\Projetos\\PomodoroCLI\\src\\PomodoroCLI.Timer\\Pomogotchi.Timer.csproj",
       "packagesPath": "C:\\Users\\João\\.nuget\\packages\\",
       "outputPath": "D:\\Projetos\\PomodoroCLI\\src\\PomodoroCLI.Timer\\obj\\",
       "projectStyle": "PackageReference",

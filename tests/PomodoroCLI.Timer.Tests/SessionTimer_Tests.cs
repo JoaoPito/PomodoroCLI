@@ -40,7 +40,7 @@ public class SessionTimer_Tests
 
     [Theory]
     [InlineData(0,0,1)]
-    public void TimerIsTriggering(int hours, int minutes, int seconds) {
+    public void TimerIsTriggeringProperly(int hours, int minutes, int seconds) {
         var clockStub = new TimerStub();
         bool triggered = false;
 

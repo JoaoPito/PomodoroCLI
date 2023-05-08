@@ -12,7 +12,7 @@
           "Avalonia.Desktop": "0.10.18",
           "Avalonia.Diagnostics": "0.10.18",
           "Avalonia.ReactiveUI": "0.10.18",
-          "PomodoroCLI.Timer": "1.0.0",
+          "Pomogotchi.Timer": "1.0.0",
           "XamlNameReferenceGenerator": "1.6.1"
         },
         "runtime": {
@@ -960,9 +960,9 @@
         }
       },
       "XamlNameReferenceGenerator/1.6.1": {},
-      "PomodoroCLI.Timer/1.0.0": {
+      "Pomogotchi.Timer/1.0.0": {
         "runtime": {
-          "PomodoroCLI.Timer.dll": {}
+          "Pomogotchi.Timer.dll": {}
         }
       }
     }
@@ -1484,7 +1484,7 @@
       "path": "xamlnamereferencegenerator/1.6.1",
       "hashPath": "xamlnamereferencegenerator.1.6.1.nupkg.sha512"
     },
-    "PomodoroCLI.Timer/1.0.0": {
+    "Pomogotchi.Timer/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

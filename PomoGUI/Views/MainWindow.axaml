@@ -40,7 +40,7 @@
             HorizontalAlignment="Left" VerticalAlignment="Top"/>
     </Panel>
 
-    <RelativePanel HorizontalAlignment="Center" VerticalAlignment="Center">      
+    <RelativePanel HorizontalAlignment="Center" VerticalAlignment="Center" Margin="40">      
       <TextBlock x:Name="SessionTimerText" Text="{Binding Clock}" FontSize="52" 
                  RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignHorizontalCenterWithPanel="True"/>
       
@@ -54,13 +54,7 @@
               Content="{Binding InteractButtonText}" Command="{Binding StartSession}"
               HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
       </Panel>
-    </RelativePanel>
-
-    <TimePicker Height="50" Width="300" IsVisible="{Binding CanChangeDuration}" 
-                SelectedTime="{Binding SelectedDuration}" ClockIdentifier="24HourClock"
-                HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
-    
-    
+    </RelativePanel>    
   </Panel>
 
  

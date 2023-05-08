@@ -7,7 +7,7 @@ namespace PomoGUI.ViewModels
 {
     public class MainWindowViewModel : ViewModelBase
     {
-        string _clock;
+        string _clock = "";
         public string Clock
         {
             get => _clock;

@@ -53,7 +53,7 @@ namespace PomodoroCLI.Timer {
 	    void Tick(Object? source, System.Timers.ElapsedEventArgs e){
 	        remainingTime -= clockPeriod;
 
-            updateTriggers.Invoke();
+            if(updateTriggers != null) updateTriggers.Invoke();
 
             if (remainingTime.TotalSeconds <= 0)
 	            Ring();

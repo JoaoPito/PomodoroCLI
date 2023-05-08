@@ -4,12 +4,12 @@
     "D:\\Projetos\\PomodoroCLI\\tests\\PomodoroCLI.Timer.Tests\\PomodoroCLI.Timer.Tests.csproj": {}
   },
   "projects": {
-    "D:\\Projetos\\PomodoroCLI\\src\\PomodoroCLI.Timer\\PomodoroCLI.Timer.csproj": {
+    "D:\\Projetos\\PomodoroCLI\\src\\PomodoroCLI.Timer\\Pomogotchi.Timer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projetos\\PomodoroCLI\\src\\PomodoroCLI.Timer\\PomodoroCLI.Timer.csproj",
-        "projectName": "PomodoroCLI.Timer",
-        "projectPath": "D:\\Projetos\\PomodoroCLI\\src\\PomodoroCLI.Timer\\PomodoroCLI.Timer.csproj",
+        "projectUniqueName": "D:\\Projetos\\PomodoroCLI\\src\\PomodoroCLI.Timer\\Pomogotchi.Timer.csproj",
+        "projectName": "Pomogotchi.Timer",
+        "projectPath": "D:\\Projetos\\PomodoroCLI\\src\\PomodoroCLI.Timer\\Pomogotchi.Timer.csproj",
         "packagesPath": "C:\\Users\\João\\.nuget\\packages\\",
         "outputPath": "D:\\Projetos\\PomodoroCLI\\src\\PomodoroCLI.Timer\\obj\\",
         "projectStyle": "PackageReference",
@@ -93,8 +93,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "D:\\Projetos\\PomodoroCLI\\src\\PomodoroCLI.Timer\\PomodoroCLI.Timer.csproj": {
-                "projectPath": "D:\\Projetos\\PomodoroCLI\\src\\PomodoroCLI.Timer\\PomodoroCLI.Timer.csproj"
+              "D:\\Projetos\\PomodoroCLI\\src\\PomodoroCLI.Timer\\Pomogotchi.Timer.csproj": {
+                "projectPath": "D:\\Projetos\\PomodoroCLI\\src\\PomodoroCLI.Timer\\Pomogotchi.Timer.csproj"
               }
             }
           }

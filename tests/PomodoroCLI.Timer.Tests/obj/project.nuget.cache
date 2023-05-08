@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "i9KgJ0N7GJhGylH8EBH0MTZN34M6RoekJ0za+BDF118VADKmW/dvSU//TrdRM+Xi1cJDaNGSdub9LRpv0AD9qg==",
+  "dgSpecHash": "8kkoNtX5UANNmp9CZe7TFNd1QdqNjTeGBbQKFuu0Of9b6DowiOV/JwTHUeKKmoEPSN5gpowX0GwJqTlS2Cag3w==",
   "success": true,
   "projectFilePath": "D:\\Projetos\\PomodoroCLI\\tests\\PomodoroCLI.Timer.Tests\\PomodoroCLI.Timer.Tests.csproj",
   "expectedPackageFiles": [

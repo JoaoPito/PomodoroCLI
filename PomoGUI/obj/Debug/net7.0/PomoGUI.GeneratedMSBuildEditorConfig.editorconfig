@@ -19,3 +19,6 @@ build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
 [D:/Projetos/PomodoroCLI/PomoGUI/Views/MainWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[D:/Projetos/PomodoroCLI/PomoGUI/Views/SettingsWindow.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
