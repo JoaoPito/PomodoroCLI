@@ -36,22 +36,27 @@ namespace PomoGUI.ViewModels
         }
 
         SessionTimer timer;
-
         Session currentSession;
+        ConfigController configLoader;
 
         public MainWindowViewModel()
         {
-            var sessionDuration = LoadWorkDuration();
+            configLoader = ConfigController.GetController();
 
-            timer = new SessionTimer(new SystemTimer());
-            timer.SetDuration(sessionDuration);
-            timer.RegisterUpdateTrigger(OnTimerUpdate);
-            timer.SetTrigger(OnSessionEnd);
+            currentSession = configLoader.LoadWorkSession();
 
-            currentSession = new Session(sessionDuration, Session.SessionType.None);
+            InitTimer();
 
             UpdateTimerText();
             UpdateButtonText();
+        }
+
+        void InitTimer()
+        {
+            timer = new SessionTimer(new SystemTimer());
+            timer.SetDuration(currentSession.Duration);
+            timer.RegisterUpdateTrigger(OnTimerUpdate);
+            timer.SetTrigger(OnSessionEnd);
         }
 
         public void OnStartStopButton()
@@ -85,53 +90,49 @@ namespace PomoGUI.ViewModels
 
         void UpdateButtonText()
         {
-            if(InSession)
+            var TxtRepository = GUITextRepository.GetRepository();
+
+            if (InSession)
             {
-                StartStopButtonText = "Skip";
-            } 
-            else if(currentSession.CurrentSession == Session.SessionType.Work) {
-                StartStopButtonText = "Start Break";
+                StartStopButtonText = TxtRepository.SkipSessionTxt;
             }
             else
             {
-                StartStopButtonText = "Start";
+                switch (currentSession.Type)
+                {
+                    case Session.SessionType.Break:
+                        StartStopButtonText = TxtRepository.StartBreakSessionTxt;
+                        break;
+
+                    case Session.SessionType.Work:
+                    default:
+                        StartStopButtonText = TxtRepository.StartWorkSessionTxt;
+                        break;
+                }
             }
         }
 
         void StartNextSession()
         {
-            switch (currentSession.CurrentSession)
+            switch (currentSession.Type)
             {
                 case Session.SessionType.Work:
-                    LoadBreakSessionConfig();
+                    currentSession = configLoader.LoadBreakSession();
                     break;
 
                 case Session.SessionType.Break:
-                    LoadWorkSessionConfig();
+                    currentSession = configLoader.LoadWorkSession();
                     break;
 
                 default:
-                    LoadWorkSessionConfig();
+                    currentSession = configLoader.LoadWorkSession();
                     break;
             }
 
+            timer.SetDuration(currentSession.Duration);
             timer.Start();
             InSession = true;
             UpdateButtonText();
-        }
-
-        void LoadWorkSessionConfig()
-        {
-            TimeSpan duration = LoadWorkDuration();
-            currentSession = new Session(duration, Session.SessionType.Work);
-            timer.SetDuration(duration);
-        }
-
-        void LoadBreakSessionConfig()
-        {
-            TimeSpan duration = LoadBreakDuration();
-            currentSession = new Session(duration, Session.SessionType.Break);
-            timer.SetDuration(duration);
         }
 
         void StopSession()
@@ -144,16 +145,6 @@ namespace PomoGUI.ViewModels
         void OnSessionEnd()
         {
             StopSession();
-        }
-
-        TimeSpan LoadWorkDuration()
-        {
-            return new TimeSpan(0, 1, 0);
-        }
-
-        TimeSpan LoadBreakDuration()
-        {
-            return new TimeSpan(0, 0, 15);
         }
     }
 }

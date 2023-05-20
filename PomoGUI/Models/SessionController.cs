@@ -8,13 +8,14 @@ namespace PomoGUI.Models
 {
     internal class SessionController
     {
-        public TimeSpan LoadWorkConfig()
+        public void OnSessionEnd()
         {
-            throw new NotImplementedException();
+
         }
-        public TimeSpan LoadBreakConfig()
-        {
-            throw new NotImplementedException();
+
+        public void OnSessionStart() {
+
         }
+
     }
 }

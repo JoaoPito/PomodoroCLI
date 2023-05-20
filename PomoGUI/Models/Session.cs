@@ -18,9 +18,9 @@ namespace PomoGUI.Models
             Break
         }
 
-        SessionType _currentSession = SessionType.None;
+        SessionType _type = SessionType.None;
 
-        public SessionType CurrentSession => _currentSession;
+        public SessionType Type { get => _type; }
 
         TimeSpan _duration;
 
@@ -30,7 +30,7 @@ namespace PomoGUI.Models
 
         public Session(TimeSpan duration, SessionType type)
         {
-            _currentSession = type;
+            _type = type;
             _duration = duration;
         }
 

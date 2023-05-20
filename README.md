@@ -38,4 +38,17 @@ Binaries can be found in the folder "Binaries", choose your OS (if available), d
 ### macOS
 *Coming soon!*
 
+## Customization
+
+###  Ding sound
+This is the sound that is played when a session ends. It can be changed by replacing the **ding.wav** file with your custom audio file.
+Supported audio formats:
+- WAV
+- AIFF
+- MP3 (using ACM, DMO or MFT)
+- G.711 mu-law and a-law
+- ADPCM, G.722, Speex (using NSpeex)
+- WMA, AAC, MP4 and more others with Media Foundation
+
+Pomogotchi uses the [NAudio](https://github.com/naudio/NAudio) C# audio library.
 
