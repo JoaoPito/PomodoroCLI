@@ -51,6 +51,7 @@ namespace PomoGUI.ViewModels
             currentSession = new Session(sessionDuration, Session.SessionType.None);
 
             UpdateTimerText();
+            UpdateButtonText();
         }
 
         public void OnStartStopButton()
@@ -82,6 +83,21 @@ namespace PomoGUI.ViewModels
             SessionProgressPercent = (int)(Math.Round(timer.GetRemainingTime().TotalSeconds/currentSession.Duration.TotalSeconds * 100));
         }
 
+        void UpdateButtonText()
+        {
+            if(InSession)
+            {
+                StartStopButtonText = "Skip";
+            } 
+            else if(currentSession.CurrentSession == Session.SessionType.Work) {
+                StartStopButtonText = "Start Break";
+            }
+            else
+            {
+                StartStopButtonText = "Start";
+            }
+        }
+
         void StartNextSession()
         {
             switch (currentSession.CurrentSession)
@@ -101,7 +117,7 @@ namespace PomoGUI.ViewModels
 
             timer.Start();
             InSession = true;
-            StartStopButtonText = "Skip";
+            UpdateButtonText();
         }
 
         void LoadWorkSessionConfig()
@@ -122,7 +138,7 @@ namespace PomoGUI.ViewModels
         {
             timer.Stop();
             InSession = false;
-            StartStopButtonText = "Start Session";
+            UpdateButtonText();
         }
 
         void OnSessionEnd()
