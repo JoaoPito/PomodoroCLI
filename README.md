@@ -8,6 +8,16 @@ The name is based on the 90s Tamagotchi (in case you didn't notice), and the pro
 
 **If you find any issues or have any feature suggestion**, please create a new issue here on GitHub (on the tab Issues) describing exactly what are your needs.
 
+## :garlic: Warning!
+***This project is still in early stages!***
+Rotten tomatoes may appear.
+
+There is still some work to be done:
+- [x] User Interface
+- [ ] Sounds & Notifications
+- [ ] Session Settings/Default Settings customization
+- [ ] Pomogotchi companion
+
 ## :tomato: Installation
 
 Binaries can be found in the folder "Binaries", choose your OS (if available), download it, and it's ready to go!
@@ -28,13 +38,4 @@ Binaries can be found in the folder "Binaries", choose your OS (if available), d
 ### macOS
 *Coming soon!*
 
-## :garlic: Warning!
-***This project is still in early stages!***
-Rotten tomatoes may appear.
-
-There is still some work to be done:
-- [x] User Interface
-- [ ] Sounds & Notifications
-- [ ] Session Settings/Default Settings customization
-- [ ] Pomogotchi companion
 
