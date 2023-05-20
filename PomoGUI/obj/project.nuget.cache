@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Rk9xkCALI0lQhNNA2E2TB/w/JxoFWjBFjYUpvLIcXzo+CSykLfsoiHTOsflYnxvPO7JFxj6BUeTnkeYv7MK+AQ==",
+  "dgSpecHash": "SCuYkXTUkns39zKWYNiuaiVuq8MwpfPOKted2h2XqODU+vgvIhuWPwjMdbofnSH0cBnOX0G/VD2pu/wgJTU5Jw==",
   "success": true,
-  "projectFilePath": "D:\\Projetos\\PomodoroCLI\\PomoGUI\\PomoGUI.csproj",
+  "projectFilePath": "D:\\Projetos\\Programação\\PomodoroCLI\\PomoGUI\\PomoGUI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\João\\.nuget\\packages\\avalonia\\0.10.18\\avalonia.0.10.18.nupkg.sha512",
     "C:\\Users\\João\\.nuget\\packages\\avalonia.angle.windows.natives\\2.1.0.2020091801\\avalonia.angle.windows.natives.2.1.0.2020091801.nupkg.sha512",

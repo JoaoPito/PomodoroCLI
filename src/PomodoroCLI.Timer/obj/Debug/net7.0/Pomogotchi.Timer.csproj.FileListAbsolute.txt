@@ -10,3 +10,15 @@ D:\Projetos\PomodoroCLI\src\PomodoroCLI.Timer\obj\Debug\net7.0\Pomogotchi.Timer.
 D:\Projetos\PomodoroCLI\src\PomodoroCLI.Timer\obj\Debug\net7.0\refint\Pomogotchi.Timer.dll
 D:\Projetos\PomodoroCLI\src\PomodoroCLI.Timer\obj\Debug\net7.0\Pomogotchi.Timer.pdb
 D:\Projetos\PomodoroCLI\src\PomodoroCLI.Timer\obj\Debug\net7.0\ref\Pomogotchi.Timer.dll
+D:\Projetos\Programação\PomodoroCLI\src\PomodoroCLI.Timer\bin\Debug\net7.0\Pomogotchi.Timer.deps.json
+D:\Projetos\Programação\PomodoroCLI\src\PomodoroCLI.Timer\bin\Debug\net7.0\Pomogotchi.Timer.dll
+D:\Projetos\Programação\PomodoroCLI\src\PomodoroCLI.Timer\bin\Debug\net7.0\Pomogotchi.Timer.pdb
+D:\Projetos\Programação\PomodoroCLI\src\PomodoroCLI.Timer\obj\Debug\net7.0\Pomogotchi.Timer.csproj.AssemblyReference.cache
+D:\Projetos\Programação\PomodoroCLI\src\PomodoroCLI.Timer\obj\Debug\net7.0\Pomogotchi.Timer.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projetos\Programação\PomodoroCLI\src\PomodoroCLI.Timer\obj\Debug\net7.0\Pomogotchi.Timer.AssemblyInfoInputs.cache
+D:\Projetos\Programação\PomodoroCLI\src\PomodoroCLI.Timer\obj\Debug\net7.0\Pomogotchi.Timer.AssemblyInfo.cs
+D:\Projetos\Programação\PomodoroCLI\src\PomodoroCLI.Timer\obj\Debug\net7.0\Pomogotchi.Timer.csproj.CoreCompileInputs.cache
+D:\Projetos\Programação\PomodoroCLI\src\PomodoroCLI.Timer\obj\Debug\net7.0\Pomogotchi.Timer.dll
+D:\Projetos\Programação\PomodoroCLI\src\PomodoroCLI.Timer\obj\Debug\net7.0\refint\Pomogotchi.Timer.dll
+D:\Projetos\Programação\PomodoroCLI\src\PomodoroCLI.Timer\obj\Debug\net7.0\Pomogotchi.Timer.pdb
+D:\Projetos\Programação\PomodoroCLI\src\PomodoroCLI.Timer\obj\Debug\net7.0\ref\Pomogotchi.Timer.dll

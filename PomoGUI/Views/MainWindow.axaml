@@ -35,7 +35,7 @@
     </ExperimentalAcrylicBorder>
 
     <Panel Margin="10">
-      <Button x:Name="SettingsButton" IsVisible="{Binding InSession}"
+      <Button x:Name="SettingsButton" IsVisible="True"
             Content="Settings" Command="{Binding OnSettingsClick}"
             HorizontalAlignment="Left" VerticalAlignment="Top"/>
     </Panel>
