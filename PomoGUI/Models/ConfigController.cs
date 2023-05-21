@@ -17,22 +17,27 @@ namespace PomoGUI.Models
             if(controllerInstance == null)
                 controllerInstance = new ConfigController();
 
-        return controllerInstance;
-    }
+            return controllerInstance;
+        }
 
-        public Session LoadWorkSession()
+        public SessionParams LoadNoneSession()
         {
             TimeSpan duration = LoadWorkDuration();
-            Session loadedSession = new Session(duration, Session.SessionType.Work);
-
+            SessionParams loadedSession = new SessionParams(duration, SessionParams.SessionType.None);
             return loadedSession;
         }
 
-        public Session LoadBreakSession()
+        public SessionParams LoadWorkSession()
+        {
+            TimeSpan duration = LoadWorkDuration();
+            SessionParams loadedSession = new SessionParams(duration, SessionParams.SessionType.Work);
+            return loadedSession;
+        }
+
+        public SessionParams LoadBreakSession()
         {
             TimeSpan duration = LoadBreakDuration();
-            Session loadedSession = new Session(duration, Session.SessionType.Break);
-            
+            SessionParams loadedSession = new SessionParams(duration, SessionParams.SessionType.Break);
             return loadedSession;
         }
 

@@ -12,13 +12,13 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = PomoGUI
-build_property.ProjectDir = D:\Projetos\Programação\PomodoroCLI\PomoGUI\
+build_property.ProjectDir = D:\Projetos\Programação\Pomogotchi\PomoGUI\
 
-[D:/Projetos/Programação/PomodoroCLI/PomoGUI/App.axaml]
+[D:/Projetos/Programação/Pomogotchi/PomoGUI/App.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[D:/Projetos/Programação/PomodoroCLI/PomoGUI/Views/MainWindow.axaml]
+[D:/Projetos/Programação/Pomogotchi/PomoGUI/Views/MainWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[D:/Projetos/Programação/PomodoroCLI/PomoGUI/Views/SettingsWindow.axaml]
+[D:/Projetos/Programação/Pomogotchi/PomoGUI/Views/SettingsWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml

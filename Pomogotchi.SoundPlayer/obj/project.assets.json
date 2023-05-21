@@ -431,11 +431,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Projetos\\Programação\\PomodoroCLI\\Pomogotchi.SoundPlayer\\Pomogotchi.SoundPlayer.csproj",
+      "projectUniqueName": "D:\\Projetos\\Programação\\Pomogotchi\\Pomogotchi.SoundPlayer\\Pomogotchi.SoundPlayer.csproj",
       "projectName": "Pomogotchi.SoundPlayer",
-      "projectPath": "D:\\Projetos\\Programação\\PomodoroCLI\\Pomogotchi.SoundPlayer\\Pomogotchi.SoundPlayer.csproj",
+      "projectPath": "D:\\Projetos\\Programação\\Pomogotchi\\Pomogotchi.SoundPlayer\\Pomogotchi.SoundPlayer.csproj",
       "packagesPath": "C:\\Users\\João\\.nuget\\packages\\",
-      "outputPath": "D:\\Projetos\\Programação\\PomodoroCLI\\Pomogotchi.SoundPlayer\\obj\\",
+      "outputPath": "D:\\Projetos\\Programação\\Pomogotchi\\Pomogotchi.SoundPlayer\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

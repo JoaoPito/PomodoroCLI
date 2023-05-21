@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Hl7rxQB8YhhoeJ+JuBO5yZUv/ZRYknUAU290xaS7VY1pkkb+qbKlddi3GAiM7j5+hJJP+aGIWugCcpsmv4TG+g==",
+  "dgSpecHash": "yW78P4VdO5QKwGfzBMMLnA1OsZUcpr7XvUlstz5oLAiTB16YyIMHPATak37tD+rV74FnKN9SM6CrQQbVE+5eVw==",
   "success": true,
-  "projectFilePath": "D:\\Projetos\\Programação\\PomodoroCLI\\tests\\PomodoroCLI.Timer.Tests\\PomodoroCLI.Timer.Tests.csproj",
+  "projectFilePath": "D:\\Projetos\\Programação\\Pomogotchi\\tests\\PomodoroCLI.Timer.Tests\\PomodoroCLI.Timer.Tests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\João\\.nuget\\packages\\coverlet.collector\\3.1.2\\coverlet.collector.3.1.2.nupkg.sha512",
     "C:\\Users\\João\\.nuget\\packages\\microsoft.codecoverage\\17.3.2\\microsoft.codecoverage.17.3.2.nupkg.sha512",

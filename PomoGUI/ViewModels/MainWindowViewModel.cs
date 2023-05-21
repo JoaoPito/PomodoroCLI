@@ -22,12 +22,6 @@ namespace PomoGUI.ViewModels
             set => this.RaiseAndSetIfChanged(ref _startStopButtonText, value);
         }
 
-        bool _inSession = false;
-        public bool InSession {
-            get => _inSession;
-            set => this.RaiseAndSetIfChanged(ref _inSession, value);
-        }
-
         int _sessionProgressPercent = 0;
         public int SessionProgressPercent
         {
@@ -35,76 +29,64 @@ namespace PomoGUI.ViewModels
             set => this.RaiseAndSetIfChanged(ref _sessionProgressPercent, value);
         }
 
-        SessionTimer timer;
-        Session currentSession;
-        ConfigController configLoader;
+        SessionController controller;
 
         public MainWindowViewModel()
         {
-            configLoader = ConfigController.GetController();
+            controller = new SessionController();
+            controller.EndTriggers += OnSessionEnd;
+            controller.Timer.RegisterUpdateTrigger(OnTimerUpdate);
 
-            currentSession = configLoader.LoadWorkSession();
-
-            InitTimer();
-
-            UpdateTimerText();
-            UpdateButtonText();
-        }
-
-        void InitTimer()
-        {
-            timer = new SessionTimer(new SystemTimer());
-            timer.SetDuration(currentSession.Duration);
-            timer.RegisterUpdateTrigger(OnTimerUpdate);
-            timer.SetTrigger(OnSessionEnd);
+            UpdateTimerUI();
         }
 
         public void OnStartStopButton()
         {
-            if (InSession)
-            {
-                StopSession();
-            }
-            else
-            {
-                StartNextSession();
-            }
+            if (controller.InSession) 
+                SkipSession();
+            else 
+                StartSession();
         }
 
         void OnTimerUpdate()
         {
-            UpdateTimerText();
-            UpdateSessionProgressBar();
+            UpdateTimerUI();
         }
 
-        void UpdateTimerText()
+        void UpdateTimerUI()
         {
-            var remainingTime = timer.GetRemainingTime();
+            UpdateTimerText(controller.Timer.GetRemainingTime());
+            UpdateButtonText(controller.CurrentSession.Type);
+            UpdateSessionProgressBar(controller.Timer.GetRemainingTime(), controller.CurrentSession.Duration);
+        }
+
+        void UpdateTimerText(TimeSpan remainingTime)
+        {
             Clock = String.Format("{0:D2}:{1:D2}:{2:D2}", remainingTime.Hours, remainingTime.Minutes, remainingTime.Seconds);
         }
 
-        void UpdateSessionProgressBar()
+        void UpdateSessionProgressBar(TimeSpan remaining, TimeSpan total)
         {
-            SessionProgressPercent = (int)(Math.Round(timer.GetRemainingTime().TotalSeconds/currentSession.Duration.TotalSeconds * 100));
+            SessionProgressPercent = (int)(Math.Round(remaining.TotalSeconds / total.TotalSeconds * 100));
         }
 
-        void UpdateButtonText()
+        void UpdateButtonText(SessionParams.SessionType currentSessionType)
         {
             var TxtRepository = GUITextRepository.GetRepository();
 
-            if (InSession)
+            if (controller.InSession)
             {
                 StartStopButtonText = TxtRepository.SkipSessionTxt;
             }
             else
             {
-                switch (currentSession.Type)
+                switch (currentSessionType)
                 {
-                    case Session.SessionType.Break:
+                    case SessionParams.SessionType.Break:
                         StartStopButtonText = TxtRepository.StartBreakSessionTxt;
                         break;
 
-                    case Session.SessionType.Work:
+                    case SessionParams.SessionType.Work:
                     default:
                         StartStopButtonText = TxtRepository.StartWorkSessionTxt;
                         break;
@@ -112,39 +94,24 @@ namespace PomoGUI.ViewModels
             }
         }
 
-        void StartNextSession()
+        void StartSession()
         {
-            switch (currentSession.Type)
-            {
-                case Session.SessionType.Work:
-                    currentSession = configLoader.LoadBreakSession();
-                    break;
-
-                case Session.SessionType.Break:
-                    currentSession = configLoader.LoadWorkSession();
-                    break;
-
-                default:
-                    currentSession = configLoader.LoadWorkSession();
-                    break;
-            }
-
-            timer.SetDuration(currentSession.Duration);
-            timer.Start();
-            InSession = true;
-            UpdateButtonText();
+            controller.StartSession();
+            UpdateTimerUI();
         }
 
-        void StopSession()
+        void SkipSession()
         {
-            timer.Stop();
-            InSession = false;
-            UpdateButtonText();
+            controller.StopSession();
+            controller.LoadNextSession();
+            UpdateTimerUI();
         }
 
         void OnSessionEnd()
         {
-            StopSession();
+            controller.StopSession();
+            controller.LoadNextSession();
+            UpdateTimerUI();
         }
     }
 }

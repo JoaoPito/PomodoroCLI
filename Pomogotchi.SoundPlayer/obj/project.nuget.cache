@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "rxBjNVOKg7XJLHAkZ9G2KWNE0JBi6T+tk4x1LQVRvm3y553zW00e7e/iADkiiRi5x/osWbN2xr1DtGqTry4Ihg==",
+  "dgSpecHash": "7cQ2nJXwSnv0qWFAk6oiUhz4AbJEbHE/fTqrvEbAuoAHiUDnnWjjpMqtGxXXg5X7GaCu9/AfG/0I+KsuKEJGjQ==",
   "success": true,
-  "projectFilePath": "D:\\Projetos\\Programação\\PomodoroCLI\\Pomogotchi.SoundPlayer\\Pomogotchi.SoundPlayer.csproj",
+  "projectFilePath": "D:\\Projetos\\Programação\\Pomogotchi\\Pomogotchi.SoundPlayer\\Pomogotchi.SoundPlayer.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\João\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\João\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
