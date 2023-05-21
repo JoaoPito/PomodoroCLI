@@ -14,7 +14,7 @@ Rotten tomatoes may appear.
 
 There is still some work to be done:
 - [x] User Interface
-- [ ] Sounds & Notifications
+- [x] Sounds & Notifications
 - [ ] Session Settings/Default Settings customization
 - [ ] Pomogotchi companion
 
@@ -38,7 +38,7 @@ Binaries can be found in the folder "Binaries", choose your OS (if available), d
 ### macOS
 *Coming soon!*
 
-## Customization
+## :onion: Customization
 
 ###  Ding sound
 **For now it's not possible to change the sound file name. This means that only .wav files are supported**
