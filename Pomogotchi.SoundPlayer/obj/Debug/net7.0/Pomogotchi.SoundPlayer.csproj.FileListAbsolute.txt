@@ -1,0 +1,12 @@
+D:\Projetos\Programação\Pomogotchi\Pomogotchi.SoundPlayer\bin\Debug\net7.0\Pomogotchi.SoundPlayer.deps.json
+D:\Projetos\Programação\Pomogotchi\Pomogotchi.SoundPlayer\bin\Debug\net7.0\Pomogotchi.SoundPlayer.dll
+D:\Projetos\Programação\Pomogotchi\Pomogotchi.SoundPlayer\bin\Debug\net7.0\Pomogotchi.SoundPlayer.pdb
+D:\Projetos\Programação\Pomogotchi\Pomogotchi.SoundPlayer\obj\Debug\net7.0\Pomogotchi.SoundPlayer.csproj.AssemblyReference.cache
+D:\Projetos\Programação\Pomogotchi\Pomogotchi.SoundPlayer\obj\Debug\net7.0\Pomogotchi.SoundPlayer.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projetos\Programação\Pomogotchi\Pomogotchi.SoundPlayer\obj\Debug\net7.0\Pomogotchi.SoundPlayer.AssemblyInfoInputs.cache
+D:\Projetos\Programação\Pomogotchi\Pomogotchi.SoundPlayer\obj\Debug\net7.0\Pomogotchi.SoundPlayer.AssemblyInfo.cs
+D:\Projetos\Programação\Pomogotchi\Pomogotchi.SoundPlayer\obj\Debug\net7.0\Pomogotchi.SoundPlayer.csproj.CoreCompileInputs.cache
+D:\Projetos\Programação\Pomogotchi\Pomogotchi.SoundPlayer\obj\Debug\net7.0\Pomogotchi.SoundPlayer.dll
+D:\Projetos\Programação\Pomogotchi\Pomogotchi.SoundPlayer\obj\Debug\net7.0\refint\Pomogotchi.SoundPlayer.dll
+D:\Projetos\Programação\Pomogotchi\Pomogotchi.SoundPlayer\obj\Debug\net7.0\Pomogotchi.SoundPlayer.pdb
+D:\Projetos\Programação\Pomogotchi\Pomogotchi.SoundPlayer\obj\Debug\net7.0\ref\Pomogotchi.SoundPlayer.dll
