@@ -41,6 +41,7 @@ Binaries can be found in the folder "Binaries", choose your OS (if available), d
 ## Customization
 
 ###  Ding sound
+***For now it's not possible to change the sound file name. This means that only .wav files are supported for now**
 This is the sound that is played when a session ends. It can be changed by replacing the **ding.wav** file with your custom audio file.
 Supported audio formats:
 - WAV
