@@ -33,7 +33,7 @@ namespace PomoGUI.ViewModels
 
         public MainWindowViewModel()
         {
-            controller = new SessionController();
+            controller = new SessionController(ConfigLoader.GetController(), new SessionTimer(new SystemTimer()));
             controller.EndTriggers += OnSessionEnd;
             controller.Timer.RegisterUpdateTrigger(OnTimerUpdate);
 

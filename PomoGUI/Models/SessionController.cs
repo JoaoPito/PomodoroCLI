@@ -11,22 +11,23 @@ namespace PomoGUI.Models
     {
         bool _inSession = false;
         public bool InSession { get => _inSession; }
-        SessionTimer timer;
-        public SessionTimer Timer { get => timer; }
+        ISessionTimer timer;
+        public ISessionTimer Timer { get => timer; }
         SessionParams currentSession;
         public SessionParams CurrentSession { get => currentSession; }
         public event Action? EndTriggers;
-        ConfigController configLoader;
+        IConfigLoader configLoader;
 
-        public SessionController(){
-            configLoader = ConfigController.GetController();
+        public SessionController(IConfigLoader config, ISessionTimer timer){
+            configLoader = config;
+            this.timer = timer;
+
             currentSession = configLoader.LoadWorkSession();
             InitTimer();
         }
 
         void InitTimer()
         {
-            timer = new SessionTimer(new SystemTimer());
             timer.SetDuration(currentSession.Duration);
             timer.SetTrigger(OnSessionEnd);
         }

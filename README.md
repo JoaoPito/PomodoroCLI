@@ -26,11 +26,11 @@ Binaries can be found in the folder "Binaries", choose your OS (if available), d
 
 ### Windows
 
+[Windows - 64 bit](Binaries/Windows/pomogotchi_x64win.zip)
+
 1. Download the .zip file corresponding to your system's hardware (x64 ou x86) by clickng in the github download icon on the right side of the page
 2. Extract it anywhere you like
 3. Run PomoGUI.exe
-
-[Windows - 64 bit](Binaries/Windows/pomogotchi_x64win.zip)
 
 ### Linux
 *Coming soon!*
