@@ -39,7 +39,14 @@ C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\7.0.5\ref\net7.0\Microso
 C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\7.0.5\ref\net7.0\Microsoft.Win32.Primitives.dll
 C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\7.0.5\ref\net7.0\Microsoft.Win32.Registry.dll
 C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\7.0.5\ref\net7.0\mscorlib.dll
+C:\Users\João\.nuget\packages\naudio.asio\2.1.0\lib\netstandard2.0\NAudio.Asio.dll
+C:\Users\João\.nuget\packages\naudio.core\2.1.0\lib\netstandard2.0\NAudio.Core.dll
+C:\Users\João\.nuget\packages\naudio\2.1.0\lib\net6.0\NAudio.dll
+C:\Users\João\.nuget\packages\naudio.midi\2.1.0\lib\netstandard2.0\NAudio.Midi.dll
+C:\Users\João\.nuget\packages\naudio.wasapi\2.1.0\lib\netstandard2.0\NAudio.Wasapi.dll
+C:\Users\João\.nuget\packages\naudio.winmm\2.1.0\lib\netstandard2.0\NAudio.WinMM.dll
 C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\7.0.5\ref\net7.0\netstandard.dll
+D:\Projetos\Programação\Pomogotchi\Pomogotchi.SoundPlayer\obj\Debug\net7.0\ref\Pomogotchi.SoundPlayer.dll
 D:\Projetos\Programação\Pomogotchi\src\PomodoroCLI.Timer\obj\Debug\net7.0\ref\Pomogotchi.Timer.dll
 C:\Users\João\.nuget\packages\reactiveui\13.2.10\lib\net5.0\ReactiveUI.dll
 C:\Users\João\.nuget\packages\skiasharp\2.88.1-preview.108\lib\net6.0\SkiaSharp.dll

@@ -1,4 +1,5 @@
 ﻿using PomodoroCLI.Timer;
+using Pomogotchi.SoundPlayer;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,9 +19,13 @@ namespace PomoGUI.Models
         public event Action? EndTriggers;
         IConfigLoader configLoader;
 
-        public SessionController(IConfigLoader config, ISessionTimer timer){
+        IPlayer dingPlayer;
+
+        public SessionController(IConfigLoader config, ISessionTimer timer, IPlayer dingPlayer)
+        {
             configLoader = config;
             this.timer = timer;
+            this.dingPlayer = dingPlayer;
 
             currentSession = configLoader.LoadWorkSession();
             InitTimer();
@@ -36,6 +41,8 @@ namespace PomoGUI.Models
         {
             EndTriggers?.Invoke();
             StopSession();
+            TryToPlaySessionEndSound();
+            
         }
 
         public void LoadNextSession()
@@ -76,6 +83,18 @@ namespace PomoGUI.Models
             }
 
             return session;
+        }
+
+        void TryToPlaySessionEndSound()
+        {
+            try
+            {
+                dingPlayer.Play();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
         }
 
     }

@@ -15,20 +15,29 @@ namespace Pomogotchi.SoundPlayer
         {
             Thread thread = new Thread(playThread);
             thread.Start();
+            
         }
 
         void playThread()
         {
-            using (var audioFile = new AudioFileReader(filePath))
-            using (var outputDevice = new WaveOutEvent())
+            try
             {
-                outputDevice.Init(audioFile);
-                outputDevice.Play();
-                while (outputDevice.PlaybackState == PlaybackState.Playing)
+                using (var audioFile = new AudioFileReader(filePath))
+                using (var outputDevice = new WaveOutEvent())
                 {
-                    Thread.Sleep(500);
+                    outputDevice.Init(audioFile);
+                    outputDevice.Play();
+                    while (outputDevice.PlaybackState == PlaybackState.Playing)
+                    {
+                        Thread.Sleep(500);
+                    }
                 }
             }
+            catch (System.IO.FileNotFoundException ex)
+            {
+                return;
+            }
+            
         }
 
     }

@@ -25,6 +25,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Pomogotchi.SoundPlayer\Pomogotchi.SoundPlayer.csproj" />
     <ProjectReference Include="..\src\PomodoroCLI.Timer\Pomogotchi.Timer.csproj" />
   </ItemGroup>
 </Project>

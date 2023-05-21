@@ -403,3 +403,11 @@ D:\Projetos\Programação\Pomogotchi\PomoGUI\obj\Debug\net7.0\refint\PomoGUI.dll
 D:\Projetos\Programação\Pomogotchi\PomoGUI\obj\Debug\net7.0\PomoGUI.pdb
 D:\Projetos\Programação\Pomogotchi\PomoGUI\obj\Debug\net7.0\PomoGUI.genruntimeconfig.cache
 D:\Projetos\Programação\Pomogotchi\PomoGUI\obj\Debug\net7.0\ref\PomoGUI.dll
+D:\Projetos\Programação\Pomogotchi\PomoGUI\bin\Debug\net7.0\NAudio.dll
+D:\Projetos\Programação\Pomogotchi\PomoGUI\bin\Debug\net7.0\NAudio.Asio.dll
+D:\Projetos\Programação\Pomogotchi\PomoGUI\bin\Debug\net7.0\NAudio.Core.dll
+D:\Projetos\Programação\Pomogotchi\PomoGUI\bin\Debug\net7.0\NAudio.Midi.dll
+D:\Projetos\Programação\Pomogotchi\PomoGUI\bin\Debug\net7.0\NAudio.Wasapi.dll
+D:\Projetos\Programação\Pomogotchi\PomoGUI\bin\Debug\net7.0\NAudio.WinMM.dll
+D:\Projetos\Programação\Pomogotchi\PomoGUI\bin\Debug\net7.0\Pomogotchi.SoundPlayer.dll
+D:\Projetos\Programação\Pomogotchi\PomoGUI\bin\Debug\net7.0\Pomogotchi.SoundPlayer.pdb

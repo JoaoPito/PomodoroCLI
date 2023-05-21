@@ -3,6 +3,7 @@ using PomodoroCLI.Timer;
 using PomoGUI.Models;
 using System;
 using Avalonia.Controls;
+using Pomogotchi.SoundPlayer;
 
 namespace PomoGUI.ViewModels
 {
@@ -33,7 +34,9 @@ namespace PomoGUI.ViewModels
 
         public MainWindowViewModel()
         {
-            controller = new SessionController(ConfigLoader.GetController(), new SessionTimer(new SystemTimer()));
+            var timer = new SessionTimer(new SystemTimer());
+            var dingPlayer = new SFXPlayer("./ding.wav");
+            controller = new SessionController(ConfigLoader.GetController(), timer, dingPlayer);
             controller.EndTriggers += OnSessionEnd;
             controller.Timer.RegisterUpdateTrigger(OnTimerUpdate);
 
