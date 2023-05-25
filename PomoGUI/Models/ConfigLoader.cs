@@ -36,12 +36,12 @@ namespace PomoGUI.Models
 
         TimeSpan LoadWorkDuration()
         {
-            return new TimeSpan(0, 0, 10);
+            return new TimeSpan(0, 45, 0);
         }
 
         TimeSpan LoadBreakDuration()
         {
-            return new TimeSpan(0, 0, 15);
+            return new TimeSpan(0, 15, 0);
         }
 
         public void SaveWorkSession(SessionParams session)

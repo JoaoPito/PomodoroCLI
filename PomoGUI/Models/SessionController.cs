@@ -11,7 +11,7 @@ namespace PomoGUI.Models
     internal class SessionController
     {
         bool _inSession = false;
-        public bool InSession { get => _inSession; }
+        public bool InSession { get => _inSession;}
         ISessionTimer timer;
         public ISessionTimer Timer { get => timer; }
         SessionParams currentSession;
@@ -33,7 +33,7 @@ namespace PomoGUI.Models
 
         void InitTimer()
         {
-            timer.SetDuration(currentSession.Duration);
+            UpdateTimerDuration();
             timer.SetTrigger(OnSessionEnd);
         }
 
@@ -41,7 +41,7 @@ namespace PomoGUI.Models
         {
             EndTriggers?.Invoke();
             StopSession();
-            TryToPlaySessionEndSound();
+            TryPlaySessionEndSound();
             
         }
 
@@ -85,7 +85,7 @@ namespace PomoGUI.Models
             return session;
         }
 
-        void TryToPlaySessionEndSound()
+        void TryPlaySessionEndSound()
         {
             try
             {
@@ -97,5 +97,29 @@ namespace PomoGUI.Models
             }
         }
 
+        void UpdateTimerDuration()
+        {
+            timer.SetDuration(currentSession.Duration);
+        }
+
+        void ChangeSessionDuration(TimeSpan amount)
+        {
+            if ((currentSession.Duration + amount).TotalMinutes >= 5 && (currentSession.Duration + amount).TotalHours < 24)
+                currentSession = new SessionParams(currentSession.Duration + amount, currentSession.Type);
+
+            UpdateTimerDuration();
+        }
+
+        public void IncrementClock()
+        {
+            var incrementAmount = new TimeSpan(0, 5, 0);
+            ChangeSessionDuration(incrementAmount);
+        }
+
+        public void DecrementClock()
+        {
+            var decrementQuantity = new TimeSpan(0, -5, 0);
+            ChangeSessionDuration(decrementQuantity);
+        }
     }
 }

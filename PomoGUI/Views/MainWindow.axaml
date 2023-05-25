@@ -35,7 +35,7 @@
     </ExperimentalAcrylicBorder>
 
     <Panel Margin="10">
-      <Button x:Name="SettingsButton" IsVisible="True"
+      <Button x:Name="SettingsButton" IsVisible="{Binding CanChangeSettings}"
             Content="Settings" Command="{Binding OnSettingsClick}"
             HorizontalAlignment="Left" VerticalAlignment="Top"/>
     </Panel>
@@ -50,11 +50,11 @@
                    Height="5" Width="300" HorizontalAlignment="Center"
                    RelativePanel.Below="SessionTimerText" RelativePanel.AlignHorizontalCenterWithPanel="True"/>
 
-      <Button x:Name="IncrementButton"
+      <Button x:Name="IncrementButton" IsVisible="{Binding CanChangeSettings}"
              Content="+" Command="{Binding OnIncrementButton}" FontSize="14" FontWeight="Bold" Height="30" Width="30"
              RelativePanel.RightOf="SessionTimerText" Margin="10" RelativePanel.AlignVerticalCenterWith="SessionTimerText"/>
       
-      <Button x:Name="DecrementButton"
+      <Button x:Name="DecrementButton" IsVisible="{Binding CanChangeSettings}"
              Content="-" Command="{Binding OnDecrementButton}" FontSize="14" FontWeight="Bold" Height="30" Width="30"
              RelativePanel.LeftOf="SessionTimerText" Margin="10" RelativePanel.AlignVerticalCenterWith="SessionTimerText"/>
       

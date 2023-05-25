@@ -32,6 +32,12 @@ namespace PomoGUI.ViewModels
 
         SessionController controller;
 
+        bool _canChangeSettings = true;
+        public bool CanChangeSettings { 
+            get => _canChangeSettings;
+            set => this.RaiseAndSetIfChanged(ref _canChangeSettings, value);
+        }
+
         public MainWindowViewModel()
         {
             var timer = new SessionTimer(new SystemTimer());
@@ -45,10 +51,17 @@ namespace PomoGUI.ViewModels
 
         public void OnStartStopButton()
         {
-            if (controller.InSession) 
+            if (controller.InSession)
+            {
                 SkipSession();
-            else 
+                CanChangeSettings = true;
+            }
+            else
+            {
                 StartSession();
+                CanChangeSettings = false;
+            }
+                
         }
 
         void OnTimerUpdate()
@@ -119,12 +132,14 @@ namespace PomoGUI.ViewModels
 
         public void OnIncrementButton()
         {
-
+            controller.IncrementClock();
+            UpdateTimerUI();
         }
 
         public void OnDecrementButton()
         {
-
+            controller.DecrementClock();
+            UpdateTimerUI();
         }
     }
 }
