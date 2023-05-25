@@ -16,7 +16,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PomoGUI", "PomoGUI\PomoGUI.
 		{CB4DF73B-577A-436A-81AA-EDDD8587D3CF} = {CB4DF73B-577A-436A-81AA-EDDD8587D3CF}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pomogotchi.SoundPlayer", "Pomogotchi.SoundPlayer\Pomogotchi.SoundPlayer.csproj", "{9DB55821-B4A5-47E3-AF22-2D31A1CDF025}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pomogotchi.SoundPlayer", "Pomogotchi.SoundPlayer\Pomogotchi.SoundPlayer.csproj", "{9DB55821-B4A5-47E3-AF22-2D31A1CDF025}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -34,8 +34,8 @@ Global
 		{C92A2A8A-066B-43CD-90EA-75CA601F1914}.Debug|x64.Build.0 = Debug|Any CPU
 		{C92A2A8A-066B-43CD-90EA-75CA601F1914}.Debug|x86.ActiveCfg = Debug|Any CPU
 		{C92A2A8A-066B-43CD-90EA-75CA601F1914}.Debug|x86.Build.0 = Debug|Any CPU
-		{C92A2A8A-066B-43CD-90EA-75CA601F1914}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C92A2A8A-066B-43CD-90EA-75CA601F1914}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C92A2A8A-066B-43CD-90EA-75CA601F1914}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{C92A2A8A-066B-43CD-90EA-75CA601F1914}.Release|Any CPU.Build.0 = Debug|Any CPU
 		{C92A2A8A-066B-43CD-90EA-75CA601F1914}.Release|x64.ActiveCfg = Release|Any CPU
 		{C92A2A8A-066B-43CD-90EA-75CA601F1914}.Release|x64.Build.0 = Release|Any CPU
 		{C92A2A8A-066B-43CD-90EA-75CA601F1914}.Release|x86.ActiveCfg = Release|Any CPU

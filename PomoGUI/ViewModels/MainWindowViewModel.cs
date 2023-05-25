@@ -116,5 +116,15 @@ namespace PomoGUI.ViewModels
             controller.LoadNextSession();
             UpdateTimerUI();
         }
+
+        public void OnIncrementButton()
+        {
+
+        }
+
+        public void OnDecrementButton()
+        {
+
+        }
     }
 }

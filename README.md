@@ -36,7 +36,8 @@ Binaries can be found in the folder "Binaries", choose your OS (if available), d
 *Coming soon!*
 
 ### macOS
-*Coming soon!*
+Since I don't have access to any macOS machine, so I have no idea if this app works on any mac. 
+I would kindly appreciate any contributions from developers who happen to have one.
 
 ## :onion: Customization
 
