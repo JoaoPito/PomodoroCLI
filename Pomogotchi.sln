@@ -11,12 +11,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{ED90CA92-F45
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pomogotchi.Timer", "src\PomodoroCLI.Timer\Pomogotchi.Timer.csproj", "{CB4DF73B-577A-436A-81AA-EDDD8587D3CF}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PomoGUI", "PomoGUI\PomoGUI.csproj", "{555D1C8C-D308-44A9-AFAC-AD339EECF8C0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PomoGUI", "src\PomoGUI\PomoGUI.csproj", "{555D1C8C-D308-44A9-AFAC-AD339EECF8C0}"
 	ProjectSection(ProjectDependencies) = postProject
 		{CB4DF73B-577A-436A-81AA-EDDD8587D3CF} = {CB4DF73B-577A-436A-81AA-EDDD8587D3CF}
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pomogotchi.SoundPlayer", "Pomogotchi.SoundPlayer\Pomogotchi.SoundPlayer.csproj", "{9DB55821-B4A5-47E3-AF22-2D31A1CDF025}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pomogotchi.SoundPlayer", "src\Pomogotchi.SoundPlayer\Pomogotchi.SoundPlayer.csproj", "{9DB55821-B4A5-47E3-AF22-2D31A1CDF025}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
