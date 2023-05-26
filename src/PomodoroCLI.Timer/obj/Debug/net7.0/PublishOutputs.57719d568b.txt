@@ -1,3 +1,0 @@
-/home/joaopito/Documentos/Projetos/PomodoroCLI/src/PomodoroCLI.Timer/bin/Debug/net7.0/publish/PomodoroCLI.Timer.dll
-/home/joaopito/Documentos/Projetos/PomodoroCLI/src/PomodoroCLI.Timer/bin/Debug/net7.0/publish/PomodoroCLI.Timer.deps.json
-/home/joaopito/Documentos/Projetos/PomodoroCLI/src/PomodoroCLI.Timer/bin/Debug/net7.0/publish/PomodoroCLI.Timer.pdb
