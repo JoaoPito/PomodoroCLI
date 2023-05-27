@@ -54,12 +54,10 @@ namespace PomoGUI.ViewModels
             if (controller.InSession)
             {
                 SkipSession();
-                CanChangeSettings = true;
             }
             else
             {
                 StartSession();
-                CanChangeSettings = false;
             }
                 
         }
@@ -113,20 +111,20 @@ namespace PomoGUI.ViewModels
         void StartSession()
         {
             controller.StartSession();
+            CanChangeSettings = false;
             UpdateTimerUI();
         }
 
         void SkipSession()
         {
-            controller.StopSession();
-            controller.LoadNextSession();
-            UpdateTimerUI();
+            OnSessionEnd();
         }
 
         void OnSessionEnd()
         {
             controller.StopSession();
             controller.LoadNextSession();
+            CanChangeSettings = true;
             UpdateTimerUI();
         }
 
