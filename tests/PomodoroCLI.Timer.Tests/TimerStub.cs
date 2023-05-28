@@ -1,6 +1,6 @@
 using System.Timers;
 
-namespace PomodoroCLI.Timer.Tests {
+namespace Pomogotchi.Timer.Tests {
     public class TimerStub : IGenericTimer {
 
         ElapsedEventHandler Events;

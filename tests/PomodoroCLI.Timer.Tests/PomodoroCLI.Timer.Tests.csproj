@@ -22,7 +22,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\PomodoroCLI.Timer\Pomogotchi.Timer.csproj" />
+    <ProjectReference Include="..\..\src\Application\Pomogotchi.Timer\Pomogotchi.Timer.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,5 +1,5 @@
 ﻿using ReactiveUI;
-using PomodoroCLI.Timer;
+using Pomogotchi.Timer;
 using PomoGUI.Models;
 using System;
 using Avalonia.Controls;

@@ -1,5 +1,5 @@
 ﻿using Avalonia.Remote.Protocol.Designer;
-using PomodoroCLI.Timer;
+using Pomogotchi.Timer;
 using PomoGUI.ViewModels;
 using System;
 using System.Collections.Generic;

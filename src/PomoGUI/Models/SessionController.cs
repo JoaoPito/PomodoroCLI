@@ -1,4 +1,4 @@
-﻿using PomodoroCLI.Timer;
+﻿using Pomogotchi.Timer;
 using Pomogotchi.SoundPlayer;
 using System;
 using System.Collections.Generic;

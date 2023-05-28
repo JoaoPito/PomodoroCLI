@@ -1,6 +1,6 @@
 using System.Timers;
 
-namespace PomodoroCLI.Timer {
+namespace Pomogotchi.Timer {
     public class SessionTimer : ISessionTimer{
 
         IGenericTimer updateClock;

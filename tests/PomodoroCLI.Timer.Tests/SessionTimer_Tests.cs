@@ -1,7 +1,7 @@
 using Xunit;
-using PomodoroCLI.Timer;
+using Pomogotchi.Timer;
 
-namespace PomodoroCLI.Timer.Tests;
+namespace Pomogotchi.Timer.Tests;
 
 public class SessionTimer_Tests
 {

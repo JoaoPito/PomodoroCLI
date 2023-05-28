@@ -1,4 +1,6 @@
-﻿namespace PomodoroCLI.Timer;
+﻿using System;
+
+namespace Pomogotchi.Timer;
 public interface ISessionTimer
 {
     public void SetDuration(TimeSpan duration);

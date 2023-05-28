@@ -1,6 +1,6 @@
 using Xunit;
 
-namespace PomodoroCLI.Timer.Tests;
+namespace Pomogotchi.Timer.Tests;
 
 public class Helpers {
     public static ISessionTimer CreateTimer(IGenericTimer clockTimer, Action? trigger, TimeSpan duration) {

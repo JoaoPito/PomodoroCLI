@@ -1,4 +1,4 @@
-namespace PomodoroCLI.Timer;
+namespace Pomogotchi.Timer;
 
 using System.Timers;
 
