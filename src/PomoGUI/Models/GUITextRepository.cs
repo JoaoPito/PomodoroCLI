@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace PomoGUI.Models
+﻿namespace PomoGUI.Models
 {
     internal class GUITextRepository
     {
@@ -12,18 +6,18 @@ namespace PomoGUI.Models
         public readonly string StartBreakSessionTxt = "Start Break";
         public readonly string SkipSessionTxt = "Skip";
 
-        static GUITextRepository? instance;
+        static GUITextRepository? _instance;
 
         private GUITextRepository() { }
 
         public static GUITextRepository GetRepository()
         {
-            if(instance == null)
+            if (_instance == null)
             {
-                instance = new GUITextRepository();
+                _instance = new GUITextRepository();
             }
 
-            return instance;
+            return _instance;
         }
     }
 }

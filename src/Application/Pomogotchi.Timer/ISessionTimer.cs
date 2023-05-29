@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Pomogotchi.Timer;
+namespace Pomogotchi.Application.Timer;
 public interface ISessionTimer
 {
     public void SetDuration(TimeSpan duration);

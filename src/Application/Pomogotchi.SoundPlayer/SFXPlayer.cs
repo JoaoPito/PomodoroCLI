@@ -1,6 +1,6 @@
 ﻿using NAudio.Wave;
 
-namespace Pomogotchi.SoundPlayer
+namespace Pomogotchi.Application.SoundPlayer
 {
     public class SFXPlayer : IPlayer
     {

@@ -1,4 +1,4 @@
-namespace Pomogotchi.Timer;
+namespace Pomogotchi.Application.Timer;
 
 using System.Timers;
 

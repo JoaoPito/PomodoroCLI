@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Pomogotchi.Domain;
 
-namespace PomoGUI.Models
+namespace Pomogotchi.Persistence
 {
-    internal class ConfigLoader : IConfigLoader
+    public class ConfigLoader : IConfigLoader
     {
         static ConfigLoader? controllerInstance;
 
@@ -20,38 +16,43 @@ namespace PomoGUI.Models
             return controllerInstance;
         }
 
-        public SessionParams LoadWorkSession()
+        public Session LoadWorkSession()
         {
             TimeSpan duration = LoadWorkDuration();
-            SessionParams loadedSession = new SessionParams(duration, SessionParams.SessionType.Work);
+            Session loadedSession = new Session(duration, Session.SessionType.Work);
             return loadedSession;
         }
 
-        public SessionParams LoadBreakSession()
+        public Session LoadBreakSession()
         {
             TimeSpan duration = LoadBreakDuration();
-            SessionParams loadedSession = new SessionParams(duration, SessionParams.SessionType.Break);
+            Session loadedSession = new Session(duration, Session.SessionType.Break);
             return loadedSession;
         }
 
         TimeSpan LoadWorkDuration()
         {
-            return new TimeSpan(0, 45, 0);
+            return new TimeSpan(0, 0, 5);
         }
 
         TimeSpan LoadBreakDuration()
         {
-            return new TimeSpan(0, 15, 0);
+            return new TimeSpan(0, 0, 3);
         }
 
-        public void SaveWorkSession(SessionParams session)
+        public void SaveWorkSession(Session session)
         {
             throw new NotImplementedException();
         }
 
-        public void SaveBreakSession(SessionParams session)
+        public void SaveBreakSession(Session session)
         {
             throw new NotImplementedException();
+        }
+
+        public string GetSoundFilePath()
+        {
+            return "./ding.wav";
         }
     }
 }

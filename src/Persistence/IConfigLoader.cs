@@ -1,12 +1,13 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using Pomogotchi.Domain;
 
-namespace src.Persistence
+namespace Pomogotchi.Persistence
 {
     public interface IConfigLoader
     {
-        
+        public Session LoadWorkSession();
+        public Session LoadBreakSession();
+        public void SaveWorkSession(Session session);
+        public void SaveBreakSession(Session session);
+        public string GetSoundFilePath();
     }
 }

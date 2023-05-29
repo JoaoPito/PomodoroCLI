@@ -1,14 +1,14 @@
 ﻿using ReactiveUI;
-using Pomogotchi.Timer;
 using PomoGUI.Models;
 using System;
 using Avalonia.Controls;
-using Pomogotchi.SoundPlayer;
 
 namespace PomoGUI.ViewModels
 {
     public class MainWindowViewModel : ViewModelBase
     {
+        MainWindowController _controller;
+
         string _clock = "";
         public string Clock
         {
@@ -30,28 +30,22 @@ namespace PomoGUI.ViewModels
             set => this.RaiseAndSetIfChanged(ref _sessionProgressPercent, value);
         }
 
-        SessionController controller;
-
         bool _canChangeSettings = true;
-        public bool CanChangeSettings { 
+        public bool CanChangeSettings
+        {
             get => _canChangeSettings;
             set => this.RaiseAndSetIfChanged(ref _canChangeSettings, value);
         }
 
         public MainWindowViewModel()
         {
-            var timer = new SessionTimer(new SystemTimer());
-            var dingPlayer = new SFXPlayer("./ding.wav");
-            controller = new SessionController(ConfigLoader.GetController(), timer, dingPlayer);
-            controller.EndTriggers += OnSessionEnd;
-            controller.Timer.RegisterUpdateTrigger(OnTimerUpdate);
-
+            _controller = new MainWindowController(OnSessionEnd, OnTimerUpdate);
             UpdateTimerUI();
         }
 
         public void OnStartStopButton()
         {
-            if (controller.InSession)
+            if (_controller.Controller.InSession)
             {
                 SkipSession();
             }
@@ -59,7 +53,7 @@ namespace PomoGUI.ViewModels
             {
                 StartSession();
             }
-                
+
         }
 
         void OnTimerUpdate()
@@ -69,9 +63,9 @@ namespace PomoGUI.ViewModels
 
         void UpdateTimerUI()
         {
-            UpdateTimerText(controller.Timer.GetRemainingTime());
-            UpdateButtonText(controller.CurrentSession.Type);
-            UpdateSessionProgressBar(controller.Timer.GetRemainingTime(), controller.CurrentSession.Duration);
+            UpdateTimerText(_controller.Controller.Timer.GetRemainingTime());
+            UpdateButtonText(_controller.Controller.CurrentSession.Type);
+            UpdateSessionProgressBar(_controller.Controller.Timer.GetRemainingTime(), _controller.Controller.CurrentSession.Duration);
         }
 
         void UpdateTimerText(TimeSpan remainingTime)
@@ -84,11 +78,11 @@ namespace PomoGUI.ViewModels
             SessionProgressPercent = (int)(Math.Round(remaining.TotalSeconds / total.TotalSeconds * 100));
         }
 
-        void UpdateButtonText(SessionParams.SessionType currentSessionType)
+        void UpdateButtonText(Pomogotchi.Domain.Session.SessionType currentSessionType)
         {
             var TxtRepository = GUITextRepository.GetRepository();
 
-            if (controller.InSession)
+            if (_controller.Controller.InSession)
             {
                 StartStopButtonText = TxtRepository.SkipSessionTxt;
             }
@@ -96,11 +90,11 @@ namespace PomoGUI.ViewModels
             {
                 switch (currentSessionType)
                 {
-                    case SessionParams.SessionType.Break:
+                    case Pomogotchi.Domain.Session.SessionType.Break:
                         StartStopButtonText = TxtRepository.StartBreakSessionTxt;
                         break;
 
-                    case SessionParams.SessionType.Work:
+                    case Pomogotchi.Domain.Session.SessionType.Work:
                     default:
                         StartStopButtonText = TxtRepository.StartWorkSessionTxt;
                         break;
@@ -110,7 +104,7 @@ namespace PomoGUI.ViewModels
 
         void StartSession()
         {
-            controller.StartSession();
+            _controller.Controller.StartSession();
             CanChangeSettings = false;
             UpdateTimerUI();
         }
@@ -122,21 +116,21 @@ namespace PomoGUI.ViewModels
 
         void OnSessionEnd()
         {
-            controller.StopSession();
-            controller.LoadNextSession();
+            _controller.Controller.StopSession();
+            _controller.Controller.LoadNextSession();
             CanChangeSettings = true;
             UpdateTimerUI();
         }
 
         public void OnIncrementButton()
         {
-            controller.IncrementClock();
+            _controller.Controller.IncrementClock();
             UpdateTimerUI();
         }
 
         public void OnDecrementButton()
         {
-            controller.DecrementClock();
+            _controller.Controller.DecrementClock();
             UpdateTimerUI();
         }
     }
