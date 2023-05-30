@@ -116,21 +116,21 @@ namespace PomoGUI.ViewModels
 
         void OnSessionEnd()
         {
-            _controller.Controller.StopSession();
-            _controller.Controller.LoadNextSession();
+            _controller.StopCurrentSession();
+            _controller.LoadNextSession();
             CanChangeSettings = true;
             UpdateTimerUI();
         }
 
         public void OnIncrementButton()
         {
-            _controller.Controller.IncrementClock();
+            _controller.IncrementClock();
             UpdateTimerUI();
         }
 
         public void OnDecrementButton()
         {
-            _controller.Controller.DecrementClock();
+            _controller.DecrementClock();
             UpdateTimerUI();
         }
     }

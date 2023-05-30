@@ -6,12 +6,11 @@ namespace Pomogotchi.Domain
     {
         public enum SessionType
         {
-            None = 0,
             Work,
             Break
         }
 
-        SessionType _type = SessionType.None;
+        SessionType _type;
 
         public SessionType Type => _type;
 

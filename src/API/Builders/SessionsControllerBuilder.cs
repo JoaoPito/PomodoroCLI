@@ -33,9 +33,12 @@ namespace Pomogotchi.API.Builders
             _timer = new SessionTimer(new SystemTimer());
         }
 
-        public ControllerBase GetController()
+        public ApiControllerBase GetController()
         {
-            return new SessionsController(_config, _timer, _soundPlayer);
+            var controller = new ApiController(_config, _timer, _soundPlayer);
+            controller.LoadDefaultConfig();
+            
+            return controller;
         }
     }
 }

@@ -7,6 +7,6 @@ namespace Pomogotchi.API.Builders
     {
         //public void AddExtension(IExtensionCommand feature);
         public void AddSoundPlayer();
-        public ControllerBase GetController();
+        public ApiControllerBase GetController();
     }
 }

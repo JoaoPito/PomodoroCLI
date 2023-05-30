@@ -32,12 +32,12 @@ namespace Pomogotchi.Persistence
 
         TimeSpan LoadWorkDuration()
         {
-            return new TimeSpan(0, 0, 5);
+            return new TimeSpan(0, 25, 0);
         }
 
         TimeSpan LoadBreakDuration()
         {
-            return new TimeSpan(0, 0, 3);
+            return new TimeSpan(0, 5, 0);
         }
 
         public void SaveWorkSession(Session session)
