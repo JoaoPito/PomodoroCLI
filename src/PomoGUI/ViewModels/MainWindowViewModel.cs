@@ -45,7 +45,7 @@ namespace PomoGUI.ViewModels
 
         public void OnStartStopButton()
         {
-            if (_controller.Controller.InSession)
+            if (_controller.SessionController.InSession)
             {
                 SkipSession();
             }
@@ -63,9 +63,9 @@ namespace PomoGUI.ViewModels
 
         void UpdateTimerUI()
         {
-            UpdateTimerText(_controller.Controller.Timer.GetRemainingTime());
-            UpdateButtonText(_controller.Controller.CurrentSession.Type);
-            UpdateSessionProgressBar(_controller.Controller.Timer.GetRemainingTime(), _controller.Controller.CurrentSession.Duration);
+            UpdateTimerText(_controller.SessionController.Timer.GetRemainingTime());
+            UpdateButtonText(_controller.SessionController.Session.Parameters.Type);
+            UpdateSessionProgressBar(_controller.SessionController.Timer.GetRemainingTime(), _controller.SessionController.Session.Parameters.Duration);
         }
 
         void UpdateTimerText(TimeSpan remainingTime)
@@ -82,7 +82,7 @@ namespace PomoGUI.ViewModels
         {
             var TxtRepository = GUITextRepository.GetRepository();
 
-            if (_controller.Controller.InSession)
+            if (_controller.SessionController.InSession)
             {
                 StartStopButtonText = TxtRepository.SkipSessionTxt;
             }
@@ -104,7 +104,7 @@ namespace PomoGUI.ViewModels
 
         void StartSession()
         {
-            _controller.Controller.StartSession();
+            _controller.SessionController.Start();
             CanChangeSettings = false;
             UpdateTimerUI();
         }
@@ -124,13 +124,13 @@ namespace PomoGUI.ViewModels
 
         public void OnIncrementButton()
         {
-            _controller.IncrementClock();
+            _controller.AddTimeToSessionDuration(new TimeSpan(0,5,0));
             UpdateTimerUI();
         }
 
         public void OnDecrementButton()
         {
-            _controller.DecrementClock();
+            _controller.AddTimeToSessionDuration(new TimeSpan(0,-5,0));
             UpdateTimerUI();
         }
     }

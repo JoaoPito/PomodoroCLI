@@ -4,26 +4,26 @@ namespace Pomogotchi.Persistence
 {
     public class ConfigLoader : IConfigLoader
     {
-        static ConfigLoader? controllerInstance;
+        static ConfigLoader? _instance;
 
         private ConfigLoader() { }
 
         public static ConfigLoader GetController()
         {
-            if(controllerInstance == null)
-                controllerInstance = new ConfigLoader();
+            if(_instance == null)
+                _instance = new ConfigLoader();
 
-            return controllerInstance;
+            return _instance;
         }
 
-        public Session LoadWorkSession()
+        public Session LoadWorkParams()
         {
             TimeSpan duration = LoadWorkDuration();
             Session loadedSession = new Session(duration, Session.SessionType.Work);
             return loadedSession;
         }
 
-        public Session LoadBreakSession()
+        public Session LoadBreakParams()
         {
             TimeSpan duration = LoadBreakDuration();
             Session loadedSession = new Session(duration, Session.SessionType.Break);
@@ -40,12 +40,12 @@ namespace Pomogotchi.Persistence
             return new TimeSpan(0, 5, 0);
         }
 
-        public void SaveWorkSession(Session session)
+        public void SaveWorkParams(Session session)
         {
             throw new NotImplementedException();
         }
 
-        public void SaveBreakSession(Session session)
+        public void SaveBreakParams(Session session)
         {
             throw new NotImplementedException();
         }

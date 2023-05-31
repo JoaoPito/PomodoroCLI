@@ -4,10 +4,10 @@ namespace Pomogotchi.Persistence
 {
     public interface IConfigLoader
     {
-        public Session LoadWorkSession();
-        public Session LoadBreakSession();
-        public void SaveWorkSession(Session session);
-        public void SaveBreakSession(Session session);
+        public Session LoadWorkParams();
+        public Session LoadBreakParams();
+        public void SaveWorkParams(Session session);
+        public void SaveBreakParams(Session session);
         public string GetSoundFilePath();
     }
 }
