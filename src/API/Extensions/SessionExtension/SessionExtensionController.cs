@@ -28,7 +28,7 @@ namespace Pomogotchi.API.Extensions
             this._controller = controller;
             this._timer = timer;
             var sessionParams = new Domain.Session(new TimeSpan(0,15,0), Domain.Session.SessionType.Work);
-            this.Session = new WorkSession(sessionParams, OnSessionParamsChanged);
+            this._session = new WorkSession(sessionParams, OnSessionParamsChanged);
 
             SetupTimer();
         }
@@ -78,6 +78,8 @@ namespace Pomogotchi.API.Extensions
         public void SwitchSessionTo(SessionType session)
         {
             Session = session;
+            Session.SetOnParamsChangedAction(OnSessionParamsChanged);
+            OnSessionParamsChanged(Session.Parameters);
         }
     }
 }

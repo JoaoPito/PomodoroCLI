@@ -1,19 +1,12 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Pomogotchi.API.Controllers;
-using Pomogotchi.Application.Timer;
 using Pomogotchi.Domain;
-using Pomogotchi.Persistence;
 
 namespace Pomogotchi.API.Extensions.SessionExtension
 {
     public class WorkSession : SessionType
     {
-        public WorkSession(Session parameters, Action<Session>? paramsUpdate) : base(parameters, paramsUpdate)
-        {
-        }
+        public WorkSession(Session parameters, Action<Session>? onParamsChanged) : base(parameters, onParamsChanged){}
+
+        public WorkSession(Session parameters) : base(parameters){}
 
         public override SessionType GetNextSession()
         {

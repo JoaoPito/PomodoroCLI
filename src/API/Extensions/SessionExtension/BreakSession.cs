@@ -8,9 +8,8 @@ namespace Pomogotchi.API.Extensions.SessionExtension
     public class BreakSession : SessionType
 
     {
-        public BreakSession(Session parameters, Action<Session>? paramsUpdate) : base(parameters, paramsUpdate)
-        {
-        }
+        public BreakSession(Session parameters, Action<Session>? paramsUpdate) : base(parameters, paramsUpdate){}
+        public BreakSession(Session parameters) : base(parameters){}
 
         public override SessionType GetNextSession()
         {

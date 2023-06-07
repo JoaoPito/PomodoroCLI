@@ -1,6 +1,7 @@
 using API;
 using Pomogotchi.API.Extensions;
 using Pomogotchi.API.Extensions.Notifications;
+using static Pomogotchi.API.Extensions.IAPIExtension;
 
 namespace Pomogotchi.API.Controllers
 {
@@ -20,13 +21,15 @@ namespace Pomogotchi.API.Controllers
         }
 
         public IAPIExtension GetExtension(Type extensionType){
-
-            var extension = _extensions.Where((extension) => extension.GetType() == extensionType).First();
-            
-            if(extension == null)
-                throw new IAPIExtension.ExtensionNotFoundException();
-
-            return extension;
+            try
+            {
+                var extension = _extensions.Where((extension) => extension.GetType() == extensionType).First();                
+                return extension;
+            }
+            catch (System.ArgumentNullException)
+            {
+                throw new ExtensionNotFoundException();
+            }
         }
 
         public void Notify(GenericNotification notification){
