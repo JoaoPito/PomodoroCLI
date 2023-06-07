@@ -2,6 +2,8 @@
 using PomoGUI.Models;
 using System;
 using Avalonia.Controls;
+using Pomogotchi.API.Extensions.SessionExtension;
+using Pomogotchi.API.Extensions;
 
 namespace PomoGUI.ViewModels
 {
@@ -64,7 +66,7 @@ namespace PomoGUI.ViewModels
         void UpdateTimerUI()
         {
             UpdateTimerText(_controller.SessionController.Timer.GetRemainingTime());
-            UpdateButtonText(_controller.SessionController.Session.Parameters.Type);
+            UpdateButtonText(_controller.SessionController);
             UpdateSessionProgressBar(_controller.SessionController.Timer.GetRemainingTime(), _controller.SessionController.Session.Parameters.Duration);
         }
 
@@ -78,28 +80,28 @@ namespace PomoGUI.ViewModels
             SessionProgressPercent = (int)(Math.Round(remaining.TotalSeconds / total.TotalSeconds * 100));
         }
 
-        void UpdateButtonText(Pomogotchi.Domain.Session.SessionType currentSessionType)
-        {
-            var TxtRepository = GUITextRepository.GetRepository();
 
-            if (_controller.SessionController.InSession)
+
+        void UpdateButtonText(SessionExtensionController sessionController)
+        {
+            var txtRepository = GUITextRepository.GetRepository();
+
+            if (sessionController.InSession)
             {
-                StartStopButtonText = TxtRepository.SkipSessionTxt;
+                StartStopButtonText = txtRepository.SkipSessionTxt;
             }
             else
             {
-                switch (currentSessionType)
-                {
-                    case Pomogotchi.Domain.Session.SessionType.Break:
-                        StartStopButtonText = TxtRepository.StartBreakSessionTxt;
-                        break;
-
-                    case Pomogotchi.Domain.Session.SessionType.Work:
-                    default:
-                        StartStopButtonText = TxtRepository.StartWorkSessionTxt;
-                        break;
-                }
+                UpdateButtonWithSessionText(txtRepository, sessionController.Session);
+                
             }
+        }
+
+        void UpdateButtonWithSessionText(GUITextRepository txtRepository, SessionType currentSession){
+            if(currentSession.GetType() == typeof(BreakSession))
+                StartStopButtonText = txtRepository.StartBreakSessionTxt;
+            else
+                StartStopButtonText = txtRepository.StartWorkSessionTxt;
         }
 
         void StartSession()

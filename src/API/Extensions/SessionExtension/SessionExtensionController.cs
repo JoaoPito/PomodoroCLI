@@ -3,7 +3,6 @@ using Pomogotchi.API.Extensions.Notifications;
 using Pomogotchi.API.Extensions.SessionExtension;
 using Pomogotchi.Application.Timer;
 using Pomogotchi.Domain;
-using Pomogotchi.Persistence;
 
 namespace Pomogotchi.API.Extensions
 {
@@ -20,8 +19,6 @@ namespace Pomogotchi.API.Extensions
 
         private SessionType _session;
         public SessionType Session { get => _session; protected set{_session = value;} } 
-
-        public Session.SessionType Type { get => Session.Type; }
         public TimeSpan Duration { get => Session.Duration; }
 
         public event Action? EndTriggers;
@@ -30,7 +27,7 @@ namespace Pomogotchi.API.Extensions
         {
             this._controller = controller;
             this._timer = timer;
-            var sessionParams = new Domain.Session(new TimeSpan(0,15,0), Domain.Session.SessionType.Work);
+            var sessionParams = new Domain.Session(new TimeSpan(0,15,0));
             this._session = new WorkSession(sessionParams, OnSessionParamsChanged);
 
             SetupTimer();

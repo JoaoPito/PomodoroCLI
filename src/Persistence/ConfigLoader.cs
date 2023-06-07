@@ -19,14 +19,14 @@ namespace Pomogotchi.Persistence
         public Session LoadWorkParams()
         {
             TimeSpan duration = LoadWorkDuration();
-            Session loadedSession = new Session(duration, Session.SessionType.Work);
+            Session loadedSession = new Session(duration);
             return loadedSession;
         }
 
         public Session LoadBreakParams()
         {
             TimeSpan duration = LoadBreakDuration();
-            Session loadedSession = new Session(duration, Session.SessionType.Break);
+            Session loadedSession = new Session(duration);
             return loadedSession;
         }
 

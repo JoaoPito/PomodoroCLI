@@ -36,8 +36,8 @@ public class TimerSetupAndUsageFuncTests
 
         var pomogotchiConfig = (ConfigLoaderExtension)(pomogotchi.GetExtension(typeof(ConfigLoaderExtension)));
 
-        pomogotchiConfig.SetWorkParams(new Session(workDuration, Session.SessionType.Work));
-        pomogotchiConfig.SetBreakParams(new Session(breakDuration, Session.SessionType.Break));
+        pomogotchiConfig.SetWorkParams(new Session(workDuration));
+        pomogotchiConfig.SetBreakParams(new Session(breakDuration));
         var workSession = new Extensions.SessionExtension.WorkSession(pomogotchiConfig.GetWorkParameters());
         pomogotchiSession.SwitchSessionTo(workSession);
 
@@ -45,8 +45,7 @@ public class TimerSetupAndUsageFuncTests
         Assert.True(pomogotchiSession.Session.Parameters.Duration == workDuration, "Work timer has not been set correctly");
 
         // He checks if the timer is going to start a work session and if the duration is correct
-        Assert.True(pomogotchiSession.Type == Session.SessionType.Work,
-                    $"The current session type is not what was expected, got {pomogotchiSession.Session.Parameters.Type}, expected {Session.SessionType.Work}");
+        Assert.Equal(typeof(Extensions.SessionExtension.WorkSession), pomogotchiSession.Session.GetType());
         Assert.True(pomogotchiSession.Duration == workDuration,
                     $"Current session duration was not set properly, got {pomogotchiSession.Session.Parameters.Duration}, expected {workDuration}");
         Assert.Equal(workDuration, pomogotchiSession.Timer.GetRemainingTime());
@@ -69,7 +68,7 @@ public class TimerSetupAndUsageFuncTests
         pomogotchiSession.SwitchSessionTo(pomogotchiSession.Session.GetNextSession());
         pomogotchiSession.Session.LoadConfig(pomogotchiConfig);
         // Since he eager to finish all his sessions, he checks if it's really a break session
-        Assert.Equal(Session.SessionType.Break, pomogotchiSession.Session.Parameters.Type);
+        Assert.Equal(typeof(Extensions.SessionExtension.BreakSession), pomogotchiSession.Session.GetType());
         Assert.True(pomogotchiSession.Session.Parameters.Duration == breakDuration, "Break timer has not been set correctly");
 
         // He stops the break session midway

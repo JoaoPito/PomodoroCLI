@@ -51,7 +51,7 @@ namespace PomoGUI.Models
             if (ValidateTimerDuration(amount))
             {
                 var currentSession = _sessionController.Session;
-                var newSessionParams = new Session(currentSession.Parameters.Duration + amount, currentSession.Parameters.Type);
+                var newSessionParams = new Session(currentSession.Duration + amount);
 
                 SetSessionParams(_configController, currentSession, newSessionParams);
                 _sessionController.Session.LoadConfig(_configController);
@@ -59,8 +59,8 @@ namespace PomoGUI.Models
         }
 
         void SetSessionParams(ConfigLoaderExtension configLoader, SessionType session, Session parameters){
-            if(session.Parameters.Type == Session.SessionType.Work) configLoader.SetWorkParams(parameters);
-            else if(session.Parameters.Type == Session.SessionType.Break) configLoader.SetBreakParams(parameters);
+            if(session.GetType() == typeof(WorkSession)) configLoader.SetWorkParams(parameters);
+            else if(session.GetType() == typeof(BreakSession)) configLoader.SetBreakParams(parameters);
         }
         public void StopCurrentSession()
         {
