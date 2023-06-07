@@ -45,9 +45,9 @@ public class TimerSetupAndUsageFuncTests
         Assert.True(pomogotchiSession.Session.Parameters.Duration == workDuration, "Work timer has not been set correctly");
 
         // He checks if the timer is going to start a work session and if the duration is correct
-        Assert.True(pomogotchiSession.Session.Parameters.Type == Session.SessionType.Work,
+        Assert.True(pomogotchiSession.Type == Session.SessionType.Work,
                     $"The current session type is not what was expected, got {pomogotchiSession.Session.Parameters.Type}, expected {Session.SessionType.Work}");
-        Assert.True(pomogotchiSession.Session.Parameters.Duration == workDuration,
+        Assert.True(pomogotchiSession.Duration == workDuration,
                     $"Current session duration was not set properly, got {pomogotchiSession.Session.Parameters.Duration}, expected {workDuration}");
         Assert.Equal(workDuration, pomogotchiSession.Timer.GetRemainingTime());
 

@@ -21,6 +21,9 @@ namespace Pomogotchi.API.Extensions
         private SessionType _session;
         public SessionType Session { get => _session; protected set{_session = value;} } 
 
+        public Session.SessionType Type { get => Session.Type; }
+        public TimeSpan Duration { get => Session.Duration; }
+
         public event Action? EndTriggers;
 
         public SessionExtensionController(ApiControllerBase controller, ISessionTimer timer)

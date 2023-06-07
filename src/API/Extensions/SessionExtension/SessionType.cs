@@ -8,6 +8,9 @@ namespace Pomogotchi.API.Extensions.SessionExtension
         private Session _parameters;
         public Session Parameters { get => _parameters; protected set { _parameters = value; OnParametersChanged(value); }}
 
+        public Session.SessionType Type { get => Parameters.Type; }
+        public TimeSpan Duration {get => Parameters.Duration; }
+
         protected Action<Session>? _userOnParamsChanged;
         public SessionType(Session parameters){
             this._userOnParamsChanged = null;
