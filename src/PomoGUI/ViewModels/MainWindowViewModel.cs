@@ -125,12 +125,14 @@ namespace PomoGUI.ViewModels
         public void OnIncrementButton()
         {
             _controller.AddTimeToSessionDuration(new TimeSpan(0,5,0));
+            _controller.SaveConfig();
             UpdateTimerUI();
         }
 
         public void OnDecrementButton()
         {
             _controller.AddTimeToSessionDuration(new TimeSpan(0,-5,0));
+            _controller.SaveConfig();
             UpdateTimerUI();
         }
     }

@@ -39,7 +39,7 @@ namespace PomoGUI.Models
             _controller = builder.GetController();
 
             var configLoader = (ConfigLoaderExtension)(_controller.GetExtension(typeof(ConfigLoaderExtension)));
-            var soundPlayer = new SFXPlayer(configLoader.GetLoader().GetSoundFilePath());
+            var soundPlayer = new SFXPlayer("./sessionEnd.wav");
             _controller.AddExtension(new SoundPlayerExtension(soundPlayer));
         }
 
@@ -59,6 +59,10 @@ namespace PomoGUI.Models
                 SetSessionParams(_configController, currentSession, newSessionParams);
                 _sessionController.Session.LoadConfig(_configController);
             }
+        }
+
+        public void SaveConfig(){
+            _configController.SaveAllChanges();
         }
 
         void SetSessionParams(ConfigLoaderExtension configLoader, SessionType session, Session parameters)

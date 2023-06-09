@@ -5,6 +5,7 @@
     <ProjectReference Include="..\Application\Pomogotchi.SoundPlayer\Pomogotchi.SoundPlayer.csproj" />
     <ProjectReference Include="..\Domain\Domain.csproj" />
     <ProjectReference Include="..\Persistence\Persistence.csproj" />
+    <ProjectReference Include="..\Application\Pomogotchi.ConfigLoader\Pomogotchi.ConfigLoader.csproj" />
   </ItemGroup>
 
   <PropertyGroup>

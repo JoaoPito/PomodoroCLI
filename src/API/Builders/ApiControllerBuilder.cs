@@ -1,7 +1,7 @@
 using Pomogotchi.API.Controllers;
 using Pomogotchi.API.Extensions;
+using Pomogotchi.Application.ConfigLoader;
 using Pomogotchi.Application.Timer;
-using Pomogotchi.Persistence;
 
 namespace Pomogotchi.API.Builders
 {

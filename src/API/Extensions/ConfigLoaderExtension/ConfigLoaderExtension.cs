@@ -1,50 +1,53 @@
 using Pomogotchi.API.Extensions.Notifications;
 using Pomogotchi.Domain;
-using Pomogotchi.Persistence;
+using Pomogotchi.Application.ConfigLoader;
 
 namespace Pomogotchi.API.Extensions
 {
     public class ConfigLoaderExtension : IConfigExtension
     {
         private readonly ConfigLoader _loader;
-
-        private Session _workParams;
-        private Session _breakParams;
         public ConfigLoaderExtension(ConfigLoader loader)
         {
             this._loader = loader;
-            _workParams = _loader.LoadWorkParams();
-            _breakParams = _loader.LoadBreakParams();
         }  
 
         public void SetWorkParams(Session parameters)
         {
-            _workParams = parameters;
+            _loader.SetWorkParams(parameters);
         }
 
         public void SetBreakParams(Session parameters)
         {
-            _breakParams = parameters;
+           _loader.SetBreakParams(parameters);
         }
 
         public Session GetWorkParameters(){
-            return _workParams;
+            return _loader.GetWorkParams();
         }
         public Session GetBreakParameters(){
-            return _breakParams;
+            return _loader.GetBreakParams();
         }
 
         public void SaveAllChanges(){
-            throw new NotImplementedException();
+            _loader.SaveChanges();
         }
 
         public IConfigLoader GetLoader(){
             return _loader;
         }
 
+        public void SetExtensionParam<T>(string key, T data){
+            _loader.SetExtensionParam<T>(key,data);
+        }
+        public T GetExtensionParam<T>(string key){
+            return _loader.GetExtensionParam<T>(key);
+        }
+
         public void Notify(GenericNotification notification)
         {
-            
+            if(notification.GetType() == typeof(ConfigSaveNotification))
+                SaveAllChanges();
         }
     }
 }
