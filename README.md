@@ -33,6 +33,7 @@ Windows releases can be found on the GitHub's Releases page.
 
 ### Linux
 Linux releases can be found on the GitHub's Releases page.
+:warning: **Caution:** It has only been tested in Fedora 37, experience with other distros may vary.
 
 ### macOS
 Since I don't have access to any macOS machine, so I have no idea if this app works on any mac. 
