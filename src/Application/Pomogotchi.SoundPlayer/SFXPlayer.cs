@@ -1,44 +1,19 @@
-﻿using NAudio.Wave;
-
-namespace Pomogotchi.Application.SoundPlayer
+﻿namespace Pomogotchi.Application.SoundPlayer
 {
     public class SFXPlayer : IPlayer
     {
-        string filePath;
+        string _filePath;
+        VLCSoundPlayer _vlcPlayer = new();
 
         public SFXPlayer(string filePath)
         {
-            this.filePath = filePath;
+            this._filePath = filePath;
+            _vlcPlayer.AttachMedia(filePath);
         }
 
         public void Play()
         {
-            Thread thread = new Thread(playThread);
-            thread.Start();
-            
+            _vlcPlayer.Play();
         }
-
-        void playThread()
-        {
-            try
-            {
-                using (var audioFile = new AudioFileReader(filePath))
-                using (var outputDevice = new WaveOutEvent())
-                {
-                    outputDevice.Init(audioFile);
-                    outputDevice.Play();
-                    while (outputDevice.PlaybackState == PlaybackState.Playing)
-                    {
-                        Thread.Sleep(500);
-                    }
-                }
-            }
-            catch (System.IO.FileNotFoundException ex)
-            {
-                return;
-            }
-            
-        }
-
     }
 }

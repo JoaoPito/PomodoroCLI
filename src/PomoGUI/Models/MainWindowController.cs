@@ -14,9 +14,12 @@ namespace PomoGUI.Models
         public ApiControllerBase Controller => _controller;
 
         SessionExtensionController _sessionController;
-        public SessionExtensionController SessionController => _sessionController;
-
         ConfigLoaderExtension _configController;
+
+        public bool InSession { get => _sessionController.InSession; }
+        public SessionType CurrentSession { get => _sessionController.Session; } 
+        public TimeSpan RemainingTime { get => _sessionController.Timer.GetRemainingTime(); }
+        public TimeSpan TotalDuration { get => _sessionController.Duration; }
 
         public MainWindowController(Action? onSessionEnd, Action? onTimerUpdate)
         {
@@ -25,7 +28,7 @@ namespace PomoGUI.Models
             _sessionController = (SessionExtensionController)_controller.GetExtension(typeof(SessionExtensionController));
             _sessionController.EndTriggers += onSessionEnd;
 
-            _configController = (ConfigLoaderExtension)(_controller.GetExtension(typeof(ConfigLoaderExtension)));
+            _configController = (ConfigLoaderExtension)_controller.GetExtension(typeof(ConfigLoaderExtension));
 
             if (onTimerUpdate != null) _sessionController.Timer.RegisterUpdateTrigger(onTimerUpdate);
         }
@@ -36,7 +39,7 @@ namespace PomoGUI.Models
             _controller = builder.GetController();
 
             //var configLoader = (ConfigLoaderExtension)(_controller.GetExtension(typeof(ConfigLoaderExtension)));
-           // var soundPlayer = new SFXPlayer(configLoader.GetLoader().GetSoundFilePath());
+            // var soundPlayer = new SFXPlayer(configLoader.GetLoader().GetSoundFilePath());
             //_controller.AddExtension(new SoundPlayerExtension(soundPlayer));
         }
 
@@ -58,10 +61,16 @@ namespace PomoGUI.Models
             }
         }
 
-        void SetSessionParams(ConfigLoaderExtension configLoader, SessionType session, Session parameters){
-            if(session.GetType() == typeof(WorkSession)) configLoader.SetWorkParams(parameters);
-            else if(session.GetType() == typeof(BreakSession)) configLoader.SetBreakParams(parameters);
+        void SetSessionParams(ConfigLoaderExtension configLoader, SessionType session, Session parameters)
+        {
+            if (session.GetType() == typeof(WorkSession)) configLoader.SetWorkParams(parameters);
+            else if (session.GetType() == typeof(BreakSession)) configLoader.SetBreakParams(parameters);
         }
+
+        public void StartSession(){
+            _sessionController.Start();
+        }
+
         public void StopCurrentSession()
         {
             _sessionController.Stop();

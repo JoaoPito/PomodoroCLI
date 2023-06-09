@@ -47,7 +47,7 @@ namespace PomoGUI.ViewModels
 
         public void OnStartStopButton()
         {
-            if (_controller.SessionController.InSession)
+            if (_controller.InSession)
             {
                 SkipSession();
             }
@@ -65,9 +65,9 @@ namespace PomoGUI.ViewModels
 
         void UpdateTimerUI()
         {
-            UpdateTimerText(_controller.SessionController.Timer.GetRemainingTime());
-            UpdateButtonText(_controller.SessionController);
-            UpdateSessionProgressBar(_controller.SessionController.Timer.GetRemainingTime(), _controller.SessionController.Session.Parameters.Duration);
+            UpdateTimerText(_controller.RemainingTime);
+            UpdateButtonText(_controller.InSession, _controller.CurrentSession);
+            UpdateSessionProgressBar(_controller.RemainingTime, _controller.TotalDuration);
         }
 
         void UpdateTimerText(TimeSpan remainingTime)
@@ -80,19 +80,17 @@ namespace PomoGUI.ViewModels
             SessionProgressPercent = (int)(Math.Round(remaining.TotalSeconds / total.TotalSeconds * 100));
         }
 
-
-
-        void UpdateButtonText(SessionExtensionController sessionController)
+        void UpdateButtonText(bool InSession, SessionType currentSession)
         {
             var txtRepository = GUITextRepository.GetRepository();
 
-            if (sessionController.InSession)
+            if (InSession)
             {
                 StartStopButtonText = txtRepository.SkipSessionTxt;
             }
             else
             {
-                UpdateButtonWithSessionText(txtRepository, sessionController.Session);
+                UpdateButtonWithSessionText(txtRepository, currentSession);
                 
             }
         }
@@ -106,7 +104,7 @@ namespace PomoGUI.ViewModels
 
         void StartSession()
         {
-            _controller.SessionController.Start();
+            _controller.StartSession();
             CanChangeSettings = false;
             UpdateTimerUI();
         }
