@@ -27,7 +27,8 @@ namespace Pomogotchi.API.Extensions
         {
             this._controller = controller;
             this._timer = timer;
-            var sessionParams = new Domain.Session(new TimeSpan(0,15,0));
+            var configLoader = (ConfigLoaderExtension)controller.GetExtension(typeof(ConfigLoaderExtension));
+            var sessionParams = configLoader.GetWorkParameters();
             this._session = new WorkSession(sessionParams, OnSessionParamsChanged);
 
             SetupTimer();

@@ -32,5 +32,9 @@ namespace Pomogotchi.Application.SoundPlayer
         public void TogglePause(){
             player.Pause();
         }
+
+        public void ChangeVolume(int percentage){
+            player.Volume = percentage;
+        }
     }
 }

@@ -32,7 +32,7 @@ namespace Pomogotchi.Persistence
 
         TimeSpan LoadWorkDuration()
         {
-            return new TimeSpan(0, 25, 0);
+            return new TimeSpan(0, 0, 10);
         }
 
         TimeSpan LoadBreakDuration()

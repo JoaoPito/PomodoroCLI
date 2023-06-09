@@ -38,9 +38,9 @@ namespace PomoGUI.Models
             var builder = new ApiControllerBuilder();
             _controller = builder.GetController();
 
-            //var configLoader = (ConfigLoaderExtension)(_controller.GetExtension(typeof(ConfigLoaderExtension)));
-            // var soundPlayer = new SFXPlayer(configLoader.GetLoader().GetSoundFilePath());
-            //_controller.AddExtension(new SoundPlayerExtension(soundPlayer));
+            var configLoader = (ConfigLoaderExtension)(_controller.GetExtension(typeof(ConfigLoaderExtension)));
+            var soundPlayer = new SFXPlayer(configLoader.GetLoader().GetSoundFilePath());
+            _controller.AddExtension(new SoundPlayerExtension(soundPlayer));
         }
 
         bool ValidateTimerDuration(TimeSpan amount)
