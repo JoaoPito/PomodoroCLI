@@ -15,17 +15,19 @@ Rotten tomatoes may appear.
 There is still some work to be done:
 - [x] User Interface
 - [x] Sounds & Notifications
-- [ ] Session Settings/Default Settings customization
+- [x] Session Settings/Default Settings customization
 - [ ] Pomogotchi companion
 
 ## :tomato: Installation
 
 Binaries can be found in the folder "Binaries", choose your OS (if available), download it, and it's ready to go!
 
-**Linux and Mac users** can compile the project using **Visual Studio** or using **.NET 7.0** (https://dotnet.microsoft.com/en-us/download).
+### Dependencies
+- Since Pomogotchi uses libVLCSharp for playing audio files, **VLC must be intalled on your machine**.
+
+**Linux and Mac users** can compile the project using **Visual Studio** or using **.NET 7.0 CLI** (https://dotnet.microsoft.com/en-us/download).
 
 ### Windows
-
 Windows releases can be found on the Releases page.
 It's currently on pre-release since it doesn't have all the features yet. But can be used as a simple timer for now.
 
@@ -37,18 +39,11 @@ Since I don't have access to any macOS machine, so I have no idea if this app wo
 I would kindly appreciate any contributions from developers who happen to have one.
 
 ## :onion: Customization
+The app settings can be found on the file **config.json** in the app's root folder.
+In this file is specified the default work/break session durations as well as any extension configuration parameter (The app must be started at least once for settings to appear).
 
-###  Ding sound
-**For now it's not possible to change the sound file name. This means that only .wav files are supported**
+###  Sounds
+The session end sound by default is located at the program folder and is called **sessionEnd.wav**, this file can be replaced or the file name can be changed on the **config.json** file.
 
-This is the sound that is played when a session ends. It can be changed by replacing the **ding.wav** file with your custom audio file.
-Supported audio formats:
-- WAV
-- AIFF
-- MP3 (using ACM, DMO or MFT)
-- G.711 mu-law and a-law
-- ADPCM, G.722, Speex (using NSpeex)
-- WMA, AAC, MP4 and more others with Media Foundation
-
-Pomogotchi uses the [NAudio](https://github.com/naudio/NAudio) C# audio library.
+Pomogotchi uses the [LibVLCSharp](https://github.com/videolan/libvlcsharp) C# audio library. 
 
