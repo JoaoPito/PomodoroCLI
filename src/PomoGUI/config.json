@@ -1,5 +1,7 @@
 {
-  "WorkDuration": "00:35:00",
+  "WorkDuration": "00:45:00",
   "BreakDuration": "00:05:00",
-  "Extensions": {}
+  "Extensions": {
+    "soundPlayer_filePath": "./sessionEnd.wav"
+  }
 }

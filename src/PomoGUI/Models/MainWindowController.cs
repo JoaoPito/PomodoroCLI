@@ -31,6 +31,8 @@ namespace PomoGUI.Models
             _configController = (ConfigLoaderExtension)_controller.GetExtension(typeof(ConfigLoaderExtension));
 
             if (onTimerUpdate != null) _sessionController.Timer.RegisterUpdateTrigger(onTimerUpdate);
+
+            SaveConfig();
         }
 
         void BuildAPI()
@@ -39,8 +41,23 @@ namespace PomoGUI.Models
             _controller = builder.GetController();
 
             var configLoader = (ConfigLoaderExtension)(_controller.GetExtension(typeof(ConfigLoaderExtension)));
-            var soundPlayer = new SFXPlayer("./sessionEnd.wav");
+            var soundFile = TryToLoadSoundPlayerConfig(configLoader);
+            var soundPlayer = new SFXPlayer(soundFile);
+            
             _controller.AddExtension(new SoundPlayerExtension(soundPlayer));
+        }
+
+        string TryToLoadSoundPlayerConfig(ConfigLoaderExtension configLoader){
+            try
+            {
+                return configLoader.GetExtensionParam("soundPlayer_filePath");
+            }
+            catch (System.ArgumentException)
+            {
+                var defaultPath =  "./sessionEnd.wav";
+                configLoader.SetExtensionParam("soundPlayer_filePath",defaultPath);
+                return defaultPath;
+            }
         }
 
         bool ValidateTimerDuration(TimeSpan amount)

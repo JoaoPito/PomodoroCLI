@@ -10,7 +10,7 @@ namespace Pomogotchi.Application.ConfigLoader
         public Session GetBreakParams();
         public void SetWorkParams(Session session);
         public void SetBreakParams(Session session);
-        public T GetExtensionParam<T>(string key);
-        public void SetExtensionParam<T>(string key, T value);
+        public string GetExtensionParam(string key);
+        public void SetExtensionParam(string key, string value);
     }
 }

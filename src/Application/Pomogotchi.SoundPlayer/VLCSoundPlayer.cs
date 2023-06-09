@@ -10,7 +10,7 @@ namespace Pomogotchi.Application.SoundPlayer
         public VLCSoundPlayer()
         {
             Core.Initialize();
-            vlc = new LibVLC();
+            vlc = new LibVLC("--no-video");
             player = new MediaPlayer(vlc);
         }
 

@@ -9,6 +9,6 @@ namespace Pomogotchi.Domain
     {
         public TimeSpan WorkDuration { get; set; }
         public TimeSpan BreakDuration { get; set; }
-        public Dictionary<string, Object> Extensions { get; set; } = new();
+        public Dictionary<string, string> Extensions { get; set; } = new();
     }
 }

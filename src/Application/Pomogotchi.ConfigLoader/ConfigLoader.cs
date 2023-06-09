@@ -63,14 +63,19 @@ namespace Pomogotchi.Application.ConfigLoader
             _currentParams.BreakDuration = session.Duration;
         }
 
-        public T GetExtensionParam<T>(string key)
+        public string GetExtensionParam(string key)
         {
-            throw new NotImplementedException();
+            if(!_currentParams.Extensions.ContainsKey(key))
+                throw new ArgumentException("Requested key not found");
+
+            Console.WriteLine($"param: {_currentParams.Extensions[key]} type: {_currentParams.Extensions[key].GetType()}");
+
+            return _currentParams.Extensions[key];
         }
 
-        public void SetExtensionParam<T>(string key, T value)
+        public void SetExtensionParam(string key, string value)
         {
-            throw new NotImplementedException();
+            _currentParams.Extensions.Add(key, value);
         }
 
         public void SaveChanges()
