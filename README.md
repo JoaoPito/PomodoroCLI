@@ -26,13 +26,13 @@ Binaries can be found in the folder "Binaries", choose your OS (if available), d
 - Since Pomogotchi uses libVLCSharp for playing audio files, **VLC must be intalled on your machine**.
 
 **Linux and Mac users** can compile the project using **Visual Studio** or using **.NET 7.0 CLI** (https://dotnet.microsoft.com/en-us/download).
+This project is currently on pre-release since it doesn't have all the features yet. But can be used as a simple timer for now.
 
 ### Windows
-Windows releases can be found on the Releases page.
-It's currently on pre-release since it doesn't have all the features yet. But can be used as a simple timer for now.
+Windows releases can be found on the GitHub's Releases page.
 
 ### Linux
-*Coming soon!*
+Linux releases can be found on the GitHub's Releases page.
 
 ### macOS
 Since I don't have access to any macOS machine, so I have no idea if this app works on any mac. 
