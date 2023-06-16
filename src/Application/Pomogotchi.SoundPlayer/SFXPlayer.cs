@@ -1,4 +1,6 @@
-﻿namespace Pomogotchi.Application.SoundPlayer
+﻿using FluentValidation;
+
+namespace Pomogotchi.Application.SoundPlayer
 {
     public class SFXPlayer : IPlayer
     {
@@ -14,7 +16,8 @@
 
         public void AttachMediaFile(string path)
         {
-            SoundFileHandler.ValidateSoundFilePath(path);
+            var validator = new SoundFileHandler.FilePathValidator();
+            validator.ValidateAndThrow(path);
 
             this._filePath = path;
             _player.AttachMediaFile(path);

@@ -50,7 +50,8 @@ public class ExtensionTests
     [InlineData("./invalidFileFormat", Helpers.INVALID_FILE_ERROR_MESSAGE)]
     [InlineData("./invalidExtension.txt", Helpers.UNSUPPORTED_FILE_EXTENSION_ERROR_MESSAGE)]
     [InlineData("", Helpers.INVALID_FILE_ERROR_MESSAGE)]
-    public void TestIfThrowsExceptionWhenGivenInvalidSoundFile(string filePath, string expectedMsg)
+    [InlineData(null, Helpers.NULL_ARGUMENT_ERROR_MESSAGE)]
+    public void TestIfFailsWhenGivenInvalidSoundFile(string filePath, string expectedMsg)
     {
         // Adds extension to mock
         var (controller, extension) = Helpers.CreateControllerMockAndAddSFXExtension();

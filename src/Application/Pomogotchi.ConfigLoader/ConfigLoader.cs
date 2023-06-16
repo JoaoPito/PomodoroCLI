@@ -7,63 +7,48 @@ namespace Pomogotchi.Application.ConfigLoader
     {
         static ConfigLoader? _instance;
 
-        const string CONFIG_FILE_PATH = "./config.json";
-        private ConfigParams _currentParams;
+        const string DEFAULT_CONFIG_FILE_PATH = "./config.json";
+        private ConfigParams _currentParams = new();
         private JsonFileHandler _json;
 
-        private ConfigLoader() {
-            _json = new JsonFileHandler(CONFIG_FILE_PATH);
+        private ConfigLoader(string? configFilePath) {
+
+            var validator = new FileHandler.ConfigFileValidator();
+
+            if(configFilePath != null && validator.Validate(configFilePath).IsValid)
+                _json = new JsonFileHandler(configFilePath);
+            else
+                _json = new JsonFileHandler(DEFAULT_CONFIG_FILE_PATH);
 
             ReloadConfig();
+        }
+
+        public static ConfigLoader GetController(string? configFilePath)
+        {
+            if(_instance == null)
+                _instance = new ConfigLoader(configFilePath);
+
+            return _instance;
         }
 
         public static ConfigLoader GetController()
         {
             if(_instance == null)
-                _instance = new ConfigLoader();
+                _instance = new ConfigLoader(null);
 
             return _instance;
         }
 
         public void ReloadConfig()
         {
-            try
-            {
-                _currentParams = _json.LoadFromFile<ConfigParams>();
-            }
-            catch (System.IO.FileNotFoundException)
-            {
-                _currentParams = LoadDefaults();
-                SaveChanges();
-            }
-            
+            _currentParams = _json.LoadFromFile<ConfigParams>();           
         }
 
-        ConfigParams LoadDefaults(){
-            return new ConfigParams{ WorkDuration = new TimeSpan(0,25,0), BreakDuration = new TimeSpan(0,5,0) };
+        public void LoadDefaults(){
+            _currentParams = new ConfigParams{ WorkDuration = new TimeSpan(0,25,0), BreakDuration = new TimeSpan(0,5,0) };
         }
 
-        public Session GetBreakParams()
-        {
-            return new Session(_currentParams.BreakDuration);
-        }
-
-        public Session GetWorkParams()
-        {
-            return new Session(_currentParams.WorkDuration);
-        }
-
-        public void SetWorkParams(Session session)
-        {
-            _currentParams.WorkDuration = session.Duration;
-        }
-
-        public void SetBreakParams(Session session)
-        {
-            _currentParams.BreakDuration = session.Duration;
-        }
-
-        public string GetExtensionParam(string key)
+        public string GetParam(string key)
         {
             if(!_currentParams.Extensions.ContainsKey(key))
                 throw new ArgumentException("Requested key not found");
@@ -73,7 +58,7 @@ namespace Pomogotchi.Application.ConfigLoader
             return _currentParams.Extensions[key];
         }
 
-        public void SetExtensionParam(string key, string value)
+        public void SetParam(string key, string value)
         {
             _currentParams.Extensions.Add(key, value);
         }

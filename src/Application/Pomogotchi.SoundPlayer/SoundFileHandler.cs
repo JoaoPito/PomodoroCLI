@@ -1,3 +1,5 @@
+using FluentValidation;
+
 namespace Pomogotchi.Application.SoundPlayer
 {
     public static class SoundFileHandler
@@ -8,30 +10,36 @@ namespace Pomogotchi.Application.SoundPlayer
 
         static readonly string[] SUPPORTED_FILE_FORMATS = { ".mp3", ".ogm", ".ogg", ".wav", ".a52", ".dts", ".aac", ".flac", ".dv", ".vid" };
 
-        public static void ValidateSoundFilePath(string path)
+        public class FilePathValidator : AbstractValidator<string>
         {
-            CheckIfPathIsNotEmpty(path);
-            CheckIfFormatIsSupported(path);
-            CheckIfFileExists(path);
-        }
+            public FilePathValidator()
+            {
+                RuleFor(path => path).NotEmpty()
+                                    .Must(BeAValidFilePath)
+                                    .WithMessage(INVALID_FILE_ERROR_MESSAGE);
 
-        static void CheckIfPathIsNotEmpty(string path)
-        {
-            if (path == null || path == string.Empty || !Path.HasExtension(path))
-                throw new ArgumentException(INVALID_FILE_ERROR_MESSAGE);
-        }
+                RuleFor(path => path).Must(Exist)
+                                    .WithMessage(FILE_NOT_FOUND_ERROR_MESSAGE);
 
-        static void CheckIfFormatIsSupported(string path)
-        {
-            var extension = Path.GetExtension(path);
-            if (!SUPPORTED_FILE_FORMATS.Contains(extension.ToLower()))
-                throw new ArgumentException(UNSUPPORTED_FILE_EXTENSION_ERROR_MESSAGE + $"'{extension}'");
-        }
+                RuleFor(path => path).Must(HaveValidExtension)
+                                    .WithMessage(UNSUPPORTED_FILE_EXTENSION_ERROR_MESSAGE);
+            }
 
-        static void CheckIfFileExists(string path)
-        {
-            if (!Path.Exists(path))
-                throw new ArgumentException(FILE_NOT_FOUND_ERROR_MESSAGE + $"'{path}'");
+            private bool BeAValidFilePath(string path)
+            {
+                return (path != null && Path.HasExtension(path));
+            }
+
+            private bool HaveValidExtension(string path)
+            {
+                var extension = Path.GetExtension(path);
+                return SUPPORTED_FILE_FORMATS.Contains(extension.ToLower());
+            }
+
+            bool Exist(string path)
+            {
+                return Path.Exists(path);
+            }
         }
     }
 }

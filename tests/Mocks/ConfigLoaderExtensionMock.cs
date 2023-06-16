@@ -12,7 +12,7 @@ namespace Pomogotchi.Tests.Mocks
 
         public ConfigLoaderExtensionMock()
         {
-            
+            _params = new ConfigParams();
         }
 
         public ConfigLoaderExtensionMock(ConfigParams config)
@@ -20,37 +20,26 @@ namespace Pomogotchi.Tests.Mocks
             this._params = config;
         }
 
-        public Session GetBreakParameters()
-        {
-            throw new NotImplementedException();
-        }
-
-        public string GetExtensionParam(string key)
+        public string GetParam(string key)
         {
             return Params.Extensions[key];
         }
 
-        public Session GetWorkParameters()
+        public CommandResult Notify(GenericNotification notification)
         {
             throw new NotImplementedException();
         }
 
-        public Result Notify(GenericNotification notification)
+        public void SetParam(string key, string data)
+        {
+            throw new NotImplementedException();
+        }
+        public CommandResult LoadConfig()
         {
             throw new NotImplementedException();
         }
 
-        public void SetBreakParams(Session parameters)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void SetExtensionParam(string key, string data)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void SetWorkParams(Session parameters)
+        public T GetParamAs<T>(string key)
         {
             throw new NotImplementedException();
         }

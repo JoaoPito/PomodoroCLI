@@ -1,3 +1,4 @@
+using FluentValidation;
 using Pomogotchi.API.Controllers;
 using Pomogotchi.API.Extensions.Notifications;
 using Pomogotchi.Application.SoundPlayer;
@@ -13,7 +14,7 @@ namespace Pomogotchi.API.Extensions
         {
             _player = player;
         }
-        public Result Notify(GenericNotification notification)
+        public CommandResult Notify(GenericNotification notification)
         {
             if(notification.GetType() == typeof(SessionEndNotification))
                 return TryPlaySessionEndSound();
@@ -21,38 +22,42 @@ namespace Pomogotchi.API.Extensions
             if(notification.GetType() == typeof(ConfigLoadNotification))
                 return HandleConfigLoadNotification((ConfigLoadNotification) notification);
             
-            return Result.Success();
+            return CommandResult.Success();
         }
 
-        Result TryPlaySessionEndSound()
+        CommandResult TryPlaySessionEndSound()
         {
             try
             {
                 _player?.Play();
-                return Result.Success();
+                return CommandResult.Success();
             }
             catch (Exception ex)
             {
-                return Result.Failure(ex.Message);
+                return CommandResult.Failure(ex.Message);
             }
         }
 
-        Result HandleConfigLoadNotification(ConfigLoadNotification notification){
+        CommandResult HandleConfigLoadNotification(ConfigLoadNotification notification){
             try
             {
                 var config = (IConfigExtension) notification.Context;
                 LoadConfig(config);
             }
-            catch (Exception ex)
+            catch (ValidationException ex)
             {
-                return Result.Failure(ex.Message);
+                return CommandResult.Failure(ex.Message);
+            }
+            catch(ArgumentNullException ex)
+            {
+                return CommandResult.Failure(ex.Message);
             }
 
-            return Result.Success();
+            return CommandResult.Success();
         }
 
         void LoadConfig(IConfigExtension configExtension){
-            var filePath = configExtension.GetExtensionParam(FILE_PATH_CONFIG_KEY);
+            var filePath = configExtension.GetParam(FILE_PATH_CONFIG_KEY);
             _player.AttachMediaFile(filePath);
         }
     }

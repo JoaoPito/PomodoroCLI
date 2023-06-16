@@ -1,3 +1,4 @@
+using FluentValidation;
 using LibVLCSharp.Shared;
 
 namespace Pomogotchi.Application.SoundPlayer
@@ -34,7 +35,8 @@ namespace Pomogotchi.Application.SoundPlayer
 
         public async void AttachMediaFile(string path)
         {
-            SoundFileHandler.ValidateSoundFilePath(path);
+            var validator = new SoundFileHandler.FilePathValidator();
+            validator.ValidateAndThrow(path);
 
             var media = new Media(vlc, path);
             await media.Parse(MediaParseOptions.ParseNetwork);

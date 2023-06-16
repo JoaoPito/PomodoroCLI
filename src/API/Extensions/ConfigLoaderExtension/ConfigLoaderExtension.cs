@@ -1,55 +1,74 @@
 using Pomogotchi.API.Extensions.Notifications;
-using Pomogotchi.Domain;
 using Pomogotchi.Application.ConfigLoader;
+using Pomogotchi.API.Controllers;
 
 namespace Pomogotchi.API.Extensions
 {
     public class ConfigLoaderExtension : IConfigExtension
     {
-        private readonly ConfigLoader _loader;
-        public ConfigLoaderExtension(ConfigLoader loader)
+        private readonly IConfigLoader _loader;
+        private readonly ApiControllerBase _controller;
+        public ConfigLoaderExtension(IConfigLoader loader, ApiControllerBase controller)
         {
+            this._controller = controller;
             this._loader = loader;
-        }  
+        }
 
-        public void SetWorkParams(Session parameters)
+        public void SaveAllChanges()
         {
-            _loader.SetWorkParams(parameters);
-        }
-
-        public void SetBreakParams(Session parameters)
-        {
-           _loader.SetBreakParams(parameters);
-        }
-
-        public Session GetWorkParameters(){
-            return _loader.GetWorkParams();
-        }
-        public Session GetBreakParameters(){
-            return _loader.GetBreakParams();
-        }
-
-        public void SaveAllChanges(){
+            _controller.NotifyAllExtensions(new ConfigSaveNotification(this));
             _loader.SaveChanges();
         }
 
-        public IConfigLoader GetLoader(){
-            return _loader;
-        }
-
-        public void SetExtensionParam(string key, string data){
-            _loader.SetExtensionParam(key,data);
-        }
-        public string GetExtensionParam(string key){
-            return _loader.GetExtensionParam(key);
-        }
-
-        public Result Notify(GenericNotification notification)
+        public void SetParam(string key, string data)
         {
-            if(notification.GetType() == typeof(ConfigSaveNotification))
-                SaveAllChanges();
+            _loader.SetParam(key, data);
+        }
+        public string GetParam(string key)
+        {
+            return _loader.GetParam(key);
+        }
 
-            return Result.Success();
+        public T GetParamAs<T>(string key)
+        {
+            throw new NotImplementedException();
+        }
+
+        public CommandResult Notify(GenericNotification notification)
+        {
+            return CommandResult.Success();
+        }
+
+        public CommandResult LoadConfig()
+        {
+            var result = HandleConfigReload();
+            _controller.NotifyAllExtensions(new ConfigLoadNotification(this));
+            return result;
+        }
+
+        CommandResult HandleConfigReload()
+        {
+            try
+            {
+                _loader.ReloadConfig();
+            }
+            catch (FileNotFoundException)
+            {
+                LoadAndCreateDefaults();
+                return CommandResult.Failure("File not found. Defaults loaded");
+            }
+            catch (Exception ex)
+            {
+                return CommandResult.Failure(ex.Message);
+            }
+
+            return CommandResult.Success();
+        }
+
+        void LoadAndCreateDefaults()
+        {
+            _loader.LoadDefaults();
+            _loader.SaveChanges();
         }
     }
 }

@@ -1,3 +1,4 @@
+using API;
 using Pomogotchi.API.Controllers;
 using Pomogotchi.API.Extensions.Notifications;
 using Pomogotchi.API.Extensions.SessionExtension;
@@ -28,8 +29,7 @@ namespace Pomogotchi.API.Extensions
             this._controller = controller;
             this._timer = timer;
             var configLoader = (ConfigLoaderExtension)controller.GetExtension(typeof(ConfigLoaderExtension));
-            var sessionParams = configLoader.GetWorkParameters();
-            this._session = new WorkSession(sessionParams, OnSessionParamsChanged);
+            configLoader.LoadConfig();
 
             SetupTimer();
         }
@@ -53,11 +53,11 @@ namespace Pomogotchi.API.Extensions
         void OnTimerEnd(){
             Stop();
             EndTriggers?.Invoke();
-            Controller.Notify(new SessionEndNotification(this));
+            Controller.NotifyAllExtensions(new SessionEndNotification(this));
         }
 
         void OnTimerUpdate(){
-            Controller.Notify(new SessionUpdateNotification(this));
+            Controller.NotifyAllExtensions(new SessionUpdateNotification(this));
         }
 
         protected virtual void OnSessionParamsChanged(Session value)
@@ -70,12 +70,19 @@ namespace Pomogotchi.API.Extensions
             Timer.SetDuration(parameters.Duration);
         }
 
-        public Result Notify(GenericNotification notification)
+        public CommandResult Notify(GenericNotification notification)
         {
             if(notification.GetType() == typeof(SessionEndNotification))
                 Stop();
+            if(notification.GetType() == typeof(ConfigLoadNotification))
+                LoadConfig(notification.Context);
 
-            return Result.Success();
+            return CommandResult.Success();
+        }
+
+        private void LoadConfig(IApiComponent context)
+        {
+            throw new NotImplementedException();
         }
 
         public void SwitchSessionTo(SessionType session)

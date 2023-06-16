@@ -12,6 +12,7 @@ namespace Pomogotchi.Tests.SoundPlayer
         public const string INVALID_FILE_ERROR_MESSAGE = "Invalid media file path";
         public const string FILE_NOT_FOUND_ERROR_MESSAGE = "Could not find file: ";
         public const string UNSUPPORTED_FILE_EXTENSION_ERROR_MESSAGE = "Cannot open file with extension: ";
+        public const string NULL_ARGUMENT_ERROR_MESSAGE = "Cannot pass null model to Validate.";
 
         public static ConfigParams CreateEmptyConfigParams()
         {

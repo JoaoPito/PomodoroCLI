@@ -32,7 +32,7 @@ namespace Pomogotchi.API.Controllers
             }
         }
 
-        public void Notify(GenericNotification notification){
+        public void NotifyAllExtensions(GenericNotification notification){
             _extensions.ForEach((extension) => extension.Notify(notification));
         }
     }

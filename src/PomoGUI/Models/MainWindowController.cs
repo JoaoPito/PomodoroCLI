@@ -39,12 +39,7 @@ namespace PomoGUI.Models
         {
             var builder = new ApiControllerBuilder();
             _controller = builder.GetController();
-
-            var configLoader = (ConfigLoaderExtension)(_controller.GetExtension(typeof(ConfigLoaderExtension)));
-            var soundFile = TryToLoadSoundPlayerConfig(configLoader);
-            var soundPlayer = new SFXPlayer(soundFile);
-            
-            _controller.AddExtension(new SoundPlayerExtension(soundPlayer));
+            _controller.AddSFXPlayerExtension();
         }
 
         string TryToLoadSoundPlayerConfig(ConfigLoaderExtension configLoader){

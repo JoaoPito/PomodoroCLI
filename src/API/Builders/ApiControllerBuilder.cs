@@ -1,32 +1,23 @@
 using Pomogotchi.API.Controllers;
 using Pomogotchi.API.Extensions;
-using Pomogotchi.Application.ConfigLoader;
 using Pomogotchi.Application.Timer;
 
 namespace Pomogotchi.API.Builders
 {
     public class ApiControllerBuilder : IControllerBuilder
     {
-        ApiController controller;
-        SessionExtensionController _session;
-        ConfigLoaderExtension _config;
+        ApiController controller = new();
         
         public ApiControllerBuilder()
         {
             ResetExtensions();
         }
 
-        void AddDefaultConfigLoader()
-        {
-            _config = new ConfigLoaderExtension(ConfigLoader.GetController());
-            controller.AddExtension(_config);
-        }
-
         void AddDefaultSessionController()
         {
             var sessionTimer = new SessionTimer(new SystemTimer());
-            _session = new SessionExtensionController(controller, sessionTimer);
-            controller.AddExtension(_session);
+            var extension = new SessionExtensionController(controller, sessionTimer);
+            controller.AddExtension(extension);
         }
 
         public ApiControllerBase GetController()
@@ -42,7 +33,8 @@ namespace Pomogotchi.API.Builders
         public void ResetExtensions(){
             controller = new ApiController();
 
-            AddDefaultConfigLoader();
+            controller.AddConfigLoader();
+            //controller.AddSessionTimer();
             AddDefaultSessionController();
         }
     }
