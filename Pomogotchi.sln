@@ -18,6 +18,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PomoGUI", "src\PomoGUI\Pomo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pomogotchi.SoundPlayer", "src\Application\Pomogotchi.SoundPlayer\Pomogotchi.SoundPlayer.csproj", "{9DB55821-B4A5-47E3-AF22-2D31A1CDF025}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pomogotchi.Tests.SoundPlayer", "tests\Pomogotchi.Tests.SoundPlayer\Pomogotchi.Tests.SoundPlayer.csproj", "{EF3B41CA-A89A-47A1-A4A4-70726DC81032}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pomogotchi.Tests.ConfigLoader", "tests\Pomogotchi.Tests.ConfigLoader\Pomogotchi.Tests.ConfigLoader.csproj", "{31C9B1E1-9E74-4656-B7DF-EE0DE25C2F83}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -76,6 +80,30 @@ Global
 		{9DB55821-B4A5-47E3-AF22-2D31A1CDF025}.Release|x64.Build.0 = Release|Any CPU
 		{9DB55821-B4A5-47E3-AF22-2D31A1CDF025}.Release|x86.ActiveCfg = Release|Any CPU
 		{9DB55821-B4A5-47E3-AF22-2D31A1CDF025}.Release|x86.Build.0 = Release|Any CPU
+		{EF3B41CA-A89A-47A1-A4A4-70726DC81032}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF3B41CA-A89A-47A1-A4A4-70726DC81032}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF3B41CA-A89A-47A1-A4A4-70726DC81032}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{EF3B41CA-A89A-47A1-A4A4-70726DC81032}.Debug|x64.Build.0 = Debug|Any CPU
+		{EF3B41CA-A89A-47A1-A4A4-70726DC81032}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{EF3B41CA-A89A-47A1-A4A4-70726DC81032}.Debug|x86.Build.0 = Debug|Any CPU
+		{EF3B41CA-A89A-47A1-A4A4-70726DC81032}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF3B41CA-A89A-47A1-A4A4-70726DC81032}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF3B41CA-A89A-47A1-A4A4-70726DC81032}.Release|x64.ActiveCfg = Release|Any CPU
+		{EF3B41CA-A89A-47A1-A4A4-70726DC81032}.Release|x64.Build.0 = Release|Any CPU
+		{EF3B41CA-A89A-47A1-A4A4-70726DC81032}.Release|x86.ActiveCfg = Release|Any CPU
+		{EF3B41CA-A89A-47A1-A4A4-70726DC81032}.Release|x86.Build.0 = Release|Any CPU
+		{31C9B1E1-9E74-4656-B7DF-EE0DE25C2F83}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31C9B1E1-9E74-4656-B7DF-EE0DE25C2F83}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31C9B1E1-9E74-4656-B7DF-EE0DE25C2F83}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{31C9B1E1-9E74-4656-B7DF-EE0DE25C2F83}.Debug|x64.Build.0 = Debug|Any CPU
+		{31C9B1E1-9E74-4656-B7DF-EE0DE25C2F83}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{31C9B1E1-9E74-4656-B7DF-EE0DE25C2F83}.Debug|x86.Build.0 = Debug|Any CPU
+		{31C9B1E1-9E74-4656-B7DF-EE0DE25C2F83}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31C9B1E1-9E74-4656-B7DF-EE0DE25C2F83}.Release|Any CPU.Build.0 = Release|Any CPU
+		{31C9B1E1-9E74-4656-B7DF-EE0DE25C2F83}.Release|x64.ActiveCfg = Release|Any CPU
+		{31C9B1E1-9E74-4656-B7DF-EE0DE25C2F83}.Release|x64.Build.0 = Release|Any CPU
+		{31C9B1E1-9E74-4656-B7DF-EE0DE25C2F83}.Release|x86.ActiveCfg = Release|Any CPU
+		{31C9B1E1-9E74-4656-B7DF-EE0DE25C2F83}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -85,6 +113,8 @@ Global
 		{CB4DF73B-577A-436A-81AA-EDDD8587D3CF} = {ED90CA92-F455-432F-BAE4-2F17E5B55118}
 		{555D1C8C-D308-44A9-AFAC-AD339EECF8C0} = {ED90CA92-F455-432F-BAE4-2F17E5B55118}
 		{9DB55821-B4A5-47E3-AF22-2D31A1CDF025} = {ED90CA92-F455-432F-BAE4-2F17E5B55118}
+		{EF3B41CA-A89A-47A1-A4A4-70726DC81032} = {EEB84EFD-C6BE-416B-AD2B-635989727848}
+		{31C9B1E1-9E74-4656-B7DF-EE0DE25C2F83} = {EEB84EFD-C6BE-416B-AD2B-635989727848}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7BDBCD4E-D2CE-41B9-BBC5-C5FDAAA53F3D}

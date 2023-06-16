@@ -1,9 +1,7 @@
 ﻿using ReactiveUI;
 using PomoGUI.Models;
 using System;
-using Avalonia.Controls;
 using Pomogotchi.API.Extensions.SessionExtension;
-using Pomogotchi.API.Extensions;
 
 namespace PomoGUI.ViewModels
 {
@@ -126,7 +124,7 @@ namespace PomoGUI.ViewModels
         {
             _controller.AddTimeToSessionDuration(new TimeSpan(0,5,0));
             _controller.SaveConfig();
-            UpdateTimerUI();
+            UpdateTimerUI();            
         }
 
         public void OnDecrementButton()

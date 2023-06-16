@@ -3,6 +3,7 @@
     public interface IPlayer
     {
         public void Play();
+        public void AttachMediaFile(string path);
 
     }
 }

@@ -3,18 +3,26 @@
     public class SFXPlayer : IPlayer
     {
         string _filePath;
-        VLCSoundPlayer _vlcPlayer = new();
+        ISoundPlayer _player;
 
-        public SFXPlayer(string filePath)
+        public SFXPlayer(ISoundPlayer player, string filePath)
         {
-            this._filePath = filePath;
-            _vlcPlayer.AttachMedia(filePath);
-            _vlcPlayer.ChangeVolume(100);
+            _player = player;
+            AttachMediaFile(filePath);
+            _player.SetVolume(100);
+        }
+
+        public void AttachMediaFile(string path)
+        {
+            SoundFileHandler.ValidateSoundFilePath(path);
+
+            this._filePath = path;
+            _player.AttachMediaFile(path);
         }
 
         public void Play()
         {
-            _vlcPlayer.Play();
+            _player.Play();
         }
     }
 }

@@ -20,7 +20,7 @@ There is still some work to be done:
 
 ## :tomato: Installation
 
-Binaries can be found in the folder "Binaries", choose your OS (if available), download it, and it's ready to go!
+Binaries can be found in the GitHub's Releases tab, click on the tags, choose the tag of your OS, then download the first option.
 
 ### Dependencies
 - Since Pomogotchi uses libVLCSharp for playing audio files, **VLC must be intalled on your machine**.

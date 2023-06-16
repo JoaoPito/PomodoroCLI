@@ -7,6 +7,6 @@ namespace Pomogotchi.API.Extensions
     {
         public class ExtensionNotFoundException : ArgumentException{}
 
-        public void Notify(GenericNotification notification);
+        public Result Notify(GenericNotification notification);
     }
 }

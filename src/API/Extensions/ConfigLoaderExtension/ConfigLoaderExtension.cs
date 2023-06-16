@@ -44,10 +44,12 @@ namespace Pomogotchi.API.Extensions
             return _loader.GetExtensionParam(key);
         }
 
-        public void Notify(GenericNotification notification)
+        public Result Notify(GenericNotification notification)
         {
             if(notification.GetType() == typeof(ConfigSaveNotification))
                 SaveAllChanges();
+
+            return Result.Success();
         }
     }
 }

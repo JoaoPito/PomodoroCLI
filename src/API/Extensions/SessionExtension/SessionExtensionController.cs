@@ -70,10 +70,12 @@ namespace Pomogotchi.API.Extensions
             Timer.SetDuration(parameters.Duration);
         }
 
-        public void Notify(GenericNotification notification)
+        public Result Notify(GenericNotification notification)
         {
             if(notification.GetType() == typeof(SessionEndNotification))
                 Stop();
+
+            return Result.Success();
         }
 
         public void SwitchSessionTo(SessionType session)
