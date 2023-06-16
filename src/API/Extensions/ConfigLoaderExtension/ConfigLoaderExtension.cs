@@ -29,11 +29,6 @@ namespace Pomogotchi.API.Extensions
             return _loader.GetParam(key);
         }
 
-        public T GetParamAs<T>(string key)
-        {
-            throw new NotImplementedException();
-        }
-
         public CommandResult Notify(GenericNotification notification)
         {
             return CommandResult.Success();
@@ -69,6 +64,11 @@ namespace Pomogotchi.API.Extensions
         {
             _loader.LoadDefaults();
             _loader.SaveChanges();
+        }
+
+        public T GetParamAs<T>(string key)
+        {
+            throw new NotImplementedException();
         }
     }
 }

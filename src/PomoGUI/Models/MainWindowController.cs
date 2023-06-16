@@ -45,12 +45,12 @@ namespace PomoGUI.Models
         string TryToLoadSoundPlayerConfig(ConfigLoaderExtension configLoader){
             try
             {
-                return configLoader.GetExtensionParam("soundPlayer_filePath");
+                return configLoader.GetParam("soundPlayer_filePath");
             }
             catch (System.ArgumentException)
             {
                 var defaultPath =  "./sessionEnd.wav";
-                configLoader.SetExtensionParam("soundPlayer_filePath",defaultPath);
+                configLoader.SetParam("soundPlayer_filePath",defaultPath);
                 return defaultPath;
             }
         }
@@ -68,19 +68,13 @@ namespace PomoGUI.Models
                 var currentSession = _sessionController.Session;
                 var newSessionParams = new Session(currentSession.Duration + amount);
 
-                SetSessionParams(_configController, currentSession, newSessionParams);
+                _configController.SaveAllChanges();
                 _sessionController.Session.LoadConfig(_configController);
             }
         }
 
         public void SaveConfig(){
             _configController.SaveAllChanges();
-        }
-
-        void SetSessionParams(ConfigLoaderExtension configLoader, SessionType session, Session parameters)
-        {
-            if (session.GetType() == typeof(WorkSession)) configLoader.SetWorkParams(parameters);
-            else if (session.GetType() == typeof(BreakSession)) configLoader.SetBreakParams(parameters);
         }
 
         public void StartSession(){

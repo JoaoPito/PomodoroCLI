@@ -76,6 +76,9 @@ public class UnitTest1
     [InlineData("./no_extension")]
     [InlineData("./wrong_extension.txt")]
     public void TestFailsWhenGivenInvalidFilePath(string path){
-        // 
+        // Create ConfigLoaderExtension with mock ConfigLoader and given file path
+
+        // Call LoadConfig and get result
+        // Check if result failed
     }
 }
