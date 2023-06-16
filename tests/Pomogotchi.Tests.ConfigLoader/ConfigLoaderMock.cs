@@ -1,3 +1,4 @@
+using System.Text.Json;
 using Pomogotchi.Application.ConfigLoader;
 using Pomogotchi.Domain;
 
@@ -7,9 +8,11 @@ namespace Pomogotchi.Tests.ConfigLoader
     {
         public Exception? ThrowWhenLoadingConfig = null;
 
-        public string GetParam(string key)
+        public Dictionary<string, string> Parameters { get; protected set; } = new();
+
+        public T? GetParamAs<T>(string key)
         {
-            throw new NotImplementedException();
+            return JsonSerializer.Deserialize<T>(Parameters[key]);
         }
 
         public void LoadDefaults()
@@ -28,9 +31,15 @@ namespace Pomogotchi.Tests.ConfigLoader
             
         }
 
-        public void SetParam(string key, string value)
+        private void SetParam(string key, string value)
         {
-            throw new NotImplementedException();
+            Parameters[key] = value;
+        }
+
+        public void SetParamAs<T>(string key, T data)
+        {
+            var serializedData = JsonSerializer.Serialize(data);
+            SetParam(key, serializedData);
         }
     }
 }

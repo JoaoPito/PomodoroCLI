@@ -25,6 +25,7 @@
     <ProjectReference Include="..\..\src\API\API.csproj" />
     <ProjectReference Include="..\..\src\Domain\Domain.csproj" />
     <ProjectReference Include="..\Mocks\Mocks.csproj" />
+    <ProjectReference Include="..\..\src\Application\Pomogotchi.ConfigLoader\Pomogotchi.ConfigLoader.csproj" />
   </ItemGroup>
 
 </Project>

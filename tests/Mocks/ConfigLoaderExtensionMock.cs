@@ -6,23 +6,23 @@ namespace Pomogotchi.Tests.Mocks
 {
     public class ConfigLoaderExtensionMock : IConfigExtension
     {
-        private ConfigParams _params;
+        private Dictionary<string,string> _params = new();
 
-        public ConfigParams Params => _params;
+        public Dictionary<string,string> Params => _params;
 
         public ConfigLoaderExtensionMock()
         {
-            _params = new ConfigParams();
+            
         }
 
-        public ConfigLoaderExtensionMock(ConfigParams config)
+        public ConfigLoaderExtensionMock(Dictionary<string,string> config)
         {
             this._params = config;
         }
 
         public string GetParam(string key)
         {
-            return Params.Extensions[key];
+            return Params[key];
         }
 
         public CommandResult Notify(GenericNotification notification)
@@ -34,12 +34,17 @@ namespace Pomogotchi.Tests.Mocks
         {
             throw new NotImplementedException();
         }
-        public CommandResult LoadConfig()
+        public CommandResult ReloadAllConfigs()
         {
             throw new NotImplementedException();
         }
 
         public T GetParamAs<T>(string key)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void SetParamAs<T>(string key, T data)
         {
             throw new NotImplementedException();
         }

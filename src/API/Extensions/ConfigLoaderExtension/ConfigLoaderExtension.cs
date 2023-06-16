@@ -20,21 +20,12 @@ namespace Pomogotchi.API.Extensions
             _loader.SaveChanges();
         }
 
-        public void SetParam(string key, string data)
-        {
-            _loader.SetParam(key, data);
-        }
-        public string GetParam(string key)
-        {
-            return _loader.GetParam(key);
-        }
-
         public CommandResult Notify(GenericNotification notification)
         {
             return CommandResult.Success();
         }
 
-        public CommandResult LoadConfig()
+        public CommandResult ReloadAllConfigs()
         {
             var result = HandleConfigReload();
             _controller.NotifyAllExtensions(new ConfigLoadNotification(this));
@@ -66,9 +57,14 @@ namespace Pomogotchi.API.Extensions
             _loader.SaveChanges();
         }
 
-        public T GetParamAs<T>(string key)
+        public T? GetParamAs<T>(string key)
         {
-            throw new NotImplementedException();
+            return _loader.GetParamAs<T>(key);
+        }
+
+        public void SetParamAs<T>(string key, T data)
+        {
+            _loader.SetParamAs<T>(key, data);
         }
     }
 }

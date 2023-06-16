@@ -57,7 +57,7 @@ namespace Pomogotchi.API.Extensions
         }
 
         void LoadConfig(IConfigExtension configExtension){
-            var filePath = configExtension.GetParam(FILE_PATH_CONFIG_KEY);
+            var filePath = configExtension.GetParamAs<string>(FILE_PATH_CONFIG_KEY);
             _player.AttachMediaFile(filePath);
         }
     }

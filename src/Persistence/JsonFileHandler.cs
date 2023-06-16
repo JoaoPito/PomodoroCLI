@@ -16,9 +16,12 @@ namespace Pomogotchi.Persistence
             File.WriteAllText(_filePath, data);
         }
 
-        public T LoadFromFile<T>(){
+        public T? LoadFromFile<T>(){
             string fileData = File.ReadAllText(_filePath);
-            return JsonSerializer.Deserialize<T>(fileData);
+            return Deserialize<T>(fileData);
         }
+
+        public T? Deserialize<T>(string data) => JsonSerializer.Deserialize<T>(data);
+        public string Serialize<T>(T data) => JsonSerializer.Serialize(data);
     }
 }

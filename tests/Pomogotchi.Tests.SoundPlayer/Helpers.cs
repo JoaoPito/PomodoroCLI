@@ -14,14 +14,9 @@ namespace Pomogotchi.Tests.SoundPlayer
         public const string UNSUPPORTED_FILE_EXTENSION_ERROR_MESSAGE = "Cannot open file with extension: ";
         public const string NULL_ARGUMENT_ERROR_MESSAGE = "Cannot pass null model to Validate.";
 
-        public static ConfigParams CreateEmptyConfigParams()
+        public static Dictionary<string,string> CreateEmptyConfigParams()
         {
-            return new ConfigParams
-            {
-                WorkDuration = TimeSpan.Zero,
-                BreakDuration = TimeSpan.Zero,
-                Extensions = new Dictionary<string, string>()
-            };
+            return new Dictionary<string,string>();
         }
 
         public static (ApiControllerMock, SoundPlayerExtension) CreateControllerMockAndAddSFXExtension()
@@ -39,7 +34,7 @@ namespace Pomogotchi.Tests.SoundPlayer
         public static ConfigLoaderExtensionMock CreateConfigLoaderMockWithFilePath(string filePath)
         {
             var config = Helpers.CreateEmptyConfigParams();
-            config.Extensions.Add(Helpers.CONFIG_PARAM_KEY, filePath);
+            config.Add(Helpers.CONFIG_PARAM_KEY, filePath);
             return new ConfigLoaderExtensionMock(config);
         }
     }

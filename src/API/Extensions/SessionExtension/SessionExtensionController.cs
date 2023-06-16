@@ -1,4 +1,3 @@
-using API;
 using Pomogotchi.API.Controllers;
 using Pomogotchi.API.Extensions.Notifications;
 using Pomogotchi.API.Extensions.SessionExtension;
@@ -10,7 +9,6 @@ namespace Pomogotchi.API.Extensions
     public class SessionExtensionController : IAPIExtension
     {
         private ApiControllerBase _controller;
-        public ApiControllerBase Controller { get => _controller; protected set => _controller = value; }
 
         private bool _inSession = false;
         public bool InSession { get => _inSession; protected set => _inSession = value; }
@@ -29,8 +27,7 @@ namespace Pomogotchi.API.Extensions
              _session = new WorkSession(new Domain.Session(new TimeSpan(0, 25, 0)));
             this._controller = controller;
             this._timer = timer;
-            var configLoader = (ConfigLoaderExtension)controller.GetExtension(typeof(ConfigLoaderExtension));
-            configLoader.LoadConfig();
+            _controller.GetConfigLoader().ReloadAllConfigs();
 
             SetupTimer();
         }
@@ -54,11 +51,11 @@ namespace Pomogotchi.API.Extensions
         void OnTimerEnd(){
             Stop();
             EndTriggers?.Invoke();
-            Controller.NotifyAllExtensions(new SessionEndNotification(this));
+            _controller.NotifyAllExtensions(new SessionEndNotification(this));
         }
 
         void OnTimerUpdate(){
-            Controller.NotifyAllExtensions(new SessionUpdateNotification(this));
+            _controller.NotifyAllExtensions(new SessionUpdateNotification(this));
         }
 
         protected virtual void OnSessionParamsChanged(Session value)
@@ -76,12 +73,12 @@ namespace Pomogotchi.API.Extensions
             if(notification.GetType() == typeof(SessionEndNotification))
                 Stop();
             if(notification.GetType() == typeof(ConfigLoadNotification))
-                LoadConfig(notification.Context);
+                LoadConfig();
 
             return CommandResult.Success();
         }
 
-        private void LoadConfig(IApiComponent context)
+        private void LoadConfig()
         {
             throw new NotImplementedException();
         }

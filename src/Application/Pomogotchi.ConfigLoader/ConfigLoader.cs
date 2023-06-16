@@ -8,7 +8,7 @@ namespace Pomogotchi.Application.ConfigLoader
         static ConfigLoader? _instance;
 
         const string DEFAULT_CONFIG_FILE_PATH = "./config.json";
-        private ConfigParams _currentParams = new();
+        private Dictionary<string, string> _currentParams = new();
         private JsonFileHandler _json;
 
         private ConfigLoader(string? configFilePath) {
@@ -17,8 +17,11 @@ namespace Pomogotchi.Application.ConfigLoader
 
             if(configFilePath != null && validator.Validate(configFilePath).IsValid)
                 _json = new JsonFileHandler(configFilePath);
-            else
+            else {
                 _json = new JsonFileHandler(DEFAULT_CONFIG_FILE_PATH);
+                _json.SaveToFile<Dictionary<string, string>>(_currentParams);
+            }
+                
 
             ReloadConfig();
         }
@@ -41,31 +44,41 @@ namespace Pomogotchi.Application.ConfigLoader
 
         public void ReloadConfig()
         {
-            _currentParams = _json.LoadFromFile<ConfigParams>();           
+            _currentParams = _json.LoadFromFile<Dictionary<string,string>>();           
         }
 
         public void LoadDefaults(){
-            _currentParams = new ConfigParams{ WorkDuration = new TimeSpan(0,25,0), BreakDuration = new TimeSpan(0,5,0) };
+            _currentParams = new Dictionary<string, string>{ };
         }
 
-        public string GetParam(string key)
+        string GetParam(string key)
         {
-            if(!_currentParams.Extensions.ContainsKey(key))
+            if(!_currentParams.ContainsKey(key))
                 throw new ArgumentException("Requested key not found");
 
-            Console.WriteLine($"param: {_currentParams.Extensions[key]} type: {_currentParams.Extensions[key].GetType()}");
-
-            return _currentParams.Extensions[key];
+            return _currentParams[key];
         }
 
-        public void SetParam(string key, string value)
+        void SetParam(string key, string value)
         {
-            _currentParams.Extensions.Add(key, value);
+            _currentParams.Add(key, value);
         }
 
         public void SaveChanges()
         {
-            _json.SaveToFile<ConfigParams>(_currentParams);
+            _json.SaveToFile<Dictionary<string,string>>(_currentParams);
+        }
+
+        public T? GetParamAs<T>(string key)
+        {
+            string paramValue = GetParam(key);
+            return _json.Deserialize<T>(paramValue);
+        }
+
+        public void SetParamAs<T>(string key, T data)
+        {
+            string serializedData = _json.Serialize<T>(data);
+            SetParam(key, serializedData);
         }
     }
 }
